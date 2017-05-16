@@ -9,7 +9,7 @@
 	<body>
 
 		<?php
-			header('Location:view/accueil.php');
+			echo('coucou');
 		?>
 	</body>
 </html>
