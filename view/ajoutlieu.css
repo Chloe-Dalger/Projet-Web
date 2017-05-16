@@ -1,0 +1,33 @@
+
+body {
+  font: 12px 'Open Sans';
+  background: url(http://img.dnd.fr/uploads/2012/02/Agence-DND-Creation-Background-Site-ECommerce-Lancaster-Paris-v2-1920x784.jpg) no-repeat center center fixed;
+}
+.custom__addon {
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.blue__addon {
+    background-color: red;
+}
+.red__addon {
+    background-color: #B73333;
+}
+.green__addon {
+    background-color: #33B757;
+}
+.yellow__addon {
+    background-color: #B7B433;
+}
+.purple__addon {
+    background-color: #B733AC;
+}
+.custom__select {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
