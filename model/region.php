@@ -1,7 +1,10 @@
 <?php
 
 function getNomRegion($id){
-
+  //donnée: id de la region
+	//pré : idregion : entier > 0
+	//résultat : le nom correspondant à l'id donné en paramètre
+	//post : nomregion : String  ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT nomregion FROM region WHERE idregion=?');
@@ -18,7 +21,10 @@ function getNomRegion($id){
 
 
 function getIdRegion($nomregion){
-
+  //donnée: nom de la region
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant à la region donnée en paramètre
+	//post : idregion: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idregion FROM region WHERE nomregion=?');
@@ -32,7 +38,9 @@ function getIdRegion($nomregion){
 }
 
 function supprimerRegion($id){
-
+  //donnée : id de la region à supprimer
+	//pré : idregion : entier >0
+	//résultat : suppression de la region de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM region WHERE idregion=?');
@@ -45,8 +53,8 @@ function supprimerRegion($id){
 }
 
 function creerRegion($nom){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
+	//donnée : nom de la region
+	//pré : nom : String & length(nom)>0
 	//résultat : ajout de l'admin dans la base de données
 
   global $db;
@@ -61,10 +69,8 @@ function creerRegion($nom){
 }
 
 function getAllRegion(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+	//résultat : Toutes les regions de la base de donnée
+	//post : Listeregion : array : une ligne par region,(idregion, nomregion) pour les colonnes
 
   global $db;
   try{
@@ -78,10 +84,28 @@ function getAllRegion(){
       return $Listeregion;
   }
 
+  function getAllDepartementRegion($id){
+  	//données : id de la région
+  	//pré : idregion: entier > 0
+  	//résultat : tous les département de la région passée en paramètre
+  	//post : Listedepregion : array : une ligne par departement,(nomdep) pour les colonnes
+
+    global $db;
+    try{
+    		$req=$db->prepare('SELECT nomdep FROM region, departement WHERE region.idregion=departement.idregion AND region.idregion=?');
+    		$req->execute(array());
+    		$Listedepregion=$req->fetchAll();
+    	} catch(PDOException $e){
+    			echo($e->getMessage());
+    			die(" Erreur lors de la récupération des departement de la region dans la base de données " );
+    }
+        return $Listedepregion;
+    }
+
   function modifRegion($id, $newnom){
-  	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  	//pré : idAdmin : entier > 0 / newMdp : String
-  	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+  	//donnée : id de la region à modifier et le nouveau nom
+  	//pré : idregion : entier > 0 / newnom : String & length(newnom)>0
+  	//résultat : modifie le nom actuel de la région par le nouveau
     global $db;
     try{
   		$req=$db->prepare('UPDATE region SET nomregion= :newnom WHERE idregion=:id');
@@ -98,10 +122,10 @@ function getAllRegion(){
 
 
 function existeRegion($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+  //données : nom de la region
+	//pré : nom: String
+	//résultat : id de la region si elle existe, NULL sinon
+	//post : idregion : entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT idregion FROM region WHERE nomregion=?');

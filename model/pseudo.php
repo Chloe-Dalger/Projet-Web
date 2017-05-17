@@ -1,7 +1,10 @@
 <?php
 
 function getPseudo($id){
-
+  //donnée: id du pseudo
+	//pré : idpseudo : entier > 0
+	//résultat : le pseudo correspondant à l'id donné en paramètre
+	//post : pseudo : String ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT pseudo FROM pseudo WHERE idpseudo=?');
@@ -18,7 +21,10 @@ function getPseudo($id){
 
 
 function getIdPseudo($pseudo){
-
+  //donnée: un pseudo
+	//pré : pseudo : String & length(pseudo)>0
+	//résultat : l'id correspondant au pseudo donné en paramètre
+	//post : idpseudo: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idpseudo FROM pseudo WHERE pseudo=?');
@@ -32,7 +38,9 @@ function getIdPseudo($pseudo){
 }
 
 function supprimerPseudo($id){
-
+  //donnée : id du pseudo à supprimer
+	//pré : idpseudo : entier >0
+	//résultat : suppression du pseudo de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM pseudo WHERE idpseudo=?');
@@ -45,9 +53,9 @@ function supprimerPseudo($id){
 }
 
 function creerPseudo($nom){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : un pseudo
+	//pré : nom : String & length(nom)>0
+	//résultat : ajout du pseudo dans la base de données
 
   global $db;
 	try{
@@ -61,10 +69,8 @@ function creerPseudo($nom){
 }
 
 function getAllPseudo(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+  //résultat : Tous les pseudos de la base de données
+  //post : Listepseudo : array : une ligne par pseudo, (idpseudo, pseudo) pour les colonnes
 
   global $db;
   try{
@@ -78,10 +84,28 @@ function getAllPseudo(){
       return $Listepseudo;
   }
 
+  function getAllLieuPseudo($psd){
+  	//données : un pseudo
+  	//pré : pseudo: String & length(pseudo)>0
+  	//résultat : Tous les lieux postés par le pseudo donné en paramètre
+  	//post : Listelieupseudo : array : une ligne par lieu, (nomlieu, urllieu, deslieu, adrlieu) pour les colonnes
+
+    global $db;
+    try{
+    		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM pseudo, lieu WHERE pseudo=? AND pseudo.idpseudo=lieu.idpseudo');
+    		$req->execute(array());
+    		$Listelieupseudo=$req->fetchAll();
+    	} catch(PDOException $e){
+    			echo($e->getMessage());
+    			die(" Erreur lors de la récupération des lieu d'un pseudo dans la base de données " );
+    }
+        return $Listelieupseudo;
+    }
+
   function modifPseudo($id, $newpseudo){
-  	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  	//pré : idAdmin : entier > 0 / newMdp : String
-  	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+  	//donnée : id du pseudo de base et le nouveau pseudo
+  	//pré : idpseudo : entier > 0 / newpseudo : String & length(newpseudo)>0
+  	//résultat : modifie le pseudo actuel avec le nouveau pseudo
     global $db;
     try{
   		$req=$db->prepare('UPDATE pseudo SET pseudo= :newpseudo WHERE idpseudo=:id');
@@ -98,10 +122,10 @@ function getAllPseudo(){
 
 
 function existePseudo($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+  //données : nom du pseudo
+	//pré : nom: String
+	//résultat : id du pseudo s'il existe, NULL sinon
+	//post : idpseudo : entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT idpseudo FROM pseudo WHERE pseudo=?');

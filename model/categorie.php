@@ -4,7 +4,10 @@
 
 
 function getNomCategorie($id){
-
+  //donnée: id de la categorie
+	//pré : idcat : entier > 0
+	//résultat : la categorie correspondant à l'id donné en paramètre
+	//post : nomcat : String ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT nomcat FROM categorie WHERE idcat=?');
@@ -20,7 +23,10 @@ function getNomCategorie($id){
 
 
 function getDesCategorie($id){
-
+  //donnée: id de la categorie
+	//pré : idpseudo : entier > 0
+	//résultat : la description correspondant à l'id donné en paramètre
+	//post : descat : String ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT descat FROM categorie WHERE idcat=?');
@@ -35,7 +41,10 @@ function getDesCategorie($id){
 
 
 function getIdCategorie($nom){
-
+  //donnée: un nom de categorie
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant à la categorie donnée en paramètre
+	//post : idcat: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idcat FROM categorie WHERE nomcat=?');
@@ -49,7 +58,9 @@ function getIdCategorie($nom){
 }
 
 function supprimerCategorie($id){
-
+  //donnée : id de la catégorie à supprimer
+	//pré : idcat : entier >0
+	//résultat : suppression de la categorie de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM categorie WHERE idcat=?');
@@ -61,9 +72,9 @@ function supprimerCategorie($id){
 }
 
 function creerCategorie($nom,$des){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : nom de la categorie, description de la categorie
+	//pré : nom, des : String & length(nom)>0 length(des)>=0
+	//résultat : ajout de la categorie dans la base de données
 
   global $db;
 	try{
@@ -77,10 +88,8 @@ function creerCategorie($nom,$des){
 }
 
 function getAllCategorie(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+	//résultat : toutes les catégories de la base de données
+	//post : Listecat : array : une ligne par categorie,(idcat, nomcat, descat) pour les colonnes
 
   global $db;
   try{
@@ -94,11 +103,28 @@ function getAllCategorie(){
       return $Listecat;
   }
 
+  function getAllLieuCategorie($nom){
+  	//données : un nom de categorie
+  	//pré : nom : String & length(nom)>0
+  	//résultat : tous les lieux de la catégorie passée en paramètre
+  	//post : Listelieucat : array : une ligne par lieu,(nomlieu, urllieu, deslieu, adrlieu) pour les colonnes
+
+    global $db;
+    try{
+    		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM categorie, lieu WHERE categorie.idcat=lieu.idcat AND nomcat=?');
+    		$req->execute(array());
+    		$Listelieucat=$req->fetchAll();
+    	} catch(PDOException $e){
+    			echo($e->getMessage());
+    			die(" Erreur lors de la récupération des Categories dans la base de données " );
+    }
+        return $Listelieucat;
+    }
+
+
   function getAllNomCategorie(){
-  	//données : id de l'admin
-  	//pré : idAdmin : entier > 0
-  	//résultat : tous les admins autres que celui passé en paramètre
-  	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+  	//résultat : toutes les categories
+  	//post : Listenomcat : array : une ligne par categorie,(nomcat) pour les colonnes
 
     global $db;
     try{
@@ -112,10 +138,10 @@ function getAllCategorie(){
         return $Listenomcat;
     }
 
-  function modifDescriptionAdmin($id,$newdes){
-  	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  	//pré : idAdmin : entier > 0 / newMdp : String
-  	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+  function modifDescriptionCategorie($id,$newdes){
+  	//donnée : id de la categorie à modifier et la nouvelle description
+  	//pré : idcat : entier > 0 / newdes : String & length(des)>=0
+  	//résultat : modifie la description de la catégorie actuelle par newdes
     global $db;
     try{
   		$req=$db->prepare('UPDATE categorie SET descat= :newdes WHERE idcat=:id');
@@ -130,9 +156,9 @@ function getAllCategorie(){
   }
 
   function modifNomCategorie($id,$newnom){
-	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-	//pré : idAdmin : entier > 0 / newMdp : String
-	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+	//donnée : id de la catégorie à modifier et le nouveau nom
+	//pré : idcat : entier > 0 / newnom : String & length(nom)>0
+	//résultat : modifie le nom de la catégorie actuelle avec un nouveau nom
   global $db;
 	try{
 		$req=$db->prepare('UPDATE categorie SET nomcat= :newnom WHERE idcat=:id');
@@ -148,10 +174,10 @@ function getAllCategorie(){
 
 
 function existeCategorie($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+  //données : nom de la categorie
+	//pré : nom: String
+	//résultat : id de la categorie si elle existe, NULL sinon
+	//post : idcat : entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT idcat FROM categorie WHERE nomcat=?');

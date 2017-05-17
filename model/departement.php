@@ -4,7 +4,10 @@
 
 
 function getNomDepartement($id){
-
+  //donnée: id du departement
+	//pré : iddep : entier > 0
+	//résultat : le nom correspondant à l'id donné en paramètre
+	//post : nomdep : String  ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT nomdep FROM departement WHERE iddep=?');
@@ -20,7 +23,10 @@ function getNomDepartement($id){
 
 
 function getNumeroDepartement($id){
-
+  //donnée: id du departement
+	//pré : iddep : entier > 0
+	//résultat : le numero correspondant à l'id donné en paramètre
+	//post : numerodep : String de 2 ou 3 chiffres  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT numerodep FROM departement WHERE iddep=?');
@@ -34,7 +40,10 @@ function getNumeroDepartement($id){
 }
 
 function getIdRegionDepartement($id){
-
+  //donnée: id du departement
+	//pré : iddep : entier > 0
+	//résultat : l'idregion correspondant à l'id donné en paramètre
+	//post : idregion : entier>0  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT idregion FROM departement WHERE iddep=?');
@@ -48,7 +57,10 @@ function getIdRegionDepartement($id){
 }
 
 function getIdDepartement($nom){
-
+  //donnée: nom du departement
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant au departement donné en paramètre
+	//post : iddep: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT iddep FROM departement WHERE nomdep=?');
@@ -62,7 +74,9 @@ function getIdDepartement($nom){
 }
 
 function supprimerDepartement($id){
-
+  //donnée : id du département à supprimer
+	//pré : iddep : entier >0
+	//résultat : suppression du département de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM departement WHERE iddep=?');
@@ -74,9 +88,9 @@ function supprimerDepartement($id){
 }
 
 function creerDepartement($nom,$numero, $idregion){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : nom du département, numéro du département, idregion à laquelle le département appartient
+	//pré : nom, numero : String & length(nom)>0 length(numero)>0, idregion: entier>0
+	//résultat : ajout du département dans la base de données
 
   global $db;
 	try{
@@ -89,11 +103,9 @@ function creerDepartement($nom,$numero, $idregion){
 
 }
 
-function getAllDepartement(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+function getAllDepartement()
+	//résultat : tous les départements de la base de données
+	//post : Listedep : array : une ligne par departement,(iddep, nomdep, numerodep, idregion) pour les colonnes
 
   global $db;
   try{
@@ -107,11 +119,27 @@ function getAllDepartement(){
       return $Listedep;
   }
 
+  function getAllVilleDepartement($id){
+  	//données : id du département
+  	//pré : iddep : entier > 0
+  	//résultat : tous les noms des villes du département passé en paramètre
+  	//post : Listevilledep : array : une ligne par nom de ville,(nomville) pour les colonnes
+
+    global $db;
+    try{
+    		$req=$db->prepare('SELECT nomville FROM ville, departement WHERE departement.iddep=ville.iddep AND departement.iddep=?');
+    		$req->execute(array());
+    		$Listevilledep=$req->fetchAll();
+    	} catch(PDOException $e){
+    			echo($e->getMessage());
+    			die(" Erreur lors de la récupération des departements dans la base de données " );
+    }
+        return $Listevilledep;
+    }
+
   function getAllNomDepartement(){
-  	//données : id de l'admin
-  	//pré : idAdmin : entier > 0
-  	//résultat : tous les admins autres que celui passé en paramètre
-  	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+  	//résultat : tous les département de la base de donnée
+  	//post : Listenomdep : array : une ligne par nom de département,(nomdep) pour les colonnes
 
     global $db;
     try{
@@ -126,9 +154,9 @@ function getAllDepartement(){
     }
 
   function modifNumeroDepartement($id,$newnum){
-  	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  	//pré : idAdmin : entier > 0 / newMdp : String
-  	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+  	//donnée : id du département à modifier et un nouveau numéro
+  	//pré : iddep : entier > 0 / newnum : String & length(newnum)>0
+  	//résultat : modifie le numéro de département par le nouveau
     global $db;
     try{
   		$req=$db->prepare('UPDATE departement SET numerodep= :newnum WHERE iddep=:id');
@@ -143,9 +171,9 @@ function getAllDepartement(){
   }
 
   function modifNomDepartement($id,$newnom){
-	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-	//pré : idAdmin : entier > 0 / newMdp : String
-	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+	//donnée : id du département à modifier et le nouveau nom
+	//pré : iddep : entier > 0 / newnom : String & length(newnom)>0
+	//résultat : modifie le nom actuel du départment par le nouveau
   global $db;
 	try{
 		$req=$db->prepare('UPDATE departement SET nomdep= :newnom WHERE iddep=:id');
@@ -161,10 +189,10 @@ function getAllDepartement(){
 
 
 function existeDepartement($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+	//données : nom du departement
+	//pré : nom: String
+	//résultat : id du departement s'il existe, NULL sinon
+	//post : iddep: entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT iddep FROM departement WHERE nomdep=?');

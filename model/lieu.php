@@ -4,7 +4,10 @@
 
 
 function getNomLieu($id){
-
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : le nom du lieu correspondant à l'id donné en paramètre
+	//post : nomlieu : String  ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT nomlieu FROM lieu WHERE idlieu=?');
@@ -19,8 +22,12 @@ function getNomLieu($id){
 
 
 
-function getUrlLieu($id){
 
+function getUrlLieu($id){
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : l'url de l'image correspondant à l'id donné en paramètre
+	//post : urllieu : String  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT urllieu FROM lieu WHERE idlieu=?');
@@ -34,7 +41,10 @@ function getUrlLieu($id){
 }
 
 function getDescriptionLieu($id){
-
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : la description correspondant à l'id donné en paramètre
+	//post : deslieu : String  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT deslieu FROM lieu WHERE idlieu=?');
@@ -47,8 +57,11 @@ function getDescriptionLieu($id){
     return $deslieu[0];
 }
 
-function getUrlLieu($id){
-
+function getAdresseLieu($id){
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : l'adresse correspondant à l'id donné en paramètre
+	//post : deslieu : String  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT adrlieu FROM lieu WHERE idlieu=?');
@@ -62,7 +75,10 @@ function getUrlLieu($id){
 }
 
 function getIdPseudoLieu($id){
-
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : l'idpseudo correspondant à l'id donné en paramètre
+	//post : idpseudo : entier>0  ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT idpseudo FROM lieu WHERE idlieu=?');
@@ -76,7 +92,10 @@ function getIdPseudoLieu($id){
 }
 
 function getIdVilleLieu($id){
-
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : l'idville correspondant à l'id donné en paramètre
+	//post : idville : entier>0 ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT idville FROM lieu WHERE idlieu=?');
@@ -90,7 +109,10 @@ function getIdVilleLieu($id){
 }
 
 function getIdCategorieLieu($id){
-
+  //donnée: id du lieu
+	//pré : idlieu : entier > 0
+	//résultat : l'idcat correspondant à l'id donné en paramètre
+	//post : idcat : entier>0 OU NULL
     global $db;
   try{
     $req=$db->prepare('SELECT idcat FROM lieu WHERE idlieu=?');
@@ -104,7 +126,10 @@ function getIdCategorieLieu($id){
 }
 
 function getIdLieu($nom){
-
+  //donnée: un nom de lieu
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant au lieu donné en paramètre
+	//post : idlieu: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idlieu FROM lieu WHERE nomlieu=?');
@@ -118,7 +143,9 @@ function getIdLieu($nom){
 }
 
 function supprimerLieu($id){
-
+  //donnée : id du lieu à supprimer
+	//pré : idlieu : entier >0
+	//résultat : suppression du lieu de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM lieu WHERE idlieu=?');
@@ -130,9 +157,9 @@ function supprimerLieu($id){
 }
 
 function creerLieu($nom, $url, $des, $adr, $idpseudo, $idville, $idcat){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : nom du lieu, l'url de l'image correspondant au lieu, description du lieu, adresse du lieu, pseudo de celui qui a ajouté de lieu, id de la ville dans laquelle se trouve le lieu et id de la catégorie à laquelle appartient le lieu
+	//pré : nom : String & length(nom)>0, url, adr, des: String ou NULL, idpseudo, idville, idcat: Entier>0
+	//résultat : ajout du lieu dans la base de données
 
   global $db;
 	try{
@@ -146,10 +173,8 @@ function creerLieu($nom, $url, $des, $adr, $idpseudo, $idville, $idcat){
 }
 
 function getAllLieu(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+	//résultat : tous les lieux de la base de données
+	//post : Listelieu : array : une ligne par lieu,(idlieu, nomlieu, urllieu, deslieu, idpseudo, idville, idcat) pour les colonnes
 
   global $db;
   try{
@@ -164,10 +189,8 @@ function getAllLieu(){
   }
 
   function getAllNomLieu(){
-  	//données : id de l'admin
-  	//pré : idAdmin : entier > 0
-  	//résultat : tous les admins autres que celui passé en paramètre
-  	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+  	//résultat : tous les noms de lieux de la base de données
+  	//post : Listenomlieu : array : une ligne par nom de lieu,(nomlieu) pour les colonnes
 
     global $db;
     try{
@@ -181,12 +204,29 @@ function getAllLieu(){
         return $Listenomlieu;
     }
 
+    function getAllMotCleLieu($id){
+    	//données : id du lieu
+    	//pré : idlieu : entier > 0
+    	//résultat : tous les mots clés du lieu passé en paramètre
+    	//post : Listemotclelieu : array : une ligne par mot cle,(libmotcle) pour les colonnes
+
+      global $db;
+      try{
+      		$req=$db->prepare('SELECT libmotcle FROM possede_mc, mot_cle, lieu WHERE lieu.idlieu=possede_mc.idlieu AND mot_cle.idmotcle=possede_mc.idmotcle AND idlieu=?');
+      		$req->execute(array());
+      		$Listemotclelieu=$req->fetchAll();
+      	} catch(PDOException $e){
+      			echo($e->getMessage());
+      			die(" Erreur lors de la récupération de tous les mot cle du lieu dans la base de données " );
+      }
+          return $Listemotclelieu;
+      }
 
 
   function modifNomLieu($id,$newnom){
-	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-	//pré : idAdmin : entier > 0 / newMdp : String
-	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+	//donnée : id du lieu à modifier et un nouveau nom
+	//pré : idlieu : entier > 0 / newnom : String & length(newnom)>0
+	//résultat : modifie le nom actuel du lieu par le nouveau
   global $db;
 	try{
 		$req=$db->prepare('UPDATE lieu SET nomlieu= :newnom WHERE idlieu=:id');
@@ -201,9 +241,9 @@ function getAllLieu(){
 }
 
 function modifUrlLieu($id,$newurl){
-  //donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  //pré : idAdmin : entier > 0 / newMdp : String
-  //résultat : modifie le mot de passe actuel avec le nouveau mdp
+  //donnée : id du lieu à modifier
+  //pré : idlieu : entier > 0 / newurl : String & length(newurl)>=0
+  //résultat : modifie l'url de l'image du lieu par une nouvelle url
   global $db;
   try{
     $req=$db->prepare('UPDATE lieu SET urllieu= :newurl WHERE idlieu=:id');
@@ -218,9 +258,9 @@ function modifUrlLieu($id,$newurl){
 }
 
 function modifDescriptionLieu($id,$newdes){
-  //donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  //pré : idAdmin : entier > 0 / newMdp : String
-  //résultat : modifie le mot de passe actuel avec le nouveau mdp
+  //donnée : id du lieu à modifier et une nouvelle description
+  //pré : idlieu : entier > 0 / newdes : String & length(newdes)>=0
+  //résultat : modifie la description du lieu actuelle par la nouvelle
   global $db;
   try{
     $req=$db->prepare('UPDATE lieu SET deslieu= :newdes WHERE idlieu=:id');
@@ -235,9 +275,9 @@ function modifDescriptionLieu($id,$newdes){
 }
 
 function modifAdresseLieu($id,$newadr){
-  //donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  //pré : idAdmin : entier > 0 / newMdp : String
-  //résultat : modifie le mot de passe actuel avec le nouveau mdp
+  //donnée : is du lieu à modifier et la nouvelle adresse du lieu
+  //pré : idlieu : entier > 0 / newadr : String & length(newadr)>=0
+  //résultat : modifie l'adresse du lieu par la nouvelle
   global $db;
   try{
     $req=$db->prepare('UPDATE lieu SET adrlieu= :newadr WHERE idlieu=:id');
@@ -253,10 +293,10 @@ function modifAdresseLieu($id,$newadr){
 
 
 function existeLieu($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+  //données : nom du lieu
+	//pré : nom: String
+	//résultat : id du lieu s'il existe, NULL sinon
+	//post : idlieu : entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT idlieu FROM lieu WHERE nomlieu=?');

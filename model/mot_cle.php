@@ -4,7 +4,10 @@
 
 
 function getLibelleMotCle($id){
-
+  //donnée: id du mot cle
+	//pré : idmotcle : entier > 0
+	//résultat : le libellé correspondant à l'id donné en paramètre
+	//post : libmotcle : String  ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT libmotcle FROM mot_cle WHERE idmotcle=?');
@@ -19,7 +22,10 @@ function getLibelleMotCle($id){
 
 
 function getIdMotCle($nom){
-
+  //donnée: nom, un mot cle
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant au mot cle donné en paramètre
+	//post : idmotcle: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idmotcle FROM mot_cle WHERE libmotcle=?');
@@ -33,7 +39,9 @@ function getIdMotCle($nom){
 }
 
 function supprimerMotCle($id){
-
+  //donnée : id du mot cle à supprimer
+	//pré : idmotcle: entier >0
+	//résultat : suppression du mot cle de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM mot_cle WHERE idmotcle=?');
@@ -45,9 +53,9 @@ function supprimerMotCle($id){
 }
 
 function creerMotCle($lib){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : libellé du mot clé
+	//pré : lib : String & length(lib)>0
+	//résultat : ajout du mot cle dans la base de données
 
   global $db;
 	try{
@@ -61,10 +69,8 @@ function creerMotCle($lib){
 }
 
 function getAllMotCle(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+  //résultat : tous les mots clés de la base de données
+	//post : Listemotcle : array : une ligne par mot cle,(idmotcle, libmotcle) pour les colonnes
 
   global $db;
   try{
@@ -78,13 +84,31 @@ function getAllMotCle(){
       return $Listemotcle;
   }
 
+  function getAllLieuMotCle($lib){
+  	//données : libellé du mot cle
+  	//pré : lib : String & length(lib)>0
+    //résultat : tous les lieux du mot clé passé en paramètre
+  	//post : Listelieumotcle : array : une ligne par lieu,(nomlieu, urllieu, deslieu, adrlieu) pour les colonnes
+
+    global $db;
+    try{
+    		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM possede_mc, mot_cle, lieu WHERE lieu.idlieu=possede_mc.idlieu AND mot_cle.idmotcle=possede_mc.idmotcle AND libmotcle=?');
+    		$req->execute(array());
+    		$Listelieumotcle=$req->fetchAll();
+    	} catch(PDOException $e){
+    			echo($e->getMessage());
+    			die(" Erreur lors de la récupération des lieux du mot cle dans la base de données " );
+    }
+        return $Listelieumotcle;
+    }
+
 
 
 
   function modifLibMotCle($id,$newlib){
-	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-	//pré : idAdmin : entier > 0 / newMdp : String
-	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+	//donnée : id du mot clé à modifier et le nouveau libellé
+	//pré : idmotcle : entier > 0 / newlib: String & length(newlib)>0
+	//résultat : modifie le libellé actuel du mot clé par le nouveau
   global $db;
 	try{
 		$req=$db->prepare('UPDATE mot_cle SET libmotcle= :newlib WHERE idmotcle=:id');
@@ -100,10 +124,10 @@ function getAllMotCle(){
 
 
 function existeMotCle($lib){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+  //données : mot cle
+	//pré : lib: String
+	//résultat : id du mot cle s'il existe, NULL sinon
+	//post : idmotcle : entier >0 ou NULL
   global $db;
 	try{
 		$req=$db->prepare('SELECT idmotcle FROM mot_cle WHERE libmotcle=?');

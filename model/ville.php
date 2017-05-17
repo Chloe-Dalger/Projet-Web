@@ -4,7 +4,10 @@
 
 
 function getNomVille($id){
-
+  //donnée: id de la ville
+	//pré : idville : entier > 0
+	//résultat : le nom correspondant à l'id donné en paramètre
+	//post : nomville : String  ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT nomville FROM ville WHERE idville=?');
@@ -20,7 +23,10 @@ function getNomVille($id){
 
 
 function getCodePostalVille($id){
-
+  //donnée: id de la ville
+	//pré : idville : entier > 0
+	//résultat : le nom correspondant à l'id donné en paramètre
+	//post : cpville : String de 5 chiffres ou NULL
     global $db;
   try{
     $req=$db->prepare('SELECT cpville FROM ville WHERE idville=?');
@@ -34,7 +40,10 @@ function getCodePostalVille($id){
 }
 
 function getIdDepartementVille($id){
-
+  //donnée: id de la ville
+	//pré : idville : entier > 0
+	//résultat : l'iddep correspondant à l'id donné en paramètre
+	//post : iddep : entier>0 OU NULL
     global $db;
   try{
     $req=$db->prepare('SELECT iddep FROM ville WHERE idville=?');
@@ -48,7 +57,10 @@ function getIdDepartementVille($id){
 }
 
 function getIdVille($nom){
-
+  //donnée: nom de la ville
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant à la ville donnée en paramètre
+	//post : idville: entier>0 ou NULL
   global $db;
   try{
     $req=$db->prepare('SELECT idville FROM ville WHERE nomville=?');
@@ -62,7 +74,9 @@ function getIdVille($nom){
 }
 
 function supprimerVille($id){
-
+  //donnée : id de la ville à supprimer
+	//pré : idville : entier >0
+	//résultat : suppression de la ville de la base de données
   global $db;
   try{
     $req=$db->prepare('DELETE FROM ville WHERE idville=?');
@@ -74,9 +88,9 @@ function supprimerVille($id){
 }
 
 function creerVille($nom,$cp, $iddep){
-	//donnée : nom de compte, mot de passe crypté, nom et prénom de l'admin
-	//pré : nomdeCompte,mdp,nom,prenom : String
-	//résultat : ajout de l'admin dans la base de données
+	//donnée : nom de la ville, code postal de la ville et id du département duquel la ville dépend
+	//pré : nom, cp : String & length(nom)>0 length(numero)>0, iddep: Entier>0
+	//résultat : ajout de le ville dans la base de données
 
   global $db;
 	try{
@@ -90,10 +104,8 @@ function creerVille($nom,$cp, $iddep){
 }
 
 function getAllville(){
-	//données : id de l'admin
-	//pré : idAdmin : entier > 0
-	//résultat : tous les admins autres que celui passé en paramètre
-	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+	//résultat : Toutes les villes de la base de données
+	//post : Listeville : array : une ligne par ville,(idville, nomville, cpville, iddep) pour les colonnes
 
   global $db;
   try{
@@ -108,10 +120,8 @@ function getAllville(){
   }
 
   function getAllNomVille(){
-  	//données : id de l'admin
-  	//pré : idAdmin : entier > 0
-  	//résultat : tous les admins autres que celui passé en paramètre
-  	//post : admins : array : une ligne par admin,(id,prenom,nom,email) pour les colonnes
+    //résultat : tous les noms de ville de la base de données
+  	//post : Listenomville : array : une ligne par nom de ville,(nomville) pour les colonnes
 
     global $db;
     try{
@@ -125,10 +135,28 @@ function getAllville(){
         return $Listenomville;
     }
 
+    function getAllLieuVille($id){
+      //données : id de la ville
+      //pré : idville : entier > 0
+      //résultat : tous les lieux de la ville passée en paramètre
+      //post : Listelieuville : array : une ligne par lieu,(nomlieu, urllieu, deslieu, adrlieu) pour les colonnes
+
+      global $db;
+      try{
+          $req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM ville, lieu WHERE ville.idville=lieu.idville AND lieu.idville=?');
+          $req->execute(array());
+          $Listelieuville=$req->fetchAll();
+        } catch(PDOException $e){
+            echo($e->getMessage());
+            die(" Erreur lors de la récupération des noms des villes dans la base de données " );
+      }
+          return $Listelieuville;
+      }
+
   function modifCodePostalVille($id,$newnum){
-  	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-  	//pré : idAdmin : entier > 0 / newMdp : String
-  	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+  	//donnée : id de la ville à modifier et le nouveau code postal
+  	//pré : idville : entier > 0 / newnum : String & length(newnum)>0
+  	//résultat : modifie le code postal de la ville par le nouveau
     global $db;
     try{
   		$req=$db->prepare('UPDATE ville SET cpville= :newnum WHERE idville=:id');
@@ -143,9 +171,9 @@ function getAllville(){
   }
 
   function modifNomVille($id,$newnom){
-	//donnée : id de l'admin qui veut modifier son mdp et nouveau mdp
-	//pré : idAdmin : entier > 0 / newMdp : String
-	//résultat : modifie le mot de passe actuel avec le nouveau mdp
+	//donnée : id de la ville à modifier et le nouveau nom
+	//pré : idville : entier > 0 / newnom : String & length(newnom)>0
+	//résultat : modifie le nom de la ville par le nouveau
   global $db;
 	try{
 		$req=$db->prepare('UPDATE ville SET nomville= :newnom WHERE idville=:id');
@@ -160,15 +188,15 @@ function getAllville(){
 }
 
 
-function existeVille($nom){
-	//données : email et mot de passe crypté de l'admin
-	//pré : email : String / password : String
-	//résultat : id de l'admin s'il existe, NULL sinon
-	//post : id : entier >0
+function existeVille($num){
+  //données : nom de la ville
+	//pré : nom: String
+	//résultat : id de la ville si elle existe, NULL sinon
+	//post : idville : entier >0 ou NULL
   global $db;
 	try{
-		$req=$db->prepare('SELECT idville FROM ville WHERE nomville=?');
-		$req->execute(array($nom));
+		$req=$db->prepare('SELECT idville FROM ville WHERE cpville=?');
+		$req->execute(array($num));
 		$idville=$req->fetch();
 	} catch(PDOException $e){
 		echo($e->getMessage());
