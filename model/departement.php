@@ -143,7 +143,7 @@ function getAllDepartement(){
 
     global $db;
     try{
-    		$req=$db->prepare('SELECT nomdep FROM departement');
+    		$req=$db->prepare('SELECT nomdep  FROM departement');
     		$req->execute(array());
     		$Listenomdep=$req->fetchAll();
     	} catch(PDOException $e){
