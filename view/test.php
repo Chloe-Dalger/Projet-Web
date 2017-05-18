@@ -143,7 +143,8 @@ a:hover {
                                      ?>
 
                                   </select>
-
+</div>
+<div class="input-group-btn search-panel">
                                     <select name="region" id="region">
                                         <option value="choisir2">Choisissez votre Département</option>
                                                <?php

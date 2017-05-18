@@ -74,41 +74,41 @@
                                           <div class="input-group-btn search-panel">
 
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <select name="region" id="region">
+
                                                     									<?php
                                                     											foreach ($regions as $region){
                                                     												echo '<option value="'.$region['id'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                     											}
                                                     									?>
-                                                    </select>
 
 
-                                                </ul>
-                                              </div>
-                                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                  <span id="search_concept">Région</span> <span class="caret"></span>
-                                              </button>
-                                                <div class="input-group-btn search-panel">
+
+                                              </ul>
+                                            </div>
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                <span id="search_concept">Région</span> <span class="caret"></span>
+                                            </button>
 
                                                 <ul class="dropdown-menu" role="menu">
-                                                      <select name="depart" id="depart">
+                                                    
                                                                         <?php
                                                                             foreach ($departs as $depart){
                                                                               echo '<option value="'.$depart['id'].'">'.$depart['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                                             }
                                                                         ?>
-                                                      </select>
-                                                </ul>
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                    <span id="search_concept">Département</span> <span class="caret"></span>
-                                                </button>
-                                          </div>
-                                          <input type="hidden" name="search_param" value="all" id="search_param">
-                                          <input type="text" class="form-control" name="x" placeholder="Entrer ville...">
-                                          <span class="input-group-btn">
-                                              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                                          </span>
-                                        </div>
+
+                                                    </ul>
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                        <span id="search_concept">Département</span> <span class="caret"></span>
+                                                    </button>
+                                              </div>
+                                              <input type="hidden" name="search_param" value="all" id="search_param">
+                                              <input type="text" class="form-control" name="x" placeholder="Entrer ville...">
+                                              <span class="input-group-btn">
+                                                  <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                              </span>
+                                            </div>
+                              </form>
                           </form>
                 </div>
             </div>
