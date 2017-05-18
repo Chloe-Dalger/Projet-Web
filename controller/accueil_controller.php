@@ -4,8 +4,10 @@
   require_once('../model/departement.php');
 
 
-  $regions=getAllRegion(); //On récupère toutes les regions dans le tableau de tableau
+  $regions=getAllRegion();
   $departs=getAllDepartement();
-	include('../accueilbis.php');
+
+
+  include('../view/accueil.php')
 
 ?>
