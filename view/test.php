@@ -151,6 +151,17 @@ a:hover {
                                                ?>
 
                                      </select>
+
+                                     <div class="form-group">
+    <div class="input-group input-group-md icon-addon addon-md">
+        <input type="text" placeholder="Texte" name="" id="schbox" class="form-control">
+        <i class="icon icon-search"></i>
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-inverse">Rechercher</button>
+        </span>
+    </div>
+</div>
+
                                    </form>
 
                                     </div>
