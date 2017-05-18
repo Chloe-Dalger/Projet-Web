@@ -132,6 +132,7 @@ a:hover {
 
                         <form method="post" action="traitement.php">
                           <div class="input-group">
+                            <div class="input-group-btn search-panel">
                                <select name="region" id="region">
                                    <option value="choisir1">Choisissez Région</option>
 
@@ -152,6 +153,7 @@ a:hover {
                                                ?>
 
                                      </select>
+                                   </div>
                                    </div>
                                    </form>
 
