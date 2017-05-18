@@ -15,47 +15,41 @@
 
 <body>
 
-  <div class="navbar navbar-inverse navbar-fixed-top">
-              <div class="adjust-nav">
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                          <span class="icon-bar"></span>
 
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-
-                          <span class="icon-bar"></span>
-                      </button>
-                      <li><a class="navbar-brand" href="Contact">Contact</a></li>
-
-                  </div>
-
-                      <ul class="nav navbar-nav navbar-left">
-                        <li><a href="accueil">Accueil</a></li>
-
-                            <li><a href="ajoutlieu">Ajouter un Lieu</a></li>
-                            <li><a href="connexionEtudiant.controller.php">Connexion</a></li>
-
-
-                      </ul>
-
-
-
-              </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Default <span class="caret"></span></button>
+          <ul role="menu" class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li class="active"><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+        <div class="input-group-btn">
+        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Default <span class="caret"></span></button>
+        <ul role="menu" class="dropdown-menu">
+          <li><a href="#"><span class="badge badge-warning">25</span>Coucou</a></li>
+          <li class="active"><a href="#"><span class="badge badge-inverse">14</span>Another action</a></li>
+          <li><a href="#"><span class="badge badge-inverse">14</span>Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><span class="badge badge-inverse">14</span>Separated link</a></li>
+        </ul>
+      </div>
+      <div class="form-group">
+  <div class="input-group input-group-md icon-addon addon-md">
+      <input type="text" placeholder="Texte" name="" id="schbox" class="form-control">
+      <i class="icon icon-search"></i>
+      <span class="input-group-btn">
+          <button type="submit" class="btn btn-inverse">Rechercher</button>
+      </span>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+      </div>
+    </div>
 
 
 
@@ -84,6 +78,8 @@
 
 
                                                 </ul>
+                                              </div>
+                                                <div class="input-group-btn search-panel">
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                     <span id="search_concept">Région</span> <span class="caret"></span>
                                                 </button>
@@ -113,7 +109,7 @@
       </div>
 
   </body>
-  
+
 </html>
 
 

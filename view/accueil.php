@@ -84,9 +84,12 @@
 
 
                                                 </ul>
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                    <span id="search_concept">Région</span> <span class="caret"></span>
-                                                </button>
+                                              </div>
+                                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                  <span id="search_concept">Région</span> <span class="caret"></span>
+                                              </button>
+                                                <div class="input-group-btn search-panel">
+
                                                 <ul class="dropdown-menu" role="menu">
                                                       <select name="depart" id="depart">
                                                                         <?php
@@ -113,7 +116,7 @@
       </div>
 
   </body>
-  
+
 </html>
 
 
