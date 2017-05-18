@@ -133,27 +133,27 @@ a:hover {
                         <form method="post" action="traitement.php">
                           <div class="input-group">
                             <div class="input-group-btn search-panel">
-                               <select name="region" id="region">
-                                   <option value="choisir1">Choisissez Région</option>
+                                 <ul class="dropdown-menu" role="menu">
+                                   <li value="choisir1">Choisissez Région</option>
 
                                      <?php
                                          foreach ($regions as $region){
-                                           echo '<option value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                           echo '<li value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                          }
                                      ?>
 
-                                  </select>
+                                  </ul>
 </div>
 <div class="input-group-btn search-panel">
-                                    <select name="region" id="region">
-                                        <option value="choisir2">Choisissez votre Département</option>
+     <ul class="dropdown-menu" role="menu">
+                                        <li value="choisir2">Choisissez votre Département</option>
                                                <?php
                                                    foreach ($departs as $depart){
-                                                     echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' ('.$depart['numerodep'].')</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                                     echo '<li value="'.$depart['iddep'].'">'.$depart['nomdep'].' ( <span class="badge badge-inverse">'.$depart['numerodep'].'</span>)</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                    }
                                                ?>
 
-                                     </select>
+                                     </ul>
                                    </div>
                                    </div>
                                    </form>
@@ -163,12 +163,8 @@ a:hover {
                             </div>
                         </div>
                     </div>
-                  </div>
+
 
               </body>
 
             </html>
-
-
-
-</html>
