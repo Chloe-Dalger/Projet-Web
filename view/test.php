@@ -126,11 +126,12 @@ a:hover {
                   <div class="cover-container">
 
                         <h1 class="cover-heading">Trouve l'endroit de tes rêves</h1>
-                        <p class="lead">Rentre la ville, choisi ta région et ton département et découvre les endroits à visiter!</p>
+                        <p class="lead">Rentre la ville, choisi la région ou le département et découvre les endroits à visiter!</p>
 
 
 
                         <form method="post" action="traitement.php">
+                          <div class="input-group">
                                <select name="region" id="region">
                                    <option value="choisir1">Choisissez Région</option>
 
@@ -151,6 +152,7 @@ a:hover {
                                                ?>
 
                                      </select>
+                                   </div>
                                    </form>
 
                                     </div>
