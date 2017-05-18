@@ -13,6 +13,14 @@
 <link rel="stylesheet" href="navbar.css">
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+color:black;
+background-color:white;
+background-image:url(http://mag.monchval.com/wp-content/uploads/2015/12/choisir-la-race-de-son-lapin.png);
+}
+</style>
 </head>
 
 <body>
@@ -23,6 +31,14 @@
                   <?php
                       foreach ($regions as $region){
                         echo '<option value="'.$region['id'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                      }
+                  ?>
+</select>
+
+<select name="depart" id="depart">
+                  <?php
+                      foreach ($departs as $depart){
+                        echo '<option value="'.$depart['id'].'">'.$depart['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                       }
                   ?>
 </select>

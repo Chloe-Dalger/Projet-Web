@@ -8,7 +8,7 @@
 
 
         $regions=getAllRegion(); //On récupère toutes les regions dans le tableau de tableau
-
+        $departs=getAllDepartement();
 				include('../test.php');
 
 ?>
