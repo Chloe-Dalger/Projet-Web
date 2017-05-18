@@ -10,78 +10,11 @@
 <script type="text/javascript" src="../bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="accueil.css">
+<link href="accueil.css" rel="stylesheet">
 <link rel="stylesheet" href="navbar.css">
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-body{
-    margin-top:20px;
-
-    background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    height: 100%;
-    background-color: #060;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-
-
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  height: 100%; /* For at least Firefox */
-  margin-top: 150px;
-  margin-left: 300px;
-
-}
-
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-
-/*
- * Header
- */
-
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
-}
-</style>
 
 </head>
 

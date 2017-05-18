@@ -15,42 +15,15 @@
 
 <body>
 
-
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="input-group">
-        <div class="input-group-btn">
-          <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Default <span class="caret"></span></button>
-          <ul role="menu" class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li class="active"><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
-        <div class="input-group-btn">
-        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">Default <span class="caret"></span></button>
-        <ul role="menu" class="dropdown-menu">
-          <li><a href="#"><span class="badge badge-warning">25</span>Coucou</a></li>
-          <li class="active"><a href="#"><span class="badge badge-inverse">14</span>Another action</a></li>
-          <li><a href="#"><span class="badge badge-inverse">14</span>Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#"><span class="badge badge-inverse">14</span>Separated link</a></li>
-        </ul>
+  <div class="form-group">
+      <div class="input-group input-group-sm icon-addon addon-sm">
+          <input type="text" placeholder="Texte" name="" id="schbox" class="form-control input-sm">
+          <i class="icon icon-search"></i>
+          <span class="input-group-btn">
+              <button type="submit" class="btn btn-inverse btn-sm">Rechercher</button>
+          </span>
       </div>
-      <div class="form-group">
-  <div class="input-group input-group-md icon-addon addon-md">
-      <input type="text" placeholder="Texte" name="" id="schbox" class="form-control">
-      <i class="icon icon-search"></i>
-      <span class="input-group-btn">
-          <button type="submit" class="btn btn-inverse">Rechercher</button>
-      </span>
   </div>
-</div>
-      </div>
-    </div>
-
 
 
 
@@ -79,10 +52,11 @@
 
                                                 </ul>
                                               </div>
+                                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                  <span id="search_concept">Région</span> <span class="caret"></span>
+                                              </button>
                                                 <div class="input-group-btn search-panel">
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                    <span id="search_concept">Région</span> <span class="caret"></span>
-                                                </button>
+
                                                 <ul class="dropdown-menu" role="menu">
                                                       <select name="depart" id="depart">
                                                                         <?php
