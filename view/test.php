@@ -17,6 +17,40 @@
 </head>
 
 <body>
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+              <div class="adjust-nav">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                          <span class="icon-bar"></span>
+
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                          <span class="icon-bar"></span>
+                      </button>
+                      <li><a class="navbar-brand" href="Contact">Contact</a></li>
+
+                  </div>
+
+                      <ul class="nav navbar-nav navbar-left">
+                        <li><a href="accueil">Accueil</a></li>
+
+                            <li><a href="ajoutlieu">Ajouter un Lieu</a></li>
+                            <li><a href="connexionEtudiant.controller.php">Connexion</a></li>
+
+
+                      </ul>
+
+
+
+              </div>
+  </div>
+
+
+
+
   <div class="body-search">
         <div class="site-wrapper">
             <div class="site-wrapper-inner">
@@ -33,13 +67,13 @@
                                                 <ul class="dropdown-menu" role="menu">
 
 
-                                                              <select name="region" id="region">
+
                                                                                 <?php
                                                                                     foreach ($regions as $region){
                                                                                       echo '<option value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                                                     }
                                                                                 ?>
-                                                              </select>
+
 
 
                                                   </ul>
@@ -47,13 +81,13 @@
                                                                 <span id="search_concept">Région</span> <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
-                                                              <select name="depart" id="depart">
+
                                                                                 <?php
                                                                                     foreach ($departs as $depart){
                                                                                       echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' ('.$depart['numerodep'].')</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                                                     }
                                                                                 ?>
-                                                              </select>
+
                                                             </ul>
                                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                                 <span id="search_concept">Département</span> <span class="caret"></span>
