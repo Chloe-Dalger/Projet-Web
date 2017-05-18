@@ -18,7 +18,6 @@
 <body>
 
   <form methode=post action="accueil.controller.php">
-      <input list="browsers">
 
 <select name="region" id="region">
                   <?php
