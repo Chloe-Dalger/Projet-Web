@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Bienvenu</title>
+<title>Bienvenue</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -58,8 +58,6 @@
 
                         <h1 class="cover-heading">Trouve l'endroit de tes rêves</h1>
                         <p class="lead">Rentre la ville, choisi ta région et ton département et découvre les endroits à visiter!</p>
-                        <form methode=post action="accueil.controller.php">
-                            <input list="browsers">
                                   <div class="input-group">
 
                                           <div class="input-group-btn search-panel">
@@ -99,7 +97,6 @@
                                                           <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                                                       </span>
                                                     </div>
-                                      </form>
                             </div>
                         </div>
                     </div>
