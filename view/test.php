@@ -9,10 +9,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="accueil.css">
 <link rel="stylesheet" href="navbar.css">
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+color:black;
+background-color:white;
+background-image:url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg);
+}
+</style>
 
 </head>
 
