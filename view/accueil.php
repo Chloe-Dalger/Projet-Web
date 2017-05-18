@@ -20,15 +20,10 @@
                   <div class="navbar-header">
                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                           <span class="icon-bar"></span>
-                          <?php
-                          // Si l'utilisateur n'est pas connecté on rajoute les boutons d'inscription et de connexion
-                          if(!isset($_COOKIE["token"])){
-                          ?>
+
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                          <?php
-                      		}
-              		        ?>
+
                           <span class="icon-bar"></span>
                       </button>
                       <li><a class="navbar-brand" href="Contact">Contact</a></li>
@@ -72,18 +67,20 @@
 
                         <h1 class="cover-heading">Trouve l'endroit de tes rêves</h1>
                         <p class="lead">Rentre la ville, choisi ta région et ton département et découvre les endroits à visiter!</p>
-
+                        <form methode=post action="accueil.controller.php">
+                            <input list="browsers">
                                   <div class="input-group">
 
                                           <div class="input-group-btn search-panel">
 
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li><a href="#contains">Contains</a></li>
-                                                  <li><a href="#its_equal">It's equal</a></li>
-                                                  <li><a href="#greather_than">Greather than ></a></li>
-                                                  <li><a href="#less_than">Less than < </a></li>
-                                                  <li class="divider"></li>
-                                                  <li><a href="#all">Anything</a></li>
+                                                  <select name="depart" id="depart">
+                                                  									<?php
+                                                  											foreach ($regions as $region){
+                                                  												echo '<option value="'.$region['id'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                                  											}
+                                                  									?>
+                                                  </select>
                                                 </ul>
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                   <span id="search_concept">Région</span> <span class="caret"></span>
@@ -98,6 +95,7 @@
                                               <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                                           </span>
                                         </div>
+                          </form>
                 </div>
             </div>
         </div>
