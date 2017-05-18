@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Bienvenue</title>
+<title>Bienvenu</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -16,11 +16,81 @@
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body {
-color:black;
-background-color:white;
-background-image:url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg);
+body{
+    margin-top:20px;
 }
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+
+.body-search {
+/*css for full size background image*/
+  background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  height: 100%;
+  background-color: #060;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  height: 100%; /* For at least Firefox */
+  margin-top: 150px;
+  margin-left: 300px;
+
+}
+.site-wrapper-inner {
+
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+
 </style>
 
 </head>
