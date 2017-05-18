@@ -78,7 +78,7 @@
 
                                                   </ul>
                                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                                <span id="search_concept">Région</span> <span class="caret"></span>
+                                                                <span id="search">Région</span> <span class="caret"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
 
@@ -90,7 +90,7 @@
 
                                                             </ul>
                                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                                <span id="search_concept">Département</span> <span class="caret"></span>
+                                                                <span id="search_c">Département</span> <span class="caret"></span>
                                                             </button>
                                                       </div>
                                                       <input type="hidden" name="search_param" value="all" id="search_param">
