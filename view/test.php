@@ -22,7 +22,15 @@
             <select name="region" id="region">
                               <?php
                                   foreach ($regions as $region){
-                                    echo '<option value="'.$region['id'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                    echo '<option value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                  }
+                              ?>
+            </select>
+
+            <select name="depart" id="depart">
+                              <?php
+                                  foreach ($departs as $depart){
+                                    echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                   }
                               ?>
             </select>
