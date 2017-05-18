@@ -18,6 +18,18 @@
 <style>
 body{
     margin-top:20px;
+
+    background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100%;
+    background-color: #060;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 a,
 a:focus,
@@ -41,21 +53,7 @@ a:hover {
  */
 
 
-.body-search {
-/*css for full size background image*/
-  background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 
-  height: 100%;
-  background-color: #060;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-
-}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
