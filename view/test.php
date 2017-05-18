@@ -63,23 +63,24 @@
 
                         <form method="post" action="traitement.php">
                                <select name="region" id="region">
-                                   <optgroup label="Région">
+                                   <option value="choisir1">Choisissez Région</option>
+
                                      <?php
                                          foreach ($regions as $region){
                                            echo '<option value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                          }
                                      ?>
-                                   </optgroup>
+
                                   </select>
 
                                     <select name="region" id="region">
-                                         <optgroup label="Département">
+                                        <option value="choisir2">Choisissez votre Département</option>
                                                <?php
                                                    foreach ($departs as $depart){
                                                      echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' ('.$depart['numerodep'].')</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                    }
                                                ?>
-                                           </optgroup>
+
                                      </select>
                                    </form>
 
