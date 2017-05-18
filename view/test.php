@@ -30,7 +30,7 @@
             <select name="depart" id="depart">
                               <?php
                                   foreach ($departs as $depart){
-                                    echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].'('.$depart['numerodep'].')''</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                    echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].'('.$depart['numerodep'].')</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                   }
                               ?>
             </select>

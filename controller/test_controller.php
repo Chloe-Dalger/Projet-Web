@@ -7,6 +7,7 @@
   $regions=getAllRegion();
   $departs=getAllDepartement();
 
+
   include('../view/test.php')
 
 ?>
