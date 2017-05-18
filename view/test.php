@@ -18,7 +18,7 @@
 
 <body>
 
-
+            <ul>
             <select name="region" id="region">
                               <?php
                                   foreach ($regions as $region){
@@ -26,7 +26,8 @@
                                   }
                               ?>
             </select>
-
+          </ul>
+          <ul>
             <select name="depart" id="depart">
                               <?php
                                   foreach ($departs as $depart){
@@ -34,7 +35,7 @@
                                   }
                               ?>
             </select>
-
+          </ul>
 
 </body>
 
