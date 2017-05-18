@@ -6,6 +6,6 @@
 
   $regions=getAllRegion(); //On récupère toutes les regions dans le tableau de tableau
   $departs=getAllDepartement();
-	include('../view/accueil.php');
+	include('../view/accueilbis.php');
 
 ?>

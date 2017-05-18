@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<?php
-					header('Location:controller/accueilbis.controller.php');
+					header('Location:controller/accueil.controller.php');
 			?>
 	</body>
 </html>
