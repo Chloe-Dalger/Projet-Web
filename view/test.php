@@ -48,11 +48,6 @@ a:hover {
 }
 
 
-/*
- * Base structure
- */
-
-
 
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -63,9 +58,7 @@ a:hover {
   margin-left: 300px;
 
 }
-.site-wrapper-inner {
 
-}
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -88,7 +81,7 @@ a:hover {
   .cover-container {
     width: 700px;
   }
-
+}
 </style>
 
 </head>
