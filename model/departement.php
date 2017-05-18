@@ -103,7 +103,7 @@ function creerDepartement($nom,$numero, $idregion){
 
 }
 
-function getAllDepartement()
+function getAllDepartement(){
 	//résultat : tous les départements de la base de données
 	//post : Listedep : array : une ligne par departement,(iddep, nomdep, numerodep, idregion) pour les colonnes
 
