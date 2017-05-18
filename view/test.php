@@ -134,11 +134,11 @@ a:hover {
                           <div class="input-group">
                             <div class="input-group-btn search-panel">
                                  <ul class="dropdown-menu" role="menu">
-                                   <li value="choisir1">Choisissez Région</option>
+                                   <li value="choisir1">Choisissez Région</li>
 
                                      <?php
                                          foreach ($regions as $region){
-                                           echo '<li value="'.$region['idregion'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                           echo '<li value="'.$region['idregion'].'">'.$region['nomregion'].'</li>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                          }
                                      ?>
 
@@ -146,10 +146,10 @@ a:hover {
 </div>
 <div class="input-group-btn search-panel">
      <ul class="dropdown-menu" role="menu">
-                                        <li value="choisir2">Choisissez votre Département</option>
+                                        <li value="choisir2">Choisissez votre Département</li>
                                                <?php
                                                    foreach ($departs as $depart){
-                                                     echo '<li value="'.$depart['iddep'].'">'.$depart['nomdep'].' ( <span class="badge badge-inverse">'.$depart['numerodep'].'</span>)</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                                     echo '<li value="'.$depart['iddep'].'">'.$depart['nomdep'].' ( <span class="badge badge-inverse">'.$depart['numerodep'].'</span>)</li>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                    }
                                                ?>
 
