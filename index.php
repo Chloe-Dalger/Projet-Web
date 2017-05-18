@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<?php
-					header('Location:controller/regions.controller.php');
+					header('Location:controller/ajoutlieu_controller.php');
 			?>
 	</body>
 </html>
