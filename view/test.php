@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <link href="../view/accueil.css" rel="stylesheet">
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="../view/navbar.css">
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
