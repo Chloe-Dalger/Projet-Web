@@ -5,4 +5,6 @@
 
   $regions=getAllRegion();
 
+  include('../view/test.php')
+
 ?>
