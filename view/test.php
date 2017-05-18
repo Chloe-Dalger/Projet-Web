@@ -146,7 +146,7 @@ a:hover {
                                         <option value="choisir2">Choisissez votre Département</option>
                                                <?php
                                                    foreach ($departs as $depart){
-                                                     echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' ('.$depart['numerodep'].')</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+                                                     echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' (<span class="badge badge-inverse">'.$depart['numerodep'].'</span>)</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
                                                    }
                                                ?>
 
