@@ -6,7 +6,7 @@
       require_once('../model/pseudo.php');
       require_once('../model/lieu.php');
       require_once('../model/categorie.php');
-
+      require_once('../model/mot_cle.php');
 
 
 
