@@ -28,26 +28,71 @@ $categories=getAllCategorie();
 
 
 
-      if($bool){
-            if(is_null(existePseudo($pseudo))){
-              creerPseudo($pseudo);
-            }
-            $idpseudo=getIdPseudo($pseudo);
-            $idville=getIdVille($ville);
-            $idcat=getIdCategorie($categorie);
-            creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
-            $idlieu=getIdLieu($nom);
-            for($i=0; $i<count($motcle); $i++){
-              if(is_null($motcle[$i])){
-                creerMotCle($motcle[$i]);
-                $idmotcle=getIdMotCle($motcle[$i]);
-                creerMotCleLieu($idlieu, $idmotcle);
-              }
-            }
-            // L'identification a réussi
-          $message = 'Votre lieu a bien été ajouté !';
+    // Si le tableau $_POST existe alors le formulaire a été envoyé
+    if(!empty($_POST))
+      {
+    // Le login est-il rempli ?
+    if(empty($pseudo))
+    {
+      $message = 'Veuillez indiquer votre pseudo !';
+    }
+      // Le mot de passe est-il rempli ?
+      elseif(empty($nomlieu))
+    {
+      $message = 'Veuillez indiquer le nom du lieu';
+    }
+      // Le mot de passe est-il correct ?
+      elseif(empty($ville)
+    {
+      $message = 'Veuillez indiquer la ville où se trouve le lieu';
+    }
+      else
+    {
 
-}
+      if(!is_null(existeLieu($nomlieu, $ville))){
+
+
+        if(is_null(existeVille($cpville))){
+          $dep=substr($cpville, 0, 1);
+          if(is_null(existeDepartement($dep))){
+            $message = 'Le code postal n''est pas valide';
+            $bool = false;
+          }else {
+            $iddep=getIdNDepartement($dep);
+            creerVille($ville,$cpville,$iddep);
+          }
+        }
+
+        if($bool){
+              if(is_null(existePseudo($pseudo))){
+                creerPseudo($pseudo);
+              }
+              $idpseudo=getIdPseudo($pseudo);
+              $idville=getIdVille($ville);
+              $idcat=getIdCategorie($categorie);
+              creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
+              $idlieu=getIdLieu($nom);
+              for($i=0; $i<count($motcle); $i++){
+                if(is_null($motcle[$i])){
+                  creerMotCle($motcle[$i]);
+                  $idmotcle=getIdMotCle($motcle[$i]);
+                  creerMotCleLieu($idlieu, $idmotcle);
+                }
+              }
+              // L'identification a réussi
+            $message = 'Votre lieu a bien été ajouté !';
+        }
+
+
+
+    }else{
+      $message='Le lieu dans cette ville existe déjà';
+    }
+
+
+
+    }
+    }
 
   include('../view/test.php');
 
