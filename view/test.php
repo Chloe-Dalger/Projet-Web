@@ -50,6 +50,13 @@
     </div>
   </div>
 
+  <?php if(!empty($message)) : ?>
+  <p><?php echo $message; ?></p>
+  <?php endif; ?>
+
+
+
+
   <form action="../controller/ajoutlieu_controller.php" method="post">
   <div class="container">
     <div class="row">
@@ -154,9 +161,5 @@
 
 
 </body>
-
-</html>
-
-
 
 </html>
