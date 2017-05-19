@@ -41,7 +41,7 @@ $categories=getAllCategorie();
       $message = 'Veuillez indiquer le nom du lieu';
     }
       // Le mot de passe est-il correct ?
-      elseif(empty($ville)
+      elseif(empty($ville))
     {
       $message = 'Veuillez indiquer la ville où se trouve le lieu';
     }
