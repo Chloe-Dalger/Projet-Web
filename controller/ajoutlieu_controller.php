@@ -48,7 +48,7 @@ $categories=getAllCategorie();
       else
     {
 
-      if(!is_null(existeLieu($nomlieu, $ville))){
+      if(!is_null(existeLieu($nomlieu, $ville)){
 
 
         }
