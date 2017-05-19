@@ -24,7 +24,7 @@ $categories=getAllCategorie();
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
-    $bool = true;
+    $bool = True;
 
 
 
@@ -61,8 +61,6 @@ $categories=getAllCategorie();
       }
 
 
-
-      }
 
 
 
