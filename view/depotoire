@@ -88,21 +88,19 @@
 
 
 
-  function creerMotCle($lib){
+
+  function creerMotCleLieu($idlieu, $idmotcle){
   	//donnée : libellé du mot clé
   	//pré : lib : String & length(lib)>0
   	//résultat : ajout du mot cle dans la base de données
 
     global $db;
   	try{
-  		$req=$db->prepare('INSERT INTO mot_cle(libmotcle) VALUES (?)');
-  		$req->execute(array($lib);
+  		$req=$db->prepare('INSERT INTO possede_mc(idlieu, idmotcle) VALUES (?,?)');
+  		$req->execute(array($idlieu, $idmotcle);
   	} catch(PDOException $e){
   		echo($e->getMessage());
   		die(" Erreur lors l'insertion du mot cle dans la base de données " );
   }
 
   }
-
-
-      require_once('../model/possede_mc.php');

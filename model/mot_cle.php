@@ -53,9 +53,9 @@ function supprimerMotCle($id){
 }
 
 function creerMotCle($nom){
-	//donnée : nom de la region
-	//pré : nom : String & length(nom)>0
-	//résultat : ajout de l'admin dans la base de données
+  //donnée : nom du mot clé
+  //pré : nom : String & length(nom)>0
+  //résultat : ajout du mot cle dans la base de données
 
   global $db;
 	try{
