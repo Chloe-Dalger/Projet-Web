@@ -50,10 +50,6 @@ $categories=getAllCategorie();
 
 
 
-        if($bool){
-
-        }
-
 
 
       }else{
