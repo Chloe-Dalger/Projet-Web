@@ -87,10 +87,22 @@
   }
 
 
-  require_once('../model/pseudo.php');
-  require_once('../model/lieu.php');
-  require_once('../model/categorie.php');
-  require_once('../model/mot_cle.php');
+
+  function creerMotCle($lib){
+  	//donnée : libellé du mot clé
+  	//pré : lib : String & length(lib)>0
+  	//résultat : ajout du mot cle dans la base de données
+
+    global $db;
+  	try{
+  		$req=$db->prepare('INSERT INTO mot_cle(libmotcle) VALUES (?)');
+  		$req->execute(array($lib);
+  	} catch(PDOException $e){
+  		echo($e->getMessage());
+  		die(" Erreur lors l'insertion du mot cle dans la base de données " );
+  }
+
+  }
 
 
       require_once('../model/possede_mc.php');
