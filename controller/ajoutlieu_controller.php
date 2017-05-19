@@ -53,9 +53,9 @@ if(!empty($_POST))
         if(is_null(existeVille($cpville))){
           $dep=substr($cpville, 0, 1);
           if(is_null(existeDepartement($dep))){
-            $message = 'Le code postal n''est pas valide';
-            $bool = False;
           }else {
+            $iddep=getIdNDepartement($dep);
+            creerVille($ville,$cpville,$iddep);
           }
         }
       if($bool){
