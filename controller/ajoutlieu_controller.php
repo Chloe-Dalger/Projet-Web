@@ -27,15 +27,7 @@ if(!empty($_POST))
     $motcle = explode(";", $motscles);
     $bool= True;
 
-    echo $pseudo;
-    echo $nomlieu;
-    echo $description;
-    echo $ville;
-    echo $cpville;
-    echo $url;
-    echo $categorie;
-    echo $adr;
-    echo $motscles; 
+
 
 
     // Si le tableau $_POST existe alors le formulaire a été envoyé

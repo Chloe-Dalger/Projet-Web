@@ -156,6 +156,18 @@
 
     </form>
 
+    <?php
+    echo $pseudo;
+    echo $nomlieu;
+    echo $description;
+    echo $ville;
+    echo $cpville;
+    echo $url;
+    echo $categorie;
+    echo $adr;
+    echo $motscles;
+     ?>
+
 </body>
 
 </html>
