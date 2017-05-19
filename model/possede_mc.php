@@ -18,23 +18,23 @@ function existeMotCleLieu($idmc, $idl){
 
 }
 
-function creerMotCle($idl, $idmc){
-  //donnée : nom du mot clé
-  //pré : nom : String & length(nom)>0
-  //résultat : ajout du mot cle dans la base de données
 
+
+
+
+function supprimerMCLieu($id){
+  //donnée : id du lieu à supprimer
+	//pré : idlieu : entier >0
+	//résultat : suppression du lieu de la base de données
   global $db;
-	try{
-		$req=$db->prepare('INSERT INTO possede_mc(idlieu, idmotcle) VALUES (?, ?)');
-		$req->execute(array($idl, $idmc));
+  try{
+    $req=$db->prepare('DELETE FROM possede_mc WHERE idmotcle=?');
+		$req->execute(array($id));
 	} catch(PDOException $e){
-		echo($e->getMessage());
-		die(" Erreur lors l'insertion de la region dans la base de données " );
+			echo($e->getMessage());
+			die(" Erreur lors de la suppression du lieu dans la base de données " );
+  }
 }
-
-}
-
-
 
 
  ?>
