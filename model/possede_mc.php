@@ -28,7 +28,7 @@ function supprimerMCLieu($id){
 	//résultat : suppression du lieu de la base de données
   global $db;
   try{
-    $req=$db->prepare('DELETE FROM possede_mc WHERE idmotcle=?');
+    $req=$db->prepare('DELETE FROM possede_mc WHERE idmotcle=? OR idlieu=:id');
 		$req->execute(array($id));
 	} catch(PDOException $e){
 			echo($e->getMessage());
