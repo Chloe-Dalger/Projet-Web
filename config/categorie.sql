@@ -1,0 +1,15 @@
+﻿INSERT INTO categorie(nomcat) VALUES
+('Attractions touristiques'),
+('Centres Commerciaux'),
+('Lieux de culte'),
+('Monuments'),
+('Restaurants/Café'),
+('Sauvage'),
+('Point de vue'), 
+('Jardins'),
+('Zoos'),
+('Parcs Nationaux'),
+('Religieux'),
+('Musées'),
+('Lieux Publics'),
+('Paysages')
