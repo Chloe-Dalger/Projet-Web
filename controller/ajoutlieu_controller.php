@@ -48,15 +48,14 @@ $categories=getAllCategorie();
       else
     {
 
+      if(!is_null(existeLieu($nomlieu, $ville))){
 
-          if(is_null(existeDepartement($dep))){
-            $message = 'Le code postal n''est pas valide';
-            $bool = false;
-          }else {
-            $iddep=getIdNDepartement($dep);
-            creerVille($ville,$cpville,$iddep);
-          }
 
+        }
+
+        if($bool){
+
+        }
 
 
 
