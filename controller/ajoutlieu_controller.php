@@ -28,39 +28,6 @@ $categories=getAllCategorie();
 
 
 
-  // Si le tableau $_POST existe alors le formulaire a été envoyé
-  if(!empty($_POST))
-    {
-  // Le login est-il rempli ?
-  if(empty($pseudo))
-  {
-    $message = 'Veuillez indiquer votre pseudo !';
-  }
-    // Le mot de passe est-il rempli ?
-    elseif(empty($nomlieu))
-  {
-    $message = 'Veuillez indiquer le nom du lieu';
-  }
-    // Le mot de passe est-il correct ?
-    elseif(empty($ville)
-  {
-    $message = 'Veuillez indiquer la ville où se trouve le lieu';
-  }
-    else
-  {
-
-  
-
-
-  }else{
-    $message='Le lieu dans cette ville existe déjà';
-  }
-
-
-
-  }
-  }
-
 
 
 
