@@ -25,7 +25,7 @@ if(!empty($_POST))
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
-
+    $bool= True;
 
 
     // Si le tableau $_POST existe alors le formulaire a été envoyé
@@ -45,7 +45,28 @@ if(!empty($_POST))
     {
       $message = 'Veuillez indiquer la ville où se trouve le lieu';
     }
+    else{
 
+      if($bool){
+            if(is_null(existePseudo($pseudo))){
+              creerPseudo($pseudo);
+            }
+            $idpseudo=getIdPseudo($pseudo);
+            $idville=getIdVille($ville);
+            $idcat=getIdCategorie($categorie);
+            creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
+            $idlieu=getIdLieu($nom);
+            for($i=0; $i<count($motcle); $i++){
+              if(is_null($motcle[$i])){
+                creerMotCle($motcle[$i]);
+                $idmotcle=getIdMotCle($motcle[$i]);
+                creerMotCleLieu($idlieu, $idmotcle);
+              }
+            }
+            // L'identification a réussi
+          $message = 'Votre lieu a bien été ajouté !';
+      }
+    }
 
 }
 
