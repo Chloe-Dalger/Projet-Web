@@ -223,13 +223,13 @@ function getAllLieu(){
       }
 
 
-  function modifNomLieu($id,$newnom){
+  function modifNomLieu($newnom, $id){
 	//donnée : id du lieu à modifier et un nouveau nom
 	//pré : idlieu : entier > 0 / newnom : String & length(newnom)>0
 	//résultat : modifie le nom actuel du lieu par le nouveau
   global $db;
 	try{
-		$req=$db->prepare('UPDATE lieu SET nomlieu= :newnom WHERE idlieu=:id');
+		$req=$db->prepare('UPDATE lieu SET nomlieu= ? WHERE idlieu=?');
 		$req->execute(array(
 			'newnom' => $newnom,
 			'idlieu' => $id
@@ -240,13 +240,13 @@ function getAllLieu(){
 }
 }
 
-function modifUrlLieu($id,$newurl){
+function modifUrlLieu($newurl, $id){
   //donnée : id du lieu à modifier
   //pré : idlieu : entier > 0 / newurl : String & length(newurl)>=0
   //résultat : modifie l'url de l'image du lieu par une nouvelle url
   global $db;
   try{
-    $req=$db->prepare('UPDATE lieu SET urllieu= :newurl WHERE idlieu=:id');
+    $req=$db->prepare('UPDATE lieu SET urllieu= ? WHERE idlieu=?');
     $req->execute(array(
       'newurl' => $newurl,
       'idlieu' => $id
@@ -257,13 +257,13 @@ function modifUrlLieu($id,$newurl){
 }
 }
 
-function modifDescriptionLieu($id,$newdes){
+function modifDescriptionLieu($newdes, $id){
   //donnée : id du lieu à modifier et une nouvelle description
   //pré : idlieu : entier > 0 / newdes : String & length(newdes)>=0
   //résultat : modifie la description du lieu actuelle par la nouvelle
   global $db;
   try{
-    $req=$db->prepare('UPDATE lieu SET deslieu= :newdes WHERE idlieu=:id');
+    $req=$db->prepare('UPDATE lieu SET deslieu= ? WHERE idlieu=?');
     $req->execute(array(
       'newdes' => $newdes,
       'idlieu' => $id
@@ -274,13 +274,13 @@ function modifDescriptionLieu($id,$newdes){
 }
 }
 
-function modifAdresseLieu($id,$newadr){
+function modifAdresseLieu($newadr, $id){
   //donnée : is du lieu à modifier et la nouvelle adresse du lieu
   //pré : idlieu : entier > 0 / newadr : String & length(newadr)>=0
   //résultat : modifie l'adresse du lieu par la nouvelle
   global $db;
   try{
-    $req=$db->prepare('UPDATE lieu SET adrlieu= :newadr WHERE idlieu=:id');
+    $req=$db->prepare('UPDATE lieu SET adrlieu= ? WHERE idlieu=?');
     $req->execute(array(
       'newadr' => $newadr,
       'idlieu' => $id
@@ -292,15 +292,15 @@ function modifAdresseLieu($id,$newadr){
 }
 
 
-function existeLieu($nom){
+function existeLieu($nom, $ville){
   //données : nom du lieu
 	//pré : nom: String
 	//résultat : id du lieu s'il existe, NULL sinon
 	//post : idlieu : entier >0 ou NULL
   global $db;
 	try{
-		$req=$db->prepare('SELECT idlieu FROM lieu WHERE nomlieu=?');
-		$req->execute(array($nom));
+		$req=$db->prepare('SELECT idlieu FROM lieu WHERE LOWER(nomlieu)=LOWER(?) AND idville=(SELECT idville FROM ville WHERE LOWER(nomville)=LOWER(?))');
+		$req->execute(array($nom, $ville));
 		$idlieu=$req->fetch();
 	} catch(PDOException $e){
 		echo($e->getMessage());

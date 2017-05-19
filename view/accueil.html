@@ -15,76 +15,90 @@
 
 <body>
 
-  <div class="form-group">
-      <div class="input-group input-group-sm icon-addon addon-sm">
-          <input type="text" placeholder="Texte" name="" id="schbox" class="form-control input-sm">
-          <i class="icon icon-search"></i>
-          <span class="input-group-btn">
-              <button type="submit" class="btn btn-inverse btn-sm">Rechercher</button>
-          </span>
-      </div>
-  </div>
+  <html>
+  <head>
+
+    <link rel="stylesheet" href="gallery.css">
+  </head>
+
+  <body>
+
+    <div class="card">
+
+        <!-- En-tête de la carte -->
+
+        <div class="card-header">
 
 
+            <!-- Le masque pour l'effet d'assombrissement lors du survol -->
 
-  <div class="body-search">
-        <div class="site-wrapper">
-            <div class="site-wrapper-inner">
-                  <div class="cover-container">
+            <div class="card-header-mask">
 
-                        <h1 class="cover-heading">Trouve l'endroit de tes rêves</h1>
-                        <p class="lead">Rentre la ville, choisi ta région et ton département et découvre les endroits à visiter!</p>
-                        <form methode=post action="accueil.controller.php">
-                            <input list="browsers">
-                                  <div class="input-group">
+                <div class="card-header-date">
 
-                                          <div class="input-group-btn search-panel">
+                    <div class="card-header-date-day">12</div>
 
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <select name="region" id="region">
-                                                    									<?php
-                                                    											foreach ($regions as $region){
-                                                    												echo '<option value="'.$region['id'].'">'.$region['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
-                                                    											}
-                                                    									?>
-                                                    </select>
+                    <div class="card-header-date-month">May</div>
 
-
-                                                </ul>
-                                              </div>
-                                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                  <span id="search_concept">Région</span> <span class="caret"></span>
-                                              </button>
-                                                <div class="input-group-btn search-panel">
-
-                                                <ul class="dropdown-menu" role="menu">
-                                                      <select name="depart" id="depart">
-                                                                        <?php
-                                                                            foreach ($departs as $depart){
-                                                                              echo '<option value="'.$depart['id'].'">'.$depart['nomregion'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
-                                                                            }
-                                                                        ?>
-                                                      </select>
-                                                </ul>
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                    <span id="search_concept">Département</span> <span class="caret"></span>
-                                                </button>
-                                          </div>
-                                          <input type="hidden" name="search_param" value="all" id="search_param">
-                                          <input type="text" class="form-control" name="x" placeholder="Entrer ville...">
-                                          <span class="input-group-btn">
-                                              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                                          </span>
-                                        </div>
-                          </form>
                 </div>
+
             </div>
+
+
+
         </div>
-      </div>
 
-  </body>
 
-</html>
+        <!-- Corps de la carte -->
 
+        <div class="card-body">
+
+
+            <!-- En-tête du corps -->
+
+            <div class="card-body-header">
+
+                <div class="card-body-category">Photos</div>
+
+                <h1>True Paradise on Earth: Unknown Place</h1>
+
+                <p class="card-body-sentence">
+
+                    They call it <span>"</span>God's Own Country.<span>"</span>
+
+                </p>
+
+            </div>
+
+
+            <!-- Description cachée par l'en-tête -->
+
+            <p class="card-body-description">
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+                Molestias autem aliquid, recusandae maiores iste fuga,
+
+                explicabo dolor vitae magnam!
+
+            </p>
+
+
+            <!-- Pied de la carte -->
+
+            <div class="card-body-footer">
+
+                <i class="icon icon-time"></i> 6min. read
+
+                <i class="icon icon-comment"></i> 39 comments
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</body>
 
 </html>

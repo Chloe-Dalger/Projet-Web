@@ -138,13 +138,13 @@ function getAllCategorie(){
         return $Listenomcat;
     }
 
-  function modifDescriptionCategorie($id,$newdes){
+  function modifDescriptionCategorie($newdes, $id){
   	//donnée : id de la categorie à modifier et la nouvelle description
   	//pré : idcat : entier > 0 / newdes : String & length(des)>=0
   	//résultat : modifie la description de la catégorie actuelle par newdes
     global $db;
     try{
-  		$req=$db->prepare('UPDATE categorie SET descat= :newdes WHERE idcat=:id');
+  		$req=$db->prepare('UPDATE categorie SET descat= ? WHERE idcat=?');
   		$req->execute(array(
   			'newdes' => $newdes,
   			'idcat' => $id

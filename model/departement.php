@@ -73,6 +73,23 @@ function getIdDepartement($nom){
     return $iddep[0];
 }
 
+function getIdNDepartement($num){
+  //donnée: nom du departement
+	//pré : nom : String & length(nom)>0
+	//résultat : l'id correspondant au departement donné en paramètre
+	//post : iddep: entier>0 ou NULL
+  global $db;
+  try{
+    $req=$db->prepare('SELECT iddep FROM departement WHERE numerodep=?');
+    $req->execute(array($num));
+		$iddep=$req->fetch();
+  } catch(PDOException $e){
+			echo($e->getMessage());
+			die(" Erreur lors de la récupération de l'id du departement dans la base de données " );
+		}
+    return $iddep[0];
+}
+
 function supprimerDepartement($id){
   //donnée : id du département à supprimer
 	//pré : iddep : entier >0
@@ -188,15 +205,15 @@ function getAllDepartement(){
 }
 
 
-function existeDepartement($nom){
+function existeDepartement($num){
 	//données : nom du departement
 	//pré : nom: String
 	//résultat : id du departement s'il existe, NULL sinon
 	//post : iddep: entier >0 ou NULL
   global $db;
 	try{
-		$req=$db->prepare('SELECT iddep FROM departement WHERE nomdep=?');
-		$req->execute(array($nom));
+		$req=$db->prepare('SELECT iddep FROM departement WHERE numerodep=?');
+		$req->execute(array($num));
 		$iddep=$req->fetch();
 	} catch(PDOException $e){
 		echo($e->getMessage());

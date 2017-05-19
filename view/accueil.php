@@ -10,8 +10,8 @@
   <script type="text/javascript" src="../bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-  <link href="../view/accueil.css" rel="stylesheet">
-  <link rel="stylesheet" href="../view/navbar.css">
+  <link href="../view/css/accueil.css" rel="stylesheet">
+  <link rel="stylesheet" href="../view/css/navbar.css">
 
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav navbar-left">
         <li><a href="accueil">Accueil</a></li>
 
-        <li><a href="ajoutlieu">Ajouter un Lieu</a></li>
+        <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
         <li><a href="connexionEtudiant.controller.php">Connexion</a></li>
 
 

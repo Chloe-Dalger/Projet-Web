@@ -105,13 +105,13 @@ function getAllMotCle(){
 
 
 
-  function modifLibMotCle($id,$newlib){
+  function modifLibMotCle($newlib, $id){
 	//donnée : id du mot clé à modifier et le nouveau libellé
 	//pré : idmotcle : entier > 0 / newlib: String & length(newlib)>0
 	//résultat : modifie le libellé actuel du mot clé par le nouveau
   global $db;
 	try{
-		$req=$db->prepare('UPDATE mot_cle SET libmotcle= :newlib WHERE idmotcle=:id');
+		$req=$db->prepare('UPDATE mot_cle SET libmotcle= ? WHERE idmotcle=?');
 		$req->execute(array(
 			'newlib' => $newlib,
 			'idmotcle' => $id
@@ -130,7 +130,7 @@ function existeMotCle($lib){
 	//post : idmotcle : entier >0 ou NULL
   global $db;
 	try{
-		$req=$db->prepare('SELECT idmotcle FROM mot_cle WHERE libmotcle=?');
+		$req=$db->prepare('SELECT idmotcle FROM mot_cle WHERE LOWER(libmotcle)=LOWER(?)');
 		$req->execute(array($nom));
 		$idmotcle=$req->fetch();
 	} catch(PDOException $e){
