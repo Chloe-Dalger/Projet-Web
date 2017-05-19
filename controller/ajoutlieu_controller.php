@@ -12,7 +12,8 @@
 $categories=getAllCategorie();
 
 
-
+if(!empty($_POST))
+  {
 
     $pseudo=$_POST['pseudo'];
     $nomlieu=$_POST['nomlieu'];
@@ -24,7 +25,6 @@ $categories=getAllCategorie();
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
-    $bool = True;
 
 
 
@@ -45,18 +45,9 @@ $categories=getAllCategorie();
     {
       $message = 'Veuillez indiquer la ville où se trouve le lieu';
     }
-      else
-    {
 
 
-
-
-
-      }else{
-      $message='Le lieu dans cette ville existe déjà';
-      }
-
-
+}
 
 
 
