@@ -4,6 +4,36 @@
 
 
 
+function supprimerMotCle($id){
+  //donnée : id du mot cle à supprimer
+	//pré : idmotcle: entier >0
+	//résultat : suppression du mot cle de la base de données
+  global $db;
+  try{
+    $req=$db->prepare('DELETE FROM mot_cle WHERE idmotcle=?');
+		$req->execute(array($id));
+	} catch(PDOException $e){
+			echo($e->getMessage());
+			die(" Erreur lors de la suppression du mot cle dans la base de données " );
+  }
+}
+
+function creerMotCle($lib){
+	//donnée : libellé du mot clé
+	//pré : lib : String & length(lib)>0
+	//résultat : ajout du mot cle dans la base de données
+
+  global $db;
+	try{
+		$req=$db->prepare('INSERT INTO mot_cle(libmotcle) VALUES (?)');
+		$req->execute(array($lib);
+	} catch(PDOException $e){
+		echo($e->getMessage());
+		die(" Erreur lors l'insertion du mot cle dans la base de données " );
+}
+
+}
+
 function getAllMotCle(){
   //résultat : tous les mots clés de la base de données
 	//post : Listemotcle : array : une ligne par mot cle,(idmotcle, libmotcle) pour les colonnes
