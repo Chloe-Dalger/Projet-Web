@@ -9,7 +9,7 @@
       require_once('../model/mot_cle.php');
             require_once('../model/possede_mc.php');
 
-$categories=getAllRegion();
+$categories=getAllDepartement();
 
 
 
