@@ -29,8 +29,7 @@ $categories=getAllCategorie();
 
 
     // Si le tableau $_POST existe alors le formulaire a été envoyé
-    if(!empty($_POST))
-      {
+
     // Le login est-il rempli ?
     if(empty($pseudo))
     {
@@ -52,7 +51,7 @@ $categories=getAllCategorie();
 
 
     }
-    }
+
 
   include('../view/test.php');
 
