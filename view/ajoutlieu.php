@@ -157,6 +157,9 @@
     </form>
 
     <?php
+    if(!empty($_POST))
+      {
+        echo"coucou";
     echo $pseudo;
     echo $nomlieu;
     echo $description;
@@ -166,6 +169,7 @@
     echo $categorie;
     echo $adr;
     echo $motscles;
+  }
      ?>
 
 </body>
