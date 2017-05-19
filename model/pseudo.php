@@ -59,7 +59,7 @@ function creerPseudo($nom){
 
   global $db;
 	try{
-		$req=$db->prepare('INSERT INTO pseudo(nompseudo) VALUES (?)');
+		$req=$db->prepare('INSERT INTO pseudo(pseudo) VALUES (?)');
 		$req->execute(array($nom));
 	} catch(PDOException $e){
 		echo($e->getMessage());
