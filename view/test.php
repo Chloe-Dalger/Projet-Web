@@ -52,17 +52,12 @@
 
 
 
-  <form action="../controller/ajoutlieu_controller.php" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
           <h3 >Ajouter un nouveau lieu</h3>
 
 
-              <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Crimson;">
-                  <span class="glyphicon glyphicon-cog"></span>  Catégorie
-                </span>
                 <select class="form-control custom__select">
                   <option value="aucune">Aucune</option>
                   <?php
@@ -71,18 +66,16 @@
                   }
                   ?>
               </select>
-            </div>
 
 
 
 
-              <input type="submit" value="Submit">
+
           </div>
     </div>
   </div>
 
 
-  </form>
 
 
 </body>
