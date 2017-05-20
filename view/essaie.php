@@ -49,7 +49,7 @@ echo $region;
 echo $depart;
 echo $ville;
 echo $message;
-echo $lieu;
+echo $lieu[0];
  ?>
 </body>
 </html>
