@@ -29,7 +29,27 @@ header{
 <?php if(!empty($message)) : ?>
     <h1><b><?php echo $message; ?></b></h1>
   <?php endif; ?>
-    
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <span class="w3-margin-right">Filtres:</span>
+
+      <?php if(!empty($ville)) : ?>
+          <button class="w3-button w3-black"><?php echo $ville; ?></button>
+        <?php endif; ?>
+        <?php if(!(strcmp($depart, "choisir2")==0)) : ?>
+            <button class="w3-button w3-black"><?php echo $depart; ?></button>
+          <?php endif; ?>
+          <?php if(!(strcmp($region, "choisir1")==0)) : ?>
+              <button class="w3-button w3-black"><?php echo $region; ?></button>
+            <?php endif; ?>
+
+
+  </header>
+      <!-- Si jamais j'utilise des mots clés
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button> -->
+    </div>
+    </div>
 
 
 </body>
