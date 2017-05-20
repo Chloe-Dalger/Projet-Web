@@ -160,7 +160,7 @@
               echo $bool;
               echo $adr;
               echo $motscles;
-              echo $categorie;
+              echo $ctegorie;
             }
                ?>
 
