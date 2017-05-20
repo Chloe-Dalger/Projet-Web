@@ -33,7 +33,7 @@
                           $message="Il n y a rien à afficher pour votre selection";
                       }
                       else{
-                        $lieu=getAllVilleDepartementRegionLieu($idville, $depart, $region);
+
                       }
                   }
                   else{
@@ -48,7 +48,6 @@
                         $message="Il n y a rien à afficher pour votre selection";
                     }
                     else{
-                      $lieu=getAllVilleRegionLieu($idville, $region);
                     }
                   }
                   else{
@@ -60,6 +59,10 @@
               }
 
               }
+            }
+
+            if(is_null($lieu)){
+              $message="Il n y a rien à afficher pour votre selection";
             }
 
 
