@@ -10,7 +10,7 @@
       require_once('../model/possede_mc.php');
 
 $categories=getAllCategorie();
-
+creerMotCle('Paysage');
 
 if(!empty($_POST))
   {
@@ -88,6 +88,7 @@ if(!empty($_POST))
                 creerMotCleLieu($idlieu, $idmotcle);
               }
             }
+
             // L'identification a réussi
           $message6 = 'Jai creer les mots cles';
             // L'identification a réussi
