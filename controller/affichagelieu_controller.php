@@ -24,7 +24,32 @@
             if(empty($ville) && empty($region) && empty($depart)){
               $lieu=getAllLieu();
             }
+            else{
+              if(!empty($region) ){
 
+              else{
+                if(!empty($departement)){
+                  if(!empty($ville)){
+                    $idville=getIdVille($ville);
+                    if(is_null($idville)){
+                        $message="Il n y a rien à afficher pour votre selection";
+                    }
+                    else{
+                      $lieu=getAllVilleDepartementLieu($idville, $iddep, $idregion);
+                    }
+                  }
+                  else{
+
+                  }
+
+                }
+                else{
+
+                }
+
+
+            }
+        }
       }
 
 
