@@ -183,7 +183,7 @@ function getAllLieu(){
   		$Listelieu=$req->fetchAll();
   	} catch(PDOException $e){
   			echo($e->getMessage());
-  			die(" Erreur lors de la récupération des lieux dans la base de données " );
+  			die(" Erreur lors de la récupération des lieuxx dans la base de données " );
   }
       return $Listelieu;
   }

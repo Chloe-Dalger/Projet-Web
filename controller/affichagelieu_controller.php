@@ -24,64 +24,7 @@
             if(empty($ville) && empty($region) && empty($depart)){
               $lieu=getAllLieu();
             }
-            else{
-              if(!empty($region) ){
-                if(!empty($departement)){
-                  if(!empty($ville)){
-                      $idville=getIdVille($ville);
-                      if(is_null($idville)){
 
-                          $message="Il n y a rien à afficher pour votre selection";
-                      }
-                      else{
-                        $lieu=getAllVilleDepartementRegionLieu($idville, $iddep, $idregion);
-                      }
-                  }
-                  else{
-                    $lieu=getAllDepartementRegionLieu($iddep, $idregion);
-                  }
-
-                }
-                else{
-                  if(!empty($ville)){
-                    $idville=getIdVille($ville);
-                    if(is_null($idville)){
-                        $message="Il n y a rien à afficher pour votre selection";
-                    }
-                    else{
-                      $lieu=getAllVilleRegionLieu($idville, $idregion);
-                    }
-                  }
-                  else{
-                    $lieu=getAllRegionLieu($idregion);
-                  }
-
-                }
-
-              }
-              else{
-                if(!empty($departement)){
-                  if(!empty($ville)){
-                    $idville=getIdVille($ville);
-                    if(is_null($idville)){
-                        $message="Il n y a rien à afficher pour votre selection";
-                    }
-                    else{
-                      $lieu=getAllVilleDepartementLieu($idville, $iddep, $idregion);
-                    }
-                  }
-                  else{
-                    $lieu=getAllDepartementLieu($iddep);
-                  }
-
-                }
-                else{
-                    $lieu=getAllVilleLieu($idville);
-                }
-
-
-            }
-        }
       }
 
 
