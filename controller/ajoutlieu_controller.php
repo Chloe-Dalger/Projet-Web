@@ -50,8 +50,8 @@ if(!empty($_POST))
       // L'identification a réussi
     $message = 'Je suis ici';
 
-      if(!is_null(existeLieu($nomlieu, $ville))){
-        // L'identification a réussi
+      // if(!is_null(existeLieu($nomlieu, $ville))){
+      //   // L'identification a réussi
       $message1 = 'Je suis bien rentré';
 
         if(is_null(existeVille($cpville))){
@@ -91,7 +91,7 @@ if(!empty($_POST))
             // L'identification a réussi
           $message = 'Votre lieu a bien été ajouté !';
       }
-    }
+
 
 }
 }
