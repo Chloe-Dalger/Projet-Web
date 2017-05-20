@@ -382,12 +382,12 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 						global $db;
 						try{
-								$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu WHERE lieu.idville IN (SELECT ville.idville FROM ville WHERE ville.iddep IN (SELECT departement.iddep FROM departement WHERE departement.idregion=?)) ');
+								$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu WHERE lieu.idville IN (SELECT ville.idville FROM ville WHERE ville.iddep IN (SELECT departement.iddep FROM departement WHERE departement.idregion=?))');
 								$req->execute(array());
 								$Listelieu=$req->fetchAll();
 							} catch(PDOException $e){
 									echo($e->getMessage());
-									die(" Erreur lors de la récupération des lieux dans la base de données " );
+									die(" Erreur lors de la récupération des lieuxs dans la base de données " );
 						}
 								return $Listelieu;
 							}
