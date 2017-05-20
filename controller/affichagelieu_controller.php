@@ -77,6 +77,7 @@
 
                     }
                     else{
+                        $idville=getIdVille($ville);
                         $lieu=getAllVilleLieu($idville);
                     }
 
