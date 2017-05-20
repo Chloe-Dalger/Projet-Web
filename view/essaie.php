@@ -13,7 +13,21 @@ header{
 }
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
-<p>Coucou</p>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="Gallery">
+
+    <h1><b>Résultats de votre recherche:</b></h1>
+<?php if(!empty($message)){
+    echo'<h1><b>'.$message.'</b></h1>';
+    ?>
+
 
 
 </body>
