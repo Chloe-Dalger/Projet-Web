@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
+background-image: url("https://previews.123rf.com/images/masyaka/masyaka1506/masyaka150600009/41254550-Blanc-texture-bois-gris-vieilles-planches-peintes-Banque-d'images.jpg");
+background-repeat: repeat;}
 header{
   margin-bottom: 30px;
 }
@@ -15,7 +17,7 @@ header{
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
   <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
