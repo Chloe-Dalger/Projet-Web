@@ -23,11 +23,13 @@ header{
   <!-- Header -->
   <header id="Gallery">
 
-    <h1><b>Résultats de votre recherche:</b></h1>
-<?php if(!empty($message)){
-    echo'<h1><b>'.$message.'</b></h1>';
-    ?>
 
+
+    <h1><b>Résultats de votre recherche:</b></h1>
+<?php if(!empty($message)) : ?>
+    <h1><b><?php echo $message; ?></b></h1>
+  <?php endif; ?>
+    
 
 
 </body>
