@@ -332,7 +332,7 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 	  global $db;
 	  try{
-	  		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu WHERE lieu.idville IN (SELECT idville from ville, departement where ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?');
+	  		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu WHERE lieu.idville IN (SELECT idville from ville, departement where ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?)');
 	  		$req->execute(array($iddepartement, $idregion));
 	  		$Listelieu=$req->fetchAll();
 	  	} catch(PDOException $e){
