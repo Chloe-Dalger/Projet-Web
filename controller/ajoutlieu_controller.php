@@ -21,7 +21,7 @@ if(!empty($_POST))
     $ville=$_POST['ville'];
     $cpville=$_POST['cpville'];
     $url=$_POST['urlim'];
-    $ctegorie=$_POST['ctegorie'];
+    $categorie=$_POST['categorie'];
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
@@ -68,7 +68,7 @@ if(!empty($_POST))
             }
             $idpseudo=getIdPseudo($pseudo);
             $idville=getIdVille($ville);
-            $idcat=getIdCategorie($ctegorie);
+            $idcat=getIdCategorie($categorie);
             creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
             $idlieu=getIdLieu($nom);
             for($i=0; $i<count($motcle); $i++){
