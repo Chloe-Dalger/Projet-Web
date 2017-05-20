@@ -14,54 +14,6 @@ header{
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-  <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header id="Gallery">
-
-    <h1><b>Résultats de votre recherche:</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filtres:</span>
-      <?php if(!empty($ville)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
-      <?php if(!(strcmp($depart, "choisir2")==0)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
-      <?php if(!(strcmp($region, "choisir1")==0)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
-
-      <!-- Si jamais j'utilise des mots clés
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button> -->
-    </div>
-    </div>
-  </header>
-
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding">
-
-    <div class="w3-third w3-container w3-margin-bottom">
-      <?php
-      foreach ($lieux as $lieu){
-
-
-      echo '<img src="'.$lieu['urllieu'].'" style="width:100%" class="w3-hover-opacity">';
-      echo'<div class="w3-container w3-white">'
-        echo'<p><b>'.$lieu['nomlieu'].'</b></p>';
-        echo'<p>'.$lieu['deslieu'].'</p>';
-      echo'</div>';
-    echo'</div>';
-  }
-    ?>
-
-  </div>
 
 
 </body>
