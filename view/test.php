@@ -125,7 +125,7 @@
                   <option value="aucune">Aucune</option>
                   <?php
                   foreach ($categories as $categorie){
-                    echo '<option value="'.$categorie['idcat'].'">'.$categorie['nomcat'].'</option>';
+                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                   ?>
               </select>
             </div>
