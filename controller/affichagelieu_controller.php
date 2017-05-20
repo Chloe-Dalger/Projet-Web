@@ -26,9 +26,9 @@
             }
             else{
               if(!empty($region) ){
-
-                    }
-                  }
+                  $lieu=getAllDepartementLieu($iddep);
+              }
+            }
 
 
       }
