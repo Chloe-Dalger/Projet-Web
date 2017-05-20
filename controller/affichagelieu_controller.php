@@ -21,7 +21,14 @@
 
 
 
-            
+            if(empty($ville) && strcmp($region, "choisir1")==0 && strcmp($depart, "choisir2")==0){
+              $lieu=getAllLieu();
+            }
+            else{
+              if(!empty($region) ){
+                  $lieu=getAllDepartementLieu($iddep);
+              }
+            }
 
 
       }
