@@ -35,7 +35,7 @@
                         $message="Il n y a rien à afficher pour votre selection";
                     }
                     else{
-                      $lieu=getAllVilleDepartementLieu($idville, $iddep, $idregion);
+
                     }
                   }
                   else{
