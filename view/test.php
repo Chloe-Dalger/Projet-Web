@@ -117,7 +117,18 @@
               </div>
               <hr />
 
-
+              <div class="input-group">
+                <span class="input-group-addon custom__addon" style="background-color: Crimson;">
+                  <span class="glyphicon glyphicon-cog"></span>  Catégorie
+                </span>
+                <select class="form-control custom__select">
+                  <option value="aucune">Aucune</option>
+                  <?php
+                  foreach ($categories as $categorie){
+                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                  ?>
+              </select>
+            </div>
 
               <hr />
 
