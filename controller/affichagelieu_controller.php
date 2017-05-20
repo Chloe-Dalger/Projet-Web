@@ -34,8 +34,8 @@
               }
 
 
-            
-            if(is_null($lieu)){
+
+            if(is_null($lieu[0])){
               $message="Il n y a rien à afficher pour votre selection";
             }
 
