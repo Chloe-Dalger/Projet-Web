@@ -158,6 +158,7 @@
               echo $ville;
               echo $cpville;
               echo $url;
+              echo $bool;
               echo $categorie;
               echo $adr;
               echo $motscles;
