@@ -36,10 +36,10 @@ header{
           <button class="w3-button w3-black"><?php echo $ville; ?></button>
         <?php endif; ?>
         <?php if(!(strcmp($depart, "choisir2")==0)) : ?>
-            <button class="w3-button w3-black"><?php echo $depart; ?></button>
+            <button class="w3-button w3-black"><?php echo $nomdepart; ?></button>
           <?php endif; ?>
           <?php if(!(strcmp($region, "choisir1")==0)) : ?>
-              <button class="w3-button w3-black"><?php echo $region; ?></button>
+              <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
 
 
@@ -50,6 +50,8 @@ header{
       <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button> -->
     </div>
     </div>
+
+
 
 
 </body>

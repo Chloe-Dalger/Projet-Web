@@ -25,7 +25,9 @@
             }
             else{
               if(!(strcmp($region, "choisir1")==0)){
+                $nomregion=getNomRegion($region);
                 if(!(strcmp($depart, "choisir2")==0)){
+                  $nomdepart=getNomDepartement($depart);
 
 
                   if(!empty($ville)){
@@ -62,6 +64,7 @@
                 }
                 else{
                     if(!(strcmp($depart, "choisir2")==0)){
+                      $nomdepart=getNomDepartement($depart);
                       if(!empty($ville)){
                         $idville=getIdVille($ville);
                         if(is_null($idville)){
