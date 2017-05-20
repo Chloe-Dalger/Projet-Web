@@ -121,7 +121,7 @@
                 <span class="input-group-addon custom__addon" style="background-color: Crimson;">
                   <span class="glyphicon glyphicon-cog"></span>  Catégorie
                 </span>
-                <select name='categorie' class="form-control custom__select">
+                <select name='ctegorie' class="form-control custom__select">
                   <option value="aucune">Aucune</option>
                   <?php
                   foreach ($categories as $categorie){
@@ -160,7 +160,7 @@
               echo $bool;
               echo $adr;
               echo $motscles;
-              echo $categorie;
+              echo $ctegorie;
             }
                ?>
 

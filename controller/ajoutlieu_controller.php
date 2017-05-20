@@ -7,7 +7,7 @@
       require_once('../model/lieu.php');
       require_once('../model/categorie.php');
       require_once('../model/mot_cle.php');
-            require_once('../model/possede_mc.php');
+      require_once('../model/possede_mc.php');
 
 $categories=getAllCategorie();
 
@@ -21,21 +21,12 @@ if(!empty($_POST))
     $ville=$_POST['ville'];
     $cpville=$_POST['cpville'];
     $url=$_POST['urlim'];
-    $categorie=$_POST['categorie'];
+    $ctegorie=$_POST['ctegorie'];
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
     $bool= True;
 
-    echo $pseudo;
-    echo $nomlieu;
-    echo $description;
-    echo $ville;
-    echo $cpville;
-    echo $url;
-    echo $categorie;
-    echo $adr;
-    echo $motscles;
 
 
     // Si le tableau $_POST existe alors le formulaire a été envoyé
@@ -76,7 +67,7 @@ if(!empty($_POST))
             }
             $idpseudo=getIdPseudo($pseudo);
             $idville=getIdVille($ville);
-            $idcat=getIdCategorie($categorie);
+            $idcat=getIdCategorie($ctegorie);
             creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
             $idlieu=getIdLieu($nom);
             for($i=0; $i<count($motcle); $i++){
