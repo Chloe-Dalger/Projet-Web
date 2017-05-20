@@ -21,20 +21,15 @@ header{
 <div class="w3-main" style="margin-left:300px">
 
   <!-- Header -->
-  <header id="Gallery">
-
-    <h1><b>Résultats de votre recherche:</b></h1>
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>My Portfolio</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filtres:</span>
-      <?php if(!empty($ville)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
-      <?php if(!(strcmp($depart, "choisir2")==0)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
-      <?php if(!(strcmp($region, "choisir1")==0)){
-        echo '<button class="w3-button w3-black">'.$ville.'</button>'
-      }?>
+      <span class="w3-margin-right">Filter:</span>
+      <?php ?>
+      <button class="w3-button w3-black">ALL</button>
 
       <!-- Si jamais j'utilise des mots clés
       <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
@@ -48,21 +43,27 @@ header{
   <div class="w3-row-padding">
 
     <div class="w3-third w3-container w3-margin-bottom">
-      <?php
-      foreach ($lieux as $lieu){
-
-
-      echo '<img src="'.$lieu['urllieu'].'" style="width:100%" class="w3-hover-opacity">';
-      echo'<div class="w3-container w3-white">'
-        echo'<p><b>'.$lieu['nomlieu'].'</b></p>';
-        echo'<p>'.$lieu['deslieu'].'</p>';
-      echo'</div>';
-    echo'</div>';
-  }
-    ?>
+      <img src="http://lorempixel.com/600/600/nature/3/" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
 
   </div>
 
+  <script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
 
 </body>
 </html>

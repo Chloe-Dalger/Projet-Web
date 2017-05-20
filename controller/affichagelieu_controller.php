@@ -21,7 +21,7 @@
 
 
             if(empty($ville) && strcmp($region, "choisir1")==0 && strcmp($depart, "choisir2")==0){
-              $lieu=getAllLieu();
+              $lieux=getAllLieu();
             }
             else{
               if(!(strcmp($region, "choisir1")==0)){
@@ -34,11 +34,11 @@
                           $message="Il n y a rien à afficher pour votre selection";
                       }
                       else{
-                        $lieu=getAllVilleDepartementRegionLieu($idville, $depart, $region);
+                        $lieux=getAllVilleDepartementRegionLieu($idville, $depart, $region);
                       }
                   }
                   else{
-                    $lieu=getAllDepartementRegionLieu($depart, $region);
+                    $lieux=getAllDepartementRegionLieu($depart, $region);
                   }
                 }
                 else{
@@ -48,11 +48,11 @@
                           $message="Il n y a rien à afficher pour votre selection";
                       }
                       else{
-                        $lieu=getAllVilleRegionLieu($idville, $region);
+                        $lieux=getAllVilleRegionLieu($idville, $region);
                       }
                     }
                     else{
-                      $lieu=getAllRegionLieu($region);
+                      $lieux=getAllRegionLieu($region);
                     }
 
                 }
@@ -68,17 +68,17 @@
                             $message="Il n y a rien à afficher pour votre selection";
                         }
                         else{
-                          $lieu=getAllVilleDepartementLieu($idville, $depart, $region);
+                          $lieux=getAllVilleDepartementLieu($idville, $depart, $region);
                         }
                       }
                       else{
-                        $lieu=getAllDepartementLieu($depart);
+                        $lieux=getAllDepartementLieu($depart);
                       }
 
                     }
                     else{
                         $idville=getIdVille($ville);
-                        $lieu=getAllVilleLieu($idville);
+                        $lieux=getAllVilleLieu($idville);
                     }
 
 
@@ -91,7 +91,7 @@
 
 
 
-            if(is_null($lieu[0])){
+            if(is_null($lieux[0])){
               $message="Il n y a rien à afficher pour votre selection";
             }
 
