@@ -16,8 +16,7 @@
         $region=$_POST['region'];
         $depart=$_POST['depart'];
 
-        $iddep=getIdDepartement($depart);
-        $idregion=getIdRegion($region);
+
 
 
 
@@ -25,8 +24,10 @@
               $lieu=getAllLieu();
             }
             else{
+              $iddep=getIdDepartement($depart);
+              $idregion=getIdRegion($region);
               if(!empty($region) ){
-                  $lieu=getAllDepartementLieu($iddep);
+
               }
             }
 
