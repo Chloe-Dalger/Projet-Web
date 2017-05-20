@@ -21,14 +21,7 @@
 
 
 
-            if(empty($ville) && empty($region) && empty($depart)){
-              $lieu=getAllLieu();
-            }
-            else{
-              if(!empty($region) ){
-                  $lieu=getAllDepartementLieu($iddep);
-              }
-            }
+            
 
 
       }

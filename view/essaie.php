@@ -43,5 +43,11 @@
 	</div>
 
 </div>
+<?php
+
+echo $region;
+echo $depart;
+echo $ville;
+ ?>
 </body>
 </html>

@@ -63,7 +63,7 @@ function getIdVille($nom){
 	//post : idville: entier>0 ou NULL
   global $db;
   try{
-    $req=$db->prepare('SELECT idville FROM ville WHERE nomville=?');
+    $req=$db->prepare('SELECT idville FROM ville WHERE LOWER(nomville)=LOWER(?)');
     $req->execute(array($nom));
 		$idville=$req->fetch();
   } catch(PDOException $e){
