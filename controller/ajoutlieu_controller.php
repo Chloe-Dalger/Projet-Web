@@ -21,7 +21,7 @@ if(!empty($_POST))
     $ville=$_POST['ville'];
     $cpville=$_POST['cpville'];
     $url=$_POST['urlim'];
-    $categorie=$_POST['categorie'];
+    $ctegorie=$_POST['ctegorie'];
     $adr=$_POST['adrlieu'];
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);

@@ -121,12 +121,11 @@
                 <span class="input-group-addon custom__addon" style="background-color: Crimson;">
                   <span class="glyphicon glyphicon-cog"></span>  Catégorie
                 </span>
-                <select name='categorie' class="form-control custom__select">
+                <select name='ctegorie' class="form-control custom__select">
                   <option value="aucune">Aucune</option>
                   <?php
                   foreach ($categories as $categorie){
-                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
-                  }
+                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                   ?>
               </select>
             </div>
