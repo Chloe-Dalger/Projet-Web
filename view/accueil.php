@@ -40,7 +40,7 @@
         <li><a href="accueil">Accueil</a></li>
 
         <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
-        <li><a href="connexionEtudiant.controller.php">Connexion</a></li>
+
 
 
       </ul>
@@ -63,7 +63,7 @@
 
 
 
-          <form method="post" action="rechercherlieu_controller.php">
+          <form method="post" action="affichagelieu_controller.php">
             <select name="region" id="region">
               <option value="choisir1">Choisissez la Région</option>
 
@@ -75,7 +75,7 @@
 
             </select>
 
-            <select name="region" id="region">
+            <select name="depart" id="depart">
               <option value="choisir2">Choisissez le Département</option>
               <?php
               foreach ($departs as $depart){
@@ -87,7 +87,7 @@
 
             <div class="form-group">
               <div class="input-group input-group-md icon-addon addon-md">
-                <input type="text" placeholder="Rechercher une ville..." name="" id="schbox" class="form-control">
+                <input type="text" placeholder="Rechercher une ville..." name="ville" id="schbox" class="form-control">
                 <i class="icon icon-search"></i>
                 <span class="input-group-btn">
                   <button type="submit" class="btn btn-inverse">Rechercher</button>

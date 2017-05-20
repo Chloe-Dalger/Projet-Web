@@ -10,7 +10,7 @@
       require_once('../model/possede_mc.php');
 
 $categories=getAllCategorie();
-creerMotCle('Paysage');
+
 
 if(!empty($_POST))
   {
@@ -23,8 +23,8 @@ if(!empty($_POST))
     $url=$_POST['urlim'];
     $ctegorie=$_POST['ctegorie'];
     $adr=$_POST['adrlieu'];
-    $motscles=$_POST['motscles'];
-    $motcle = explode(";", $motscles);
+    //$motscles=$_POST['motscles'];
+    //$motcle = explode(";", $motscles);
     $bool= True;
     $dep=substr($cpville, 0, 2);
 
@@ -49,21 +49,21 @@ if(!empty($_POST))
     }
     else{
       // L'identification a réussi
-    $message = 'Je suis ici';
+    //$message = 'Je suis ici';
 
       // if(!is_null(existeLieu($nomlieu, $ville))){
       //   // L'identification a réussi
-      $message1 = 'Je suis bien rentré';
+      //$message1 = 'Je suis bien rentré';
 
         if(is_null(existeVille($cpville))){
           // L'identification a réussi
-        $message3 = 'La ville n existais pas';
+        //$message3 = 'La ville n existais pas';
 
           if(is_null(existeDepartement($dep))){
-            $message = 'Le code postal n est pas valide';
+            //$message = 'Le code postal n est pas valide';
             $bool = false;
           }else {
-            $message4 = 'J ai bien rajouté la ville ';
+            //$message4 = 'J ai bien rajouté la ville ';
             $iddep=getIdNDepartement($dep);
             creerVille($ville,$cpville,$iddep);
             // L'identification a réussi
@@ -80,17 +80,15 @@ if(!empty($_POST))
             $idville=getIdVille($ville);
             $idcat=getIdCategorie($ctegorie);
             creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
-            $idlieu=getIdLieu($nom);
-            for($i=0; $i<count($motcle); $i++){
-              if(is_null($motcle[$i])){
-                creerMotCle($motcle[$i]);
-                $idmotcle=getIdMotCle($motcle[$i]);
-                creerMotCleLieu($idlieu, $idmotcle);
-              }
-            }
+             $idlieu=getIdLieu($nom);
+            // for($i=0; $i<count($motcle); $i++){
+            //   if(is_null($motcle[$i])){
+            //     creerMotCle($motcle[$i]);
+            //     $idmotcle=getIdMotCle($motcle[$i]);
+            //     creerMotCleLieu($idlieu, $idmotcle);
+            //   }
+            //}
 
-            // L'identification a réussi
-          $message6 = 'Jai creer les mots cles';
             // L'identification a réussi
           $message = 'Votre lieu a bien été ajouté !';
       }
