@@ -25,13 +25,46 @@
             }
             else{
               if(!(strcmp($region, "choisir1")==0)){
+                if(!(strcmp($depart, "choisir2")==0)){
 
-                    $lieu=getAllRegionLieu($region);
+
+                  if(!empty($ville)){
+                      $idville=getIdVille($ville);
+                      if(is_null($idville)){
+                          $message="Il n y a rien à afficher pour votre selection";
+                      }
+                      else{
+                        $lieu=getAllVilleDepartementRegionLieu($idville, $depart, $region);
+                      }
                   }
+                  else{
+                    $lieu=getAllDepartementRegionLieu($depart, $region);
+                  }
+                }
+                else{
+                    if(!empty($ville)){
+                      $idville=getIdVille($ville);
+                      if(is_null($idville)){
+                          $message="Il n y a rien à afficher pour votre selection";
+                      }
+                      else{
+                        $lieu=getAllVilleRegionLieu($idville, $region);
+                      }
+                    }
+                    else{
+                      $lieu=getAllRegionLieu($region);
+                    }
 
                 }
 
-              }
+
+
+                }
+                }
+        }
+
+
+
 
 
 

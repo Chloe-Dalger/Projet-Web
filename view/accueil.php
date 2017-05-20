@@ -65,7 +65,7 @@
 
           <form method="post" action="affichagelieu_controller.php">
             <select name="region" id="region">
-              <option value="choisir1">Choisissez la Région</option>
+              <option value="choisir1" selected="selected">Choisissez la Région</option>
 
               <?php
               foreach ($regions as $region){
@@ -76,7 +76,7 @@
             </select>
 
             <select name="depart" id="depart">
-              <option value="choisir2">Choisissez le Département</option>
+              <option value="choisir2" selected="selected">Choisissez le Département</option>
               <?php
               foreach ($departs as $depart){
                 echo '<option value="'.$depart['iddep'].'">'.$depart['nomdep'].' (<span class="badge badge-inverse">'.$depart['numerodep'].'</span>)</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
