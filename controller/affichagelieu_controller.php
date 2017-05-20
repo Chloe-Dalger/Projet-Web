@@ -25,32 +25,7 @@
             }
             else{
               if(!(strcmp($region, "choisir1")==0)){
-                if(!(strcmp($depart, "choisir2")==0)){
-                  if(!empty($ville)){
-                      $idville=getIdVille($ville);
-                      if(is_null($idville)){
 
-                          $message="Il n y a rien à afficher pour votre selection";
-                      }
-                      else{
-
-                      }
-                  }
-                  else{
-                    $lieu=getAllDepartementRegionLieu($departement, $region);
-                  }
-
-                }
-                else{
-                  if(!empty($ville)){
-                    $idville=getIdVille($ville);
-                    if(is_null($idville)){
-                        $message="Il n y a rien à afficher pour votre selection";
-                    }
-                    else{
-                    }
-                  }
-                  else{
                     $lieu=getAllRegionLieu($region);
                   }
 
@@ -58,9 +33,8 @@
 
               }
 
-              }
-            }
 
+            
             if(is_null($lieu)){
               $message="Il n y a rien à afficher pour votre selection";
             }
