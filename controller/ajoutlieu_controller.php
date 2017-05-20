@@ -26,6 +26,7 @@ if(!empty($_POST))
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
     $bool= True;
+    $dep=substr($cpville, 0, 1);
 
 
 
@@ -57,15 +58,16 @@ if(!empty($_POST))
         if(is_null(existeVille($cpville))){
           // L'identification a réussi
         $message3 = 'La ville n existais pas';
-          $dep=substr($cpville, 0, 1);
+
           if(is_null(existeDepartement($dep))){
             $message = 'Le code postal n est pas valide';
             $bool = false;
           }else {
+            $message4 = 'J ai bien rajouté la ville ';
             $iddep=getIdNDepartement($dep);
             creerVille($ville,$cpville,$iddep);
             // L'identification a réussi
-          $message4 = 'J ai bien rajouté la ville ';
+
           }
         }
       if($bool){

@@ -176,6 +176,7 @@
               echo $ctegorie;
               echo $adr;
               echo $motscles;
+              echo $dep;
             }
                ?>
 
