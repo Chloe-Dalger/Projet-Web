@@ -17,34 +17,7 @@
 </head>
 
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-              <div class="adjust-nav">
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                          <span class="icon-bar"></span>
 
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-
-                          <span class="icon-bar"></span>
-                      </button>
-                      <li><a class="navbar-brand" href="Contact">Contact</a></li>
-
-                  </div>
-
-                      <ul class="nav navbar-nav navbar-left">
-                        <li><a href="accueil">Accueil</a></li>
-
-                            <li><a href="ajoutlieu">Ajouter un Lieu</a></li>
-                            <li><a href="connexionEtudiant.controller.php">Connexion</a></li>
-
-
-                      </ul>
-
-
-
-              </div>
-  </div>
 
 
     <?php if(!empty($message)) : ?>
@@ -150,27 +123,29 @@
 
                 <input type="submit" value="Submit">
             </div>
+
+
+                <?php
+                if(!empty($_POST))
+                  {
+                    echo"coucou";
+                echo $pseudo;
+                echo $nomlieu;
+                echo $description;
+                echo $ville;
+                echo $cpville;
+                echo $url;
+                echo $categorie;
+                echo $adr;
+                echo $motscles;
+              }
+                 ?>
       </div>
     </div>
 
 
     </form>
 
-    <?php
-    if(!empty($_POST))
-      {
-        echo"coucou";
-    echo $pseudo;
-    echo $nomlieu;
-    echo $description;
-    echo $ville;
-    echo $cpville;
-    echo $url;
-    echo $categorie;
-    echo $adr;
-    echo $motscles;
-  }
-     ?>
 
 </body>
 
