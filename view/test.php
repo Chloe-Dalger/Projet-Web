@@ -123,10 +123,7 @@
                 </span>
                 <select name='ctegorie' class="form-control custom__select">
                   <option value="aucune">Aucune</option>
-                  <?php
-                  foreach ($categories as $categorie){
-                    echo '<option value="'.$categorie['idcat'].'">'.$categorie['nomcat'].'</option>';
-                  ?>
+
               </select>
             </div>
 
