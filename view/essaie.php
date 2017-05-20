@@ -49,6 +49,7 @@ echo $region;
 echo $depart;
 echo $ville;
 echo $message;
+echo $lieu;
  ?>
 </body>
 </html>

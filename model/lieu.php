@@ -316,8 +316,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
   global $db;
   try{
-  		$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu, ville, departement, region WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?');
-  		$req->execute(array());
+  		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu, ville, departement, region WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?');
+  		$req->execute(array($idville, $iddepartement, $idregion));
   		$Listelieu=$req->fetchAll();
   	} catch(PDOException $e){
   			echo($e->getMessage());
@@ -332,8 +332,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 	  global $db;
 	  try{
-	  		$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu WHERE lieu.idville=(SELECT idville from ville, departement where ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?');
-	  		$req->execute(array());
+	  		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu WHERE lieu.idville IN (SELECT idville from ville, departement where ville.iddep=? AND ville.iddep=departement.iddep AND departement.idregion=?');
+	  		$req->execute(array($iddepartement, $idregion));
 	  		$Listelieu=$req->fetchAll();
 	  	} catch(PDOException $e){
 	  			echo($e->getMessage());
@@ -349,8 +349,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 				global $db;
 				try{
-						$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu, ville WHERE lieu.idville=? ');
-						$req->execute(array());
+						$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu, ville WHERE lieu.idville=? ');
+						$req->execute(array($idville));
 						$Listelieu=$req->fetchAll();
 					} catch(PDOException $e){
 							echo($e->getMessage());
@@ -366,8 +366,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 					global $db;
 					try{
-							$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu WHERE lieu.idville=(SELECT ville.idville FROM ville WHERE ville.iddep= ?) ');
-							$req->execute(array());
+							$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu WHERE lieu.idville IN (SELECT ville.idville FROM ville WHERE ville.iddep= ?)');
+							$req->execute(array($iddepartement));
 							$Listelieu=$req->fetchAll();
 						} catch(PDOException $e){
 								echo($e->getMessage());
@@ -398,8 +398,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 							  global $db;
 							  try{
-							  		$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu, ville WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep=?');
-							  		$req->execute(array());
+							  		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu, ville WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep=?');
+							  		$req->execute(array($idville, $iddepartement));
 							  		$Listelieu=$req->fetchAll();
 							  	} catch(PDOException $e){
 							  			echo($e->getMessage());
@@ -414,8 +414,8 @@ function getAllVilleDepartementRegionLieu($idville, $iddepartement, $idregion){
 
 									global $db;
 									try{
-											$req=$db->prepare('SELECT (nomlieu, urllieu, deslieu, adrlieu) FROM lieu, ville, departement, region WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep=(SELECT departement.iddep FROM departement WHERE departement.idregion=?)');
-											$req->execute(array());
+											$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM lieu, ville, departement, region WHERE lieu.idville=? AND lieu.idville=ville.idville AND ville.iddep IN (SELECT departement.iddep FROM departement WHERE departement.idregion=?)');
+											$req->execute(array($idville, $idregion));
 											$Listelieu=$req->fetchAll();
 										} catch(PDOException $e){
 												echo($e->getMessage());
