@@ -26,7 +26,7 @@ if(!empty($_POST))
     $motscles=$_POST['motscles'];
     $motcle = explode(";", $motscles);
     $bool= True;
-    $dep=substr($cpville, 0, 1);
+    $dep=substr($cpville, 0, 2);
 
 
 
