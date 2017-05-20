@@ -145,7 +145,21 @@
               <?php if(!empty($message)) : ?>
               <p><?php echo $message; ?></p>
               <?php endif; ?>
-
+              <?php
+              if(!empty($_POST))
+                {
+                  echo"coucou";
+              echo $pseudo;
+              echo $nomlieu;
+              echo $description;
+              echo $ville;
+              echo $cpville;
+              echo $url;
+              echo $ctegorie;
+              echo $adr;
+              echo $motscles;
+            }
+               ?>
 
 
 
