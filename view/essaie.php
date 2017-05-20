@@ -48,8 +48,7 @@
 echo $region;
 echo $depart;
 echo $ville;
-echo $iddep;
-echo $idregion;
+
  ?>
 </body>
 </html>

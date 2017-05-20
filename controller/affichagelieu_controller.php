@@ -24,9 +24,8 @@
               $lieu=getAllLieu();
             }
             else{
-              $iddep=getIdDepartement($depart);
-              $idregion=getIdRegion($region);
               if(!empty($region) ){
+                $lieu=getAllRegionLieu($region);
 
               }
             }
