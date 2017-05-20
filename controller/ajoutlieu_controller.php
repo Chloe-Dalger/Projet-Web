@@ -47,11 +47,16 @@ if(!empty($_POST))
       $message = 'Veuillez indiquer la ville où se trouve le lieu';
     }
     else{
+      // L'identification a réussi
+    $message = 'Je suis ici';
 
       if(!is_null(existeLieu($nomlieu, $ville))){
-
+        // L'identification a réussi
+      $message1 = 'Je suis bien rentré';
 
         if(is_null(existeVille($cpville))){
+          // L'identification a réussi
+        $message3 = 'La ville n existais pas';
           $dep=substr($cpville, 0, 1);
           if(is_null(existeDepartement($dep))){
             $message = 'Le code postal n est pas valide';
@@ -59,10 +64,14 @@ if(!empty($_POST))
           }else {
             $iddep=getIdNDepartement($dep);
             creerVille($ville,$cpville,$iddep);
+            // L'identification a réussi
+          $message4 = 'J ai bien rajouté la ville ';
           }
         }
       if($bool){
             if(is_null(existePseudo($pseudo))){
+              // L'identification a réussi
+            $message5 = 'Le pseudo n existait pas';
               creerPseudo($pseudo);
             }
             $idpseudo=getIdPseudo($pseudo);
@@ -77,6 +86,8 @@ if(!empty($_POST))
                 creerMotCleLieu($idlieu, $idmotcle);
               }
             }
+            // L'identification a réussi
+          $message6 = 'Jai creer les mots cles';
             // L'identification a réussi
           $message = 'Votre lieu a bien été ajouté !';
       }

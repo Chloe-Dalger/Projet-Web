@@ -145,6 +145,24 @@
               <?php if(!empty($message)) : ?>
               <p><?php echo $message; ?></p>
               <?php endif; ?>
+              <?php if(!empty($message1)) : ?>
+              <p><?php echo $message1; ?></p>
+              <?php endif; ?>
+              <?php if(!empty($message2)) : ?>
+              <p><?php echo $message2; ?></p>
+              <?php endif; ?>
+              <?php if(!empty($message3)) : ?>
+              <p><?php echo $message3; ?></p>
+              <?php endif; ?>
+              <?php if(!empty($message4)) : ?>
+              <p><?php echo $message4; ?></p>
+              <?php endif; ?>
+              <?php if(!empty($message5)) : ?>
+              <p><?php echo $message5; ?></p>
+              <?php endif; ?>
+              <?php if(!empty($message6)) : ?>
+              <p><?php echo $message6; ?></p>
+              <?php endif; ?>
               <?php
               if(!empty($_POST))
                 {
