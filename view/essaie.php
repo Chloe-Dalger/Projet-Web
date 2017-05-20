@@ -26,9 +26,7 @@ header{
 
 
     <h1><b>Résultats de votre recherche:</b></h1>
-<?php if(!empty($message)) : ?>
-    <h1><b><?php echo $message; ?></b></h1>
-  <?php endif; ?>
+
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filtres:</span>
 
@@ -51,7 +49,28 @@ header{
     </div>
     </div>
 
+    <?php if(!empty($message)) : ?>
+        <h1><b><?php echo $message; ?></b></h1>
+      <?php endif; ?>
 
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+
+    <div class="w3-third w3-container w3-margin-bottom">
+      <?php
+      foreach ($lieux as $lieu){
+
+
+      echo '<img src="'.$lieu['urllieu'].'" style="width:100%" class="w3-hover-opacity">';
+      ?> <div class="w3-container w3-white">
+        <p><b><?php echo $lieu['nomlieu']; ?></b></p>
+        <p><?php echo $lieu['deslieu']; ?></p>
+      </div>
+    </div>
+  <?php }
+    ?>
+
+  </div>
 
 
 </body>
