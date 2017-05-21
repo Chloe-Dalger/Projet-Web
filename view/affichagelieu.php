@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<link href="../view/css/accueil.css" rel="stylesheet">
+<link rel="stylesheet" href="../view/css/navbar.css">
+
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -13,8 +23,42 @@ background-repeat: repeat;}
 header{
   margin-bottom: 30px;
 }
+
+
 </style>
+</head>
+
 <body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="adjust-nav">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+          </button>
+          <li><a class="navbar-brand" href="Contact">Contact</a></li>
+
+        </div>
+
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="accueil">Accueil</a></li>
+
+          <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
+
+
+
+        </ul>
+
+
+
+      </div>
+    </div>
+
 
   <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>

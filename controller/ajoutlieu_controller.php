@@ -100,7 +100,7 @@ if(!empty($_POST))
 
 
 
-  include('../view/test.php');
+  include('../view/ajoutlieu.php');
 
 
 
