@@ -16,8 +16,9 @@
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
-background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
+}
+body{background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
 background-repeat: repeat;}
 header{
   margin-bottom: 30px;
