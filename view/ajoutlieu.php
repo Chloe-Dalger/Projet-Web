@@ -80,7 +80,7 @@
             <br />
 
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Gold;">
+                <span class="input-group-addon custom__addon" style="background-color: HotPink;">
                   <span class="glyphicon glyphicon-cog"></span>  Nom lieu
                 </span>
                 <input type="text" maxlength="40" placeholder="Entrez la ville..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
@@ -103,14 +103,14 @@
               </div>
 <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Gold;">
+                <span class="input-group-addon custom__addon" style="background-color: DarkCyan;">
                   <span class="glyphicon glyphicon-cog"></span>  Code Postal
                 </span>
                 <input type="text" placeholder="Entrez le code postal ici..." maxlength="40" name="cpville" id="cpville" value="<?php if(!empty($_POST['cpville'])) { echo htmlspecialchars($_POST['cpville'], ENT_QUOTES); } ?>">
               </div>
 <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Gold;">
+                <span class="input-group-addon custom__addon" style="background-color: Sienna;">
                   <span class="glyphicon glyphicon-cog"></span>  Adresse Lieu
                 </span>
                 <input type="text" placeholder="Entrez la ville..." maxlength="40" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
