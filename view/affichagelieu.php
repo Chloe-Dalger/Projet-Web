@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../view/css/navbar.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -18,6 +19,34 @@ header{
 
 </style>
 </head>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="adjust-nav">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+      </button>
+      <li><a class="navbar-brand" href="Contact">Contact</a></li>
+
+    </div>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="../controller/accueil_controller.php">Accueil</a></li>
+
+      <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
+
+
+    </ul>
+
+
+
+  </div>
+</div>
 
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
