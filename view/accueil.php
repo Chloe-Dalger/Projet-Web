@@ -63,7 +63,7 @@
 
             <div class="form-group">
               <div class="input-group input-group-md icon-addon addon-md">
-                <input type="text" placeholder="Rechercher une ville..." name="ville" id="schbox" class="form-control" value="<?php if(!empty($_POST['description'])) { echo htmlspecialchars($_POST['description'], ENT_QUOTES); } ?>>
+                <input type="text" placeholder="Rechercher une ville..." name="ville" id="schbox" class="form-control" value="<?php if(!empty($_POST['ville'])) { echo htmlspecialchars($_POST['ville'], ENT_QUOTES); } ?>">
                 <i class="icon icon-search"></i>
                 <span class="input-group-btn">
                   <button type="submit" class="btn btn-inverse">Rechercher</button>
