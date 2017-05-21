@@ -12,7 +12,6 @@
 <script type="text/javascript" src="../bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-<link href="../view/css/accueil.css" rel="stylesheet">
 <link rel="stylesheet" href="../view/css/navbar.css">
 
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
