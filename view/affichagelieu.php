@@ -54,22 +54,24 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 </style>
+
+<ul>
+  <li><a class="active" href="../controller/accueil_controller.php">Accueil</a></li>
+  <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
+
+</ul>
+
 </head>
 
 
 
 
 
-<body class="w3-light-grey w3-content" >
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-  <ul>
-    <li><a href="../controller/accueil_controller.php">Accueil</a></li>
-    <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
-
-  </ul>
 
   <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer; max-width:1600px" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:50px">
