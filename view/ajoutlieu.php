@@ -71,7 +71,7 @@
               <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
             <?php endif; ?>
 
-              <div class="input-group" style="margin-top: 150px; ">
+              <div class="input-group" style="margin-top: 100px; ">
                 <span class="input-group-addon custom__addon" style="background-color: DodgerBlue;">
                   <span class="glyphicon glyphicon-cog"></span>  Pseudo
                 </span>
