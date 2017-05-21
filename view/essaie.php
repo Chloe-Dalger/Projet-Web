@@ -27,10 +27,10 @@ header{
 
 
 
-    <h1><b>Résultats de votre recherche:</b></h1>
+    <h1 class="w3-white"><b>Résultats de votre recherche:</b></h1>
 
     <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filtres:</span>
+      <span class="w3-margin-right w3-white">Filtres:</span>
 
       <?php if(!empty($ville)) : ?>
           <button class="w3-button w3-black"><?php echo $ville; ?></button>
