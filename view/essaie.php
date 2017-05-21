@@ -62,7 +62,7 @@ header{
     <div class="w3-third w3-container w3-margin-bottom">
       <?php
 
-        echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: auto;"" class="w3-hover-opacity">';
+        echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
       ?> <div class="w3-container w3-white">
         <p><b><?php echo $lieu['nomlieu']; ?></b></p>
         <p><?php echo $lieu['deslieu']; ?></p>
