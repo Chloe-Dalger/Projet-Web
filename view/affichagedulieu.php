@@ -26,7 +26,7 @@
 		     <div class='cbm_wrap '>
 					<h1><?php echo $nom;?></h1>
 		     <img src='<?php echo $urllieu;?>'>
-		     <p><?php echo $deslieu;?></p>
+		     <p style="font-size:12px"><?php echo $deslieu;?></p>
 		     <br />
 				 <p><?php echo $adrlieu.', '.$cpville.' '.$nomville;?></p><br/>
 		     <a><u><?php echo $pseudo; ?></u></a>

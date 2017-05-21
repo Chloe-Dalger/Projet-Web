@@ -80,10 +80,10 @@
             <br />
 
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: HotPink;">
+                <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
                   <span class="glyphicon glyphicon-cog"></span>  Nom lieu
                 </span>
-                <input type="text" maxlength="40" placeholder="Entrez la ville..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
+                <input type="text" maxlength="40" placeholder="Entrez lle nom du lieu ici..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
               </div>
             <br />
               <div class="input-group">
@@ -110,14 +110,14 @@
               </div>
 <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Sienna;">
+                <span class="input-group-addon custom__addon" style="background-color: Wheat;">
                   <span class="glyphicon glyphicon-cog"></span>  Adresse Lieu
                 </span>
-                <input type="text" placeholder="Entrez la ville..." maxlength="40" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
+                <input type="text" placeholder="Entrez l''adresse de la ville ici..." maxlength="40" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
               </div>
               <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
+                <span class="input-group-addon custom__addon" style="background-color: HotPink;">
                   <span class="glyphicon glyphicon-cog"></span>  URL Image
                 </span>
                 <input type="url" placeholder="Entrez l'url de l'image ici..." name="urlim" id="urlim" value="<?php if(!empty($_POST['urlim'])) { echo htmlspecialchars($_POST['urlim'], ENT_QUOTES); } ?>">
