@@ -67,7 +67,7 @@ li a:hover:not(.active) {
 
 
 
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<body class="w3-light-grey w3-content">
 
 
   <!-- Overlay effect when opening sidebar on small screens -->
