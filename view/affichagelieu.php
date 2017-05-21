@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="../view/css/test.css">
 <link rel="stylesheet" href="../view/css/navbar.css">
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
@@ -69,7 +69,7 @@ header{
     <h1><b> Résultats de votre recherche:</b></h1>
 
     <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filtres:</span>
+      <span class="w3-margin-right ">Filtres:</span>
 
       <?php if(!empty($ville)) : ?>
           <button class="w3-button w3-black"><?php echo $ville; ?></button>

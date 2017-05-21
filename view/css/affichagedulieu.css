@@ -1,3 +1,8 @@
+
+body{
+	background:url(http://subtlepatterns.com/patterns/wood_pattern.png);
+	background-repeat: repeat;
+}
 .wrapper_body{
 	position: absolute;
     padding: 20px 0;
@@ -7,8 +12,6 @@
     font-family: 'Open Sans', sans-serif;
     color: #4A4A4A ;
     text-align: center;
-    background:url(http://subtlepatterns.com/patterns/wood_pattern.png);
-		background-repeat: repeat;
   }
 .cbm_wrap{
 
