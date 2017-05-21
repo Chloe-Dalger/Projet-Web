@@ -8,10 +8,11 @@
     color: #4A4A4A ;
     text-align: center;
     background:url(http://subtlepatterns.com/patterns/wood_pattern.png);
+		background-repeat: repeat;
   }
 .cbm_wrap{
 
-    margin: 100px auto;
+    margin: 30px auto;
     display: block;
     width: 800px;
     min-height: 310px;
@@ -33,6 +34,7 @@
 .cbm_wrap p{
     margin-top: 15px !important;
     text-align: justify !important;
+		font-size: 10px;
 }
 .cbm_wrap h1{
     font-size: 20px;
