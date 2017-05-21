@@ -58,7 +58,7 @@ header{
     <?php
     foreach ($lieux as $lieu){ ?>
     <div class="w3-third w3-container w3-margin-bottom">
-      <?php echo '<a href="../controller/ajoutdulieu_controller.php?nom='.$lieu['nomlieu'].'">';?>
+      <?php echo '<a href="../controller/affichagedulieu_controller.php?nom='.$lieu['nomlieu'].'">';?>
       <?php
 
         echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
