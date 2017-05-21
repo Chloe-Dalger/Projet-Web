@@ -102,5 +102,5 @@
 
 
 
-            include('../view/essaie.php');
+            include('../view/affichagelieu.php');
 ?>
