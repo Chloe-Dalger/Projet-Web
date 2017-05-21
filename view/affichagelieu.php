@@ -55,11 +55,7 @@ li a:hover:not(.active) {
 }
 </style>
 
-<ul>
-  <li><a class="active" href="../controller/accueil_controller.php">Accueil</a></li>
-  <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
 
-</ul>
 
 </head>
 
@@ -68,6 +64,12 @@ li a:hover:not(.active) {
 
 
 <body class="w3-light-grey w3-content" style="max-width:2000px">
+
+  <ul>
+    <li><a href="../controller/accueil_controller.php">Accueil</a></li>
+    <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
+
+  </ul>
 
 
   <!-- Overlay effect when opening sidebar on small screens -->

@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/css/accueil.css" rel="stylesheet">
-  <link rel="stylesheet" href="../view/css/navbar.css">
 
   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,34 +20,11 @@
 <body>
 
 
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="adjust-nav">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-          <span class="icon-bar"></span>
+    <ul>
+      <li><a class="active" href="../controller/accueil_controller.php">Accueil</a></li>
+      <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
 
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-
-          <span class="icon-bar"></span>
-        </button>
-        <li><a class="navbar-brand" href="Contact">Contact</a></li>
-
-      </div>
-
-      <ul class="nav navbar-nav navbar-left">
-        <li><a href="accueil">Accueil</a></li>
-
-        <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
-
-
-
-      </ul>
-
-
-
-    </div>
-  </div>
+    </ul>
 
 
 
