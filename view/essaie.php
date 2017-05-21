@@ -14,7 +14,7 @@ header{
   margin-bottom: 30px;
 }
 </style>
-<body class="w3-light-grey w3-content" style="max-width:600px">
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
   <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -62,7 +62,7 @@ header{
     <div class="w3-third w3-container w3-margin-bottom">
       <?php
 
-        echo '<img src="'.$lieu['urllieu'].'" style="width:100%" class="w3-hover-opacity">';
+        echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: auto;"" class="w3-hover-opacity">';
       ?> <div class="w3-container w3-white">
         <p><b><?php echo $lieu['nomlieu']; ?></b></p>
         <p><?php echo $lieu['deslieu']; ?></p>
