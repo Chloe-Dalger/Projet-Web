@@ -27,7 +27,7 @@ header{
 
 
 
-    <h1 class="w3-white"><b>Résultats de votre recherche:</b></h1>
+    <h1><b><span class="w3-black"> Résultats de votre recherche:</span></b></h1>
 
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right w3-white">Filtres:</span>
@@ -42,20 +42,18 @@ header{
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
 
-
+    </div>
+    
   </header>
-      <!-- Si jamais j'utilise des mots clés
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button> -->
-    </div>
-    </div>
+
+
+</div>
 
     <?php if(!empty($message)) : ?>
         <h1><b><?php echo $message; ?></b></h1>
       <?php endif; ?>
 
-  <!-- First Photo Grid-->
+
   <div class="w3-row-padding">
     <?php
     foreach ($lieux as $lieu){ ?>
