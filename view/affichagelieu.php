@@ -21,39 +21,52 @@ header{
   margin-bottom: 30px;
 }
 
+body {margin:0;}
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
 </style>
 </head>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="adjust-nav">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-        <span class="icon-bar"></span>
-
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-
-        <span class="icon-bar"></span>
-      </button>
-      <li><a class="navbar-brand" href="Contact">Contact</a></li>
-
-    </div>
-
-    <ul class="nav navbar-nav navbar-left">
-      <li><a href="../controller/accueil_controller.php">Accueil</a></li>
-
-      <li><a href="../controller/ajoutlieu_controller.php">Ajouter un Lieu</a></li>
-
-
-    </ul>
 
 
 
-  </div>
-</div>
 
 <body class="w3-light-grey w3-content" style="max-width:1600px">
+
+  <ul>
+    <li><a class="active" href="../controller/accueil_controller.php">Accueil</a></li>
+    <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
+
+  </ul>
 
   <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
