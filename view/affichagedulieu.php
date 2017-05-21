@@ -10,7 +10,7 @@
 
 		​<div class='wrapper_body'>
 		     <div class='cbm_wrap '>
-					<h1><?php echo $nomlieu;?></h1>
+					<h1><?php echo $nom;?></h1>
 		     <img src='<?php echo $urllieu;?>'>
 		     <p><?php echo $deslieu;?></p>
 		     <br />
