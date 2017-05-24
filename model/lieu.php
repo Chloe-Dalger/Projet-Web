@@ -231,7 +231,7 @@
   	try{
   		$req=$db->prepare('UPDATE lieu SET nomlieu= ? WHERE idlieu=?');
   		$req->execute(array(
-  			'newnom' => $newnom,
+  			'nomlieu' => $newnom,
   			'idlieu' => $id
   		));
   	} catch(PDOException $e){
@@ -248,7 +248,7 @@
     try{
       $req=$db->prepare('UPDATE lieu SET urllieu= ? WHERE idlieu=?');
       $req->execute(array(
-        'newurl' => $newurl,
+        'urllieu' => $newurl,
         'idlieu' => $id
       ));
     } catch(PDOException $e){
@@ -265,7 +265,7 @@
     try{
       $req=$db->prepare('UPDATE lieu SET deslieu= ? WHERE idlieu=?');
       $req->execute(array(
-        'newdes' => $newdes,
+        'deslieu' => $newdes,
         'idlieu' => $id
       ));
     } catch(PDOException $e){
@@ -282,7 +282,7 @@
     try{
       $req=$db->prepare('UPDATE lieu SET adrlieu= ? WHERE idlieu=?');
       $req->execute(array(
-        'newadr' => $newadr,
+        'arlieu' => $newadr,
         'idlieu' => $id
       ));
     } catch(PDOException $e){
@@ -299,7 +299,7 @@
     try{
       $req=$db->prepare('UPDATE lieu SET idcat= ? WHERE idlieu=?');
       $req->execute(array(
-        'newidcat' => $newidcat,
+        'idcat' => $newidcat,
         'idlieu' => $id
       ));
     } catch(PDOException $e){
@@ -316,7 +316,7 @@
     try{
       $req=$db->prepare('UPDATE lieu SET idville= ? WHERE idlieu=?');
       $req->execute(array(
-        'newidville' => $newidville,
+        'idville' => $newidville,
         'idlieu' => $id
       ));
     } catch(PDOException $e){
