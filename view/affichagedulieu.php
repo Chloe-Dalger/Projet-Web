@@ -30,6 +30,7 @@
 		     <br />
 				 <p><?php echo $adrlieu.', '.$cpville.' '.$nomville;?></p><br/>
 		     <a><u><?php echo $pseudo; ?></u></a>
+				 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour</a>
 
 		     </div>
 
@@ -39,14 +40,15 @@
 	 				<?php echo '<a href="../controller/updatelieu_controller.php?nom='.$nom.'">';?>
 	 				  <button type="button" class="btn btn-info">Modifier</button></a>
 
+
 	 			</div>
 
 
 	 					 <br />
-						<form action="../controller/deletelieu_controller.php" method="post">
+						<form action="../controller/deletelieu_controller.php?nom=<?php echo $nom;?>" method="post">
 	 					 <div class="input-group">
 							 <input class="btn btn-danger"type="submit" value="Supprimer">
-	 						 <input type="password" placeholder="Entrez le mot de passe..."name="psw" id="urlim">
+	 						 <input type="password" placeholder="Entrez le mot de passe..." name="psw" id="urlim">
 
 	 					 </div>
 					 </form>
