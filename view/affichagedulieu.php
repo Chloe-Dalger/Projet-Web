@@ -47,9 +47,9 @@
 	 					 <br />
 						<form action="../controller/deletelieu_controller.php?nom=<?php echo $nom;?>" method="post">
 	 					 <div class="input-group">
-							 <input class="btn btn-danger"type="submit" value="Supprimer">
-	 						 <input type="password" placeholder="Entrez le mot de passe..." name="psw" id="urlim">
 
+	 						 <input type="password" placeholder="Entrez le mot de passe..." name="psw" id="urlim">
+							 <input class="btn btn-danger"type="submit" value="Supprimer">
 	 					 </div>
 					 </form>
 	 						</div>

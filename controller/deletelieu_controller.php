@@ -16,12 +16,12 @@
   if (strcmp($psw, $password) == 0) {
     supprimerLieu($idlieu);
       //page vue voulue
-      include('../view/updatelieu.php');
+      include('../view/accueil.php');
   }
   else{
 
       //page vue voulue
-      include('../controller/deletelieu_controller.php?nom='.$nom);
+      include('../controller/affichagedulieu_controller.php?nom='.$nom);
   }
 
   ?>
