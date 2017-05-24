@@ -62,7 +62,33 @@
   </ul>
 
 
+  <form action="../controller/updatelieu_controller.php" method="post">
+  <div class="container">
+    <div class="row">
+          <div class="col-md-6" >
+          <h1 style="margin-top:100px">Modifier un lieu</h3>
+          <?php if(!empty($message)) : ?>
+              <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
+            <?php endif; ?>
 
+
+              <div class="input-group">
+                <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
+                  <span class="glyphicon glyphicon-cog"></span>  Nom lieu
+                </span>
+                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nomlieu; ?>">
+              </div>
+
+              <hr/>
+
+
+              <input type="submit" value="Submit">
+          </div>
+    </div>
+  </div>
+
+
+  </form>
 
 
 </body>
