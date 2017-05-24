@@ -79,7 +79,7 @@
                 <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nom; ?>">
               </div>
 
-              <hr/>
+
               <br />
                 <div class="input-group">
                   <span class="input-group-addon custom__addon" style="background-color: LimeGreen;">
@@ -97,8 +97,31 @@
                   <input type="text" maxlength="40" name="ville" id="ville" value="<?php echo $nomville; ?>">
                 </div>
   <br />
-              
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: DarkCyan;">
+                    <span class="glyphicon glyphicon-cog"></span>  Code Postal
+                  </span>
+                  <input type="text" maxlength="40" name="cpville" id="cpville" value="<?php echo $cpville; ?>">
+                </div>
+  <br />
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: Wheat;">
+                    <span class="glyphicon glyphicon-cog"></span>  Adresse Lieu
+                  </span>
+                  <input type="text" maxlength="40" name="adrlieu" id="adrlieu" value="<?php echo $adrlieu; ?>">
+                </div>
+                <br />
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: HotPink;">
+                    <span class="glyphicon glyphicon-cog"></span>  URL Image
+                  </span>
+                  <input type="url" name="urlim" id="urlim" value="<?php echo $urlim; ?>">
+                </div>
+  <br />
 
+
+
+              <hr/>
 
               <input type="submit" value="Submit">
           </div>
