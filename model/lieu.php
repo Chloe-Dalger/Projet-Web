@@ -232,7 +232,7 @@
   		$req=$db->prepare('UPDATE lieu SET :newnom WHERE idlieu=:id');
   		$req->execute(array(
   			'newnom' => $newnom,
-  			'idlieu' => $id
+  			'id' => $id
   		));
   	} catch(PDOException $e){
   		echo($e->getMessage());
@@ -246,10 +246,10 @@
     //résultat : modifie l'url de l'image du lieu par une nouvelle url
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET urllieu= ? WHERE idlieu=?');
+      $req=$db->prepare('UPDATE lieu SET :newurl WHERE idlieu=:id');
       $req->execute(array(
-        'urllieu' => $newurl,
-        'idlieu' => $id
+        'newurl' => $newurl,
+        'id' => $id
       ));
     } catch(PDOException $e){
       echo($e->getMessage());
@@ -263,10 +263,10 @@
     //résultat : modifie la description du lieu actuelle par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET deslieu= ? WHERE idlieu=?');
+      $req=$db->prepare('UPDATE lieu SET :newdes WHERE idlieu=:id');
       $req->execute(array(
-        'deslieu' => $newdes,
-        'idlieu' => $id
+        'newdes' => $newdes,
+        'id' => $id
       ));
     } catch(PDOException $e){
       echo($e->getMessage());
@@ -280,10 +280,10 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET adrlieu= ? WHERE idlieu=?');
+      $req=$db->prepare('UPDATE lieu SET :newadr WHERE idlieu=:id');
       $req->execute(array(
-        'arlieu' => $newadr,
-        'idlieu' => $id
+        'newadr' => $newadr,
+        'id' => $id
       ));
     } catch(PDOException $e){
       echo($e->getMessage());
@@ -297,10 +297,10 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET idcat= ? WHERE idlieu=?');
+      $req=$db->prepare('UPDATE lieu SET :newidcat WHERE idlieu=:id');
       $req->execute(array(
-        'idcat' => $newidcat,
-        'idlieu' => $id
+        'newidcat' => $newidcat,
+        'id' => $id
       ));
     } catch(PDOException $e){
       echo($e->getMessage());
@@ -314,10 +314,10 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET idville= ? WHERE idlieu=?');
+      $req=$db->prepare('UPDATE lieu SET :newidville WHERE idlieu=:id');
       $req->execute(array(
-        'idville' => $newidville,
-        'idlieu' => $id
+        'newidville' => $newidville,
+        'id' => $id
       ));
     } catch(PDOException $e){
       echo($e->getMessage());
