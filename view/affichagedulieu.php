@@ -33,7 +33,7 @@
 
 		     </div>
 				 <br />
-	 			<div style="margin-left: 150 px;">
+	 			<div style="display= block; margin: auto;">
 	 			<div class="input-group" >
 	 				<?php echo '<a href="../controller/updatelieu_controller.php?nom='.$nom.'">';?>
 	 				  <button type="button" class="btn btn-info">Modifier</button></a>
