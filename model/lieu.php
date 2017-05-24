@@ -229,7 +229,7 @@
   	//résultat : modifie le nom actuel du lieu par le nouveau
     global $db;
   	try{
-  		$req=$db->prepare('UPDATE lieu SET :newnom WHERE idlieu=:id');
+  		$req=$db->prepare('UPDATE lieu SET nomlieu=:newnom WHERE idlieu=:id');
   		$req->execute(array(
   			'newnom' => $newnom,
   			'id' => $id
@@ -246,7 +246,7 @@
     //résultat : modifie l'url de l'image du lieu par une nouvelle url
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET :newurl WHERE idlieu=:id');
+      $req=$db->prepare('UPDATE lieu SET urllieu=:newurl WHERE idlieu=:id');
       $req->execute(array(
         'newurl' => $newurl,
         'id' => $id
@@ -263,7 +263,7 @@
     //résultat : modifie la description du lieu actuelle par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET :newdes WHERE idlieu=:id');
+      $req=$db->prepare('UPDATE lieu SET deslieu=:newdes WHERE idlieu=:id');
       $req->execute(array(
         'newdes' => $newdes,
         'id' => $id
@@ -280,7 +280,7 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET :newadr WHERE idlieu=:id');
+      $req=$db->prepare('UPDATE lieu SET adrlieu=:newadr WHERE idlieu=:id');
       $req->execute(array(
         'newadr' => $newadr,
         'id' => $id
@@ -297,7 +297,7 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET :newidcat WHERE idlieu=:id');
+      $req=$db->prepare('UPDATE lieu SET idcat=:newidcat WHERE idlieu=:id');
       $req->execute(array(
         'newidcat' => $newidcat,
         'id' => $id
@@ -314,7 +314,7 @@
     //résultat : modifie l'adresse du lieu par la nouvelle
     global $db;
     try{
-      $req=$db->prepare('UPDATE lieu SET :newidville WHERE idlieu=:id');
+      $req=$db->prepare('UPDATE lieu SET idville= :newidville WHERE idlieu=:id');
       $req->execute(array(
         'newidville' => $newidville,
         'id' => $id
