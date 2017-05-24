@@ -34,15 +34,13 @@
 		     </div>
 
 				 <br />
-				 <div class="input-group">
+				 <div class="input-group" style="text-align: center;">
 					 <?php echo '<a href="../controller/updatelieu_controller.php?nom='.$nom.'">';?>
 						 <button type="button" class="btn btn-info">Modifier</button></a>
 
-				 </div>
-
 
 				 			<br />
-				 			<div class="input-group">
+
 				 				<span class="input-group-addon custom__addon" style="background-color: red;">
 				 					Supprimer
 				 				</span>
