@@ -77,7 +77,7 @@ if(!empty($_POST))
               creerPseudo($pseudo);
             }
             $idpseudo=getIdPseudo($pseudo);
-            $idville=getIdVille($ville);
+            $idville=getIdVille($cpville);
             $idcat=getIdCategorie($ctegorie);
             creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
              $idlieu=getIdLieu($nom);

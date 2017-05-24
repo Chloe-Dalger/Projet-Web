@@ -291,6 +291,39 @@
   }
   }
 
+  function modifCategorieLieu($newidcat, $id){
+    //donnée : id du lieu à modifier et la nouvelle adresse du lieu
+    //pré : idlieu : entier > 0 / newadr : String & length(newadr)>=0
+    //résultat : modifie l'adresse du lieu par la nouvelle
+    global $db;
+    try{
+      $req=$db->prepare('UPDATE lieu SET idcat= ? WHERE idlieu=?');
+      $req->execute(array(
+        'newidcat' => $newidcat,
+        'idlieu' => $id
+      ));
+    } catch(PDOException $e){
+      echo($e->getMessage());
+      die(" Erreur lors de la modification de la catégorie du lieu dans la table " );
+  }
+  }
+
+  function modifVilleLieu($newidville, $id){
+    //donnée : id du lieu à modifier et la nouvelle adresse du lieu
+    //pré : idlieu : entier > 0 / newadr : String & length(newadr)>=0
+    //résultat : modifie l'adresse du lieu par la nouvelle
+    global $db;
+    try{
+      $req=$db->prepare('UPDATE lieu SET idville= ? WHERE idlieu=?');
+      $req->execute(array(
+        'newidville' => $newidville,
+        'idlieu' => $id
+      ));
+    } catch(PDOException $e){
+      echo($e->getMessage());
+      die(" Erreur lors de la modification de la ville du lieu dans la table " );
+  }
+  }
 
   function existeLieu($nom, $ville){
     //données : nom du lieu et une ville

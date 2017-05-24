@@ -56,15 +56,15 @@ function getIdDepartementVille($id){
     return $iddep[0];
 }
 
-function getIdVille($nom){
+function getIdVille($cpnom){
   //donnée: nom de la ville
-	//pré : nom : String & length(nom)>0
+	//pré : nom : String & length(cpnom)=5
 	//résultat : l'id correspondant à la ville donnée en paramètre
 	//post : idville: entier>0 ou NULL
   global $db;
   try{
-    $req=$db->prepare('SELECT idville FROM ville WHERE LOWER(nomville)=LOWER(?)');
-    $req->execute(array($nom));
+    $req=$db->prepare('SELECT idville FROM ville WHERE cpville=?');
+    $req->execute(array($cpnom));
 		$idville=$req->fetch();
   } catch(PDOException $e){
 			echo($e->getMessage());
