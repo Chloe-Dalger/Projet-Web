@@ -28,7 +28,7 @@
 		     <br />
 				 <p><?php echo $adrlieu.', '.$cpville.' '.$nomville;?></p><br/>
 		     <a><u><?php echo $pseudo; ?></u></a>
-				 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour</a>
+				 <a href="javascript:history.go(-1)">Retour</a>
 
 		     </div>
 
