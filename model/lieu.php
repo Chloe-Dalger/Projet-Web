@@ -229,9 +229,9 @@
   	//résultat : modifie le nom actuel du lieu par le nouveau
     global $db;
   	try{
-  		$req=$db->prepare('UPDATE lieu SET nomlieu= :newnom WHERE idlieu=:id');
+  		$req=$db->prepare('UPDATE lieu SET :newnom WHERE idlieu=:id');
   		$req->execute(array(
-  			'nomlieu' => $newnom,
+  			'newnom' => $newnom,
   			'idlieu' => $id
   		));
   	} catch(PDOException $e){
