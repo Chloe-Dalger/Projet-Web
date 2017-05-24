@@ -127,7 +127,7 @@
                     <?php
                     foreach ($categories as $categorie){
 
-                      if($categorie['nomcat']==$nomcat)
+                      if(''.$categorie['nomcat'].''==$nomcat)
                       echo '<option selected value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                     }
                     else {
