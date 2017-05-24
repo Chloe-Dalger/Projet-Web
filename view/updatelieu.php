@@ -76,7 +76,7 @@
                 <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
                   <span class="glyphicon glyphicon-cog"></span>  Nom lieu
                 </span>
-                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nomlieu; ?>">
+                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nom; ?>">
               </div>
 
               <hr/>
