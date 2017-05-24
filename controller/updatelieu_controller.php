@@ -89,14 +89,9 @@
               $idville=getIdVille($cpville);
               $idcat=getIdCategorie($ctegorie);
 
-              //Je met mon lieu à jour
+              //Mettre le lieu à jour
 
-              modifNomLieu($nomlieu, $idlieu);
-              modifUrlLieu($url, $idlieu);
-              modifDescriptionLieu($description, $idlieu);
-              modifVilleLieu($idville, $idlieu);
-              modifCategorieLieu($idcat, $idlieu);
-              modifAdresseLieu($adr, $idlieu);
+              modifLieu($nomlieu, $description, $url, $adr, $idcat, $idville, $idlieu);
 
 
 

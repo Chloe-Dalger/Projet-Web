@@ -222,6 +222,27 @@
             return $Listemotclelieu;
         }
 
+        function modifLieu($newnom, $newdes, $newurl, $newadr, $newidcat, $newidville, $id){
+        //donnée : id du lieu à modifier et un nouveau nom
+        //pré : idlieu : entier > 0 / newnom : String & length(newnom)>0
+        //résultat : modifie le nom actuel du lieu par le nouveau
+        global $db;
+        try{
+          $req=$db->prepare('UPDATE lieu SET nomlieu=:newnom, deslieu=:newdes, urllieu=:newurl, adrlieu=:newadr, idcat=:newidcat, idville=:newidville WHERE idlieu=:id');
+          $req->execute(array(
+            'newnom' => $newnom,
+            'newdes' => $newdes,
+            'newurl' => $newurl,
+            'newadr' => $newadr,
+            'newidcat' => $newidcat,
+            'newidville' => $newidville,
+            'id' => $id
+          ));
+        } catch(PDOException $e){
+          echo($e->getMessage());
+          die(" Erreur lors de la modification des parametres du lieu dans la table " );
+      }
+      }
 
     function modifNomLieu($newnom, $id){
   	//donnée : id du lieu à modifier et un nouveau nom
