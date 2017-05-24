@@ -20,7 +20,7 @@
   }
   else{
       //page vue voulue
-      include('../controller/affichagedulieu_controller.php?nom='.$nom.'');
+      include('../view/accueil.php');
   }
 
   ?>
