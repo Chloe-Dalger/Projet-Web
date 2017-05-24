@@ -125,15 +125,11 @@
                   <select name='ctegorie' class="form-control custom__select">
                     <option value="aucune">Aucune</option>
                     <?php
-                    foreach ($categories as $categorie){
 
-                      if(''.$categorie['nomcat'].''==$nomcat)
-                      echo '<option selected value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
-                    }
-                    else {
+                    foreach ($categories as $categorie){
+                      $nomcat1=$categorie['nomcat'];
                       echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
-                    }
-                    }
+
                     ?>
                 </select>
 
