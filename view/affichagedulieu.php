@@ -32,8 +32,9 @@
 		     <a><u><?php echo $pseudo; ?></u></a>
 
 		     </div>
+
 				 <br />
-	 			<div style="display= block; margin: auto;">
+	 			<div style="display= block">
 	 			<div class="input-group" >
 	 				<?php echo '<a href="../controller/updatelieu_controller.php?nom='.$nom.'">';?>
 	 				  <button type="button" class="btn btn-info">Modifier</button></a>
@@ -42,12 +43,12 @@
 
 
 	 					 <br />
+						<form action="../controller/deletelieu_controller.php" method="post">
 	 					 <div class="input-group">
-	 						 <span class="input-group-addon custom__addon" style="background-color: red;">
-	 							 Supprimer
-	 						 </span>
 	 						 <input type="password" placeholder="Entrez le mot de passe..."name="psw" id="urlim">
+							 <input class="btn btn-danger"type="submit" value="Supprimer">
 	 					 </div>
+					 </form>
 	 						</div>
 
 			</div>
