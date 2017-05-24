@@ -19,9 +19,8 @@
       include('../view/accueil.php');
   }
   else{
-
       //page vue voulue
-      include('../controller/affichagedulieu_controller.php?nom='.$nom);
+      include('../controller/affichagedulieu_controller.php?nom='.$nom.'');
   }
 
   ?>
