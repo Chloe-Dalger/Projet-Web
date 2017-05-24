@@ -115,10 +115,25 @@
                   <span class="input-group-addon custom__addon" style="background-color: HotPink;">
                     <span class="glyphicon glyphicon-cog"></span>  URL Image
                   </span>
-                  <input type="url" name="urlim" id="urlim" value="<?php echo $urlim; ?>">
+                  <input type="url" name="urlim" id="urlim" value="<?php echo $urllieu; ?>">
                 </div>
   <br />
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: Crimson;">
+                    <span class="glyphicon"></span>  Catégorie
+                  </span>
+                  <select name='ctegorie' class="form-control custom__select">
+                    <option value="aucune">Aucune</option>
+                    <?php
+                    foreach ($categories as $categorie){
 
+
+                      echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                    }
+                    ?>
+                </select>
+
+                </div>
 
 
               <hr/>
