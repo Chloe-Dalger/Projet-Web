@@ -229,7 +229,7 @@
   	//résultat : modifie le nom actuel du lieu par le nouveau
     global $db;
   	try{
-  		$req=$db->prepare('UPDATE lieu SET nomlieu= ? WHERE idlieu=?');
+  		$req=$db->prepare('UPDATE lieu SET nomlieu= :newnom WHERE idlieu=:id');
   		$req->execute(array(
   			'nomlieu' => $newnom,
   			'idlieu' => $id
