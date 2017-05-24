@@ -27,6 +27,6 @@
   $nomcat=getNomCategorie($idcat);
 
   //page vue voulue
-  include('../view/updateulieu.php');
+  include('../view/updatelieu.php');
 
 ?>
