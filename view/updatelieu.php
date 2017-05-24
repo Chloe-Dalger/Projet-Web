@@ -90,7 +90,14 @@
 
                 </div>
   <br />
-
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: Gold;">
+                    <span class="glyphicon glyphicon-cog"></span>  Ville
+                  </span>
+                  <input type="text" maxlength="40" name="ville" id="ville" value="<?php echo $nomville; ?>">
+                </div>
+  <br />
+              
 
 
               <input type="submit" value="Submit">
