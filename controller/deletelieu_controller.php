@@ -19,7 +19,7 @@
       include('../view/accueil.php');
   }
   else{
-      //page vue voulue
+      //changer avec la page du lieu
       include('../view/accueil.php');
   }
 
