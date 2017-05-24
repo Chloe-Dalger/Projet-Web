@@ -36,19 +36,21 @@
 				 <br />
 				 <div class="input-group">
 					 <?php echo '<a href="../controller/updatelieu_controller.php?nom='.$nom.'">';?>
-						 <button type="button" class="btn btn-danger">Modifier</button></a>
+						 <button type="button" class="btn btn-info">Modifier</button></a>
 
 				 </div>
+
+
+				 			<br />
+				 			<div class="input-group">
+				 				<span class="input-group-addon custom__addon" style="background-color: red;">
+				 					Supprimer
+				 				</span>
+				 				<input type="password" placeholder="Entrez le mot de passe..."name="psw" id="urlim">
+				 			</div>
+				 			 </div>
 			</div>
 
-			<br />
-			<div class="input-group">
-				<span class="input-group-addon custom__addon" style="background-color: HotPink;">
-					Supprimer
-				</span>
-				<input type="password" placeholder="Entrez le mot de passe..."name="psw" id="urlim" value="mdp">
-			</div>
-			 </div>
 
 
 
