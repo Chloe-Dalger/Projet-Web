@@ -32,7 +32,23 @@
 		     <a><u><?php echo $pseudo; ?></u></a>
 
 		     </div>
+			 </div>
+			 <br />
+			 <div class="input-group">
+				 <span class="input-group-addon custom__addon" style="background-color: HotPink;">
+					 <?php echo '<a href="../controller/affichagedulieu_controller.php?nom='.$nom.'">';?>Modifier</a>
+				 </span>
+			 </div>
 		</div>
+
+		<br />
+		<div class="input-group">
+			<span class="input-group-addon custom__addon" style="background-color: HotPink;">
+				Supprimer
+			</span>
+			<input type="password" placeholder="Entrez le mot de passe..."name="psw" id="urlim" value="mdp">
+		</div>
+
 
 	</body>
 </html>

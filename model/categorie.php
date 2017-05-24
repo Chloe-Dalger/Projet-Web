@@ -123,7 +123,7 @@ function getAllCategorie(){
 
 
   function getAllNomCategorie(){
-  	//résultat : toutes les categories
+  	//résultat : tous les noms des categories
   	//post : Listenomcat : array : une ligne par categorie,(nomcat) pour les colonnes
 
     global $db;

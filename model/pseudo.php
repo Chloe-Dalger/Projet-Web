@@ -93,7 +93,7 @@ function getAllPseudo(){
     global $db;
     try{
     		$req=$db->prepare('SELECT nomlieu, urllieu, deslieu, adrlieu FROM pseudo, lieu WHERE pseudo=? AND pseudo.idpseudo=lieu.idpseudo');
-    		$req->execute(array());
+    		$req->execute(array($psd));
     		$Listelieupseudo=$req->fetchAll();
     	} catch(PDOException $e){
     			echo($e->getMessage());

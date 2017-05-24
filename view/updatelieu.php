@@ -57,7 +57,7 @@
 
   <ul>
     <li><a  href="../controller/accueil_controller.php">Accueil</a></li>
-    <li><a class="active" href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
+    <li><a  href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
 
   </ul>
 
@@ -71,67 +71,66 @@
               <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
             <?php endif; ?>
 
-              <div class="input-group" style="margin-top: 100px; ">
-                <span class="input-group-addon custom__addon" style="background-color: DodgerBlue;">
-                  Pseudo
-                </span>
-                <input type="text" maxlength="15" placeholder="Entrez votre nom/pseudo..." name="pseudo" id="pseudo" value="<?php if(!empty($_POST['pseudo'])) { echo htmlspecialchars($_POST['pseudo'], ENT_QUOTES); } ?>">
-              </div>
-            <br />
 
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
-                  Nom lieu
+                  <span class="glyphicon glyphicon-cog"></span>  Nom lieu
                 </span>
-                <input type="text" maxlength="40" placeholder="Entrez lle nom du lieu ici..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
+                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nomlieu; ?>">
               </div>
             <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: LimeGreen;">
-                  Description
+                  <span class="glyphicon glyphicon-cog"></span>  Description
                 </span>
 
-                  <textarea  maxlength="500" name="description" cols="40" rows="5" placeholder="Entrez la description du lieu ici..." value="<?php if(!empty($_POST['description'])) { echo htmlspecialchars($_POST['description'], ENT_QUOTES); } ?>"></textarea>
+                  <textarea  maxlength="500" name="description" cols="40" rows="5" value="<?php echo $deslieu; ?>?>"><?php echo $deslieu; ?></textarea>
 
               </div>
 <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Gold;">
-                 Ville
+                  <span class="glyphicon glyphicon-cog"></span>  Ville
                 </span>
-                <input type="text" placeholder="Entrez la ville ici..." maxlength="40" name="ville" id="ville" value="<?php if(!empty($_POST['ville'])) { echo htmlspecialchars($_POST['ville'], ENT_QUOTES); } ?>">
+                <input type="text" maxlength="40" name="ville" id="ville" value="<?php echo $nomville; ?>">
               </div>
 <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: DarkCyan;">
-                Code Postal
+                  <span class="glyphicon glyphicon-cog"></span>  Code Postal
                 </span>
-                <input type="text" placeholder="Entrez le code postal ici..." maxlength="40" name="cpville" id="cpville" value="<?php if(!empty($_POST['cpville'])) { echo htmlspecialchars($_POST['cpville'], ENT_QUOTES); } ?>">
+                <input type="text" maxlength="40" name="cpville" id="cpville" value="<?php echo $cpville; ?>">
               </div>
 <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Wheat;">
-                Adresse Lieu
+                  <span class="glyphicon glyphicon-cog"></span>  Adresse Lieu
                 </span>
-                <input type="text" placeholder="Entrez l''adresse de la ville ici..." maxlength="40" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
+                <input type="text" maxlength="40" name="adrlieu" id="adrlieu" value="<?php echo $adrlieu; ?>">
               </div>
               <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: HotPink;">
-                  URL Image
+                  <span class="glyphicon glyphicon-cog"></span>  URL Image
                 </span>
-                <input type="url" placeholder="Entrez l'url de l'image ici..." name="urlim" id="urlim" value="<?php if(!empty($_POST['urlim'])) { echo htmlspecialchars($_POST['urlim'], ENT_QUOTES); } ?>">
+                <input type="url" name="urlim" id="urlim" value="<?php echo $urlim; ?>">
               </div>
 <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Crimson;">
-                Catégorie
+                  <span class="glyphicon"></span>  Catégorie
                 </span>
                 <select name='ctegorie' class="form-control custom__select">
                   <option value="aucune">Aucune</option>
                   <?php
                   foreach ($categories as $categorie){
-                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>'; //Affiche chaque nom (ex: Informatique et Gestion) de chaque département de la base de données
+
+                    if($categorie['nomcat']==$nomcat)
+                    echo '<option selected   value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                  }
+                  else {
+                    echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                  }
                   }
                   ?>
               </select>
