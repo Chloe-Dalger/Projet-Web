@@ -25,6 +25,7 @@
   $nomville=getNomVille($idville);
   $idcat=getIdCategorieLieu($idlieu);
   $nomcat=getNomCategorie($idcat);
+  $categories=getAllCategorie();
 
 
   // Si le tableau $_POST existe alors le formulaire a été envoyé
