@@ -80,6 +80,17 @@
               </div>
 
               <hr/>
+              <br />
+                <div class="input-group">
+                  <span class="input-group-addon custom__addon" style="background-color: LimeGreen;">
+                    <span class="glyphicon glyphicon-cog"></span>  Description
+                  </span>
+
+                    <textarea  maxlength="500" name="description" cols="40" rows="5" ><?php echo $deslieu; ?></textarea>
+
+                </div>
+  <br />
+
 
 
               <input type="submit" value="Submit">
