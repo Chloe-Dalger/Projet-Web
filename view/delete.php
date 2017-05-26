@@ -9,11 +9,41 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
-
-  <style>
+<style>
   body{font-family: "Raleway", sans-serif;
   background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
   background-repeat: repeat;}
+
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+  }
+
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+      background-color: #111;
+  }
+
+  .active {
+      background-color: #4CAF50;
+  }
   </style>
 <?php include('navbar.php');?>
 
