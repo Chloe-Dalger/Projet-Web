@@ -56,7 +56,7 @@
 <?php include('navbar.php');?>
 
 <!-- Formulaire de modification du lieu avec les informations du lieu pré remplis -->
-  <form action="modifier-<?php echo $nom ?>" method="post">
+  <form action="modificationOK-<?php echo $nom ?>" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
