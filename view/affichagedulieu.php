@@ -42,7 +42,7 @@
 
 	 					 <br />
 						 <!-- Formulaire pour supprimer le lieu avec besoin de mot de passe -->
-						<form action="supprimer/<?php echo $nom;?>" method="post">
+						<form action="../controller/deletelieu_controller.php?nom=<?php echo $nom;?>" method="post">
 	 					 <div class="input-group">
 
 	 						 <input type="password" placeholder="Entrez le mot de passe..." name="psw" id="urlim">

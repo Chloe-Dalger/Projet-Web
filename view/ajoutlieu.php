@@ -60,7 +60,7 @@
   </ul>
 
   <!-- Formulaire d'ajout d'un lieu -->
-  <form action="ajoutlieu" method="post">
+  <form action="../controller/ajoutlieu_controller.php" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
