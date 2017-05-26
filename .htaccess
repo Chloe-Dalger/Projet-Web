@@ -1,5 +1,5 @@
 Options +FollowSymlinks -MultiViews
 RewriteEngine on
 
-RewriteRule ^accueil$ controller/accueil_controller.php 
-RewriteRule ^ajoutlieu controller/ajoutlieu_controller.php
+
+RewriteRule ^ajoutlieu$ /controller/ajoutlieu_controller.php [L]
