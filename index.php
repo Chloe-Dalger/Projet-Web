@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<?php
-					header('Location:controller/accueil_controller.php');
+					header('Location:accueil');
 			?>
 	</body>
 </html>
