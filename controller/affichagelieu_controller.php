@@ -6,13 +6,12 @@
     require_once('../model/departement.php');
     require_once('../model/lieu.php');
     require_once('../model/region.php');
-    require_once('../model/categorie.php');
 
-    $categories=getAllCategorie();
 
     //si post n'est pas vide alors le formulaire a été envoyé
     if(!empty($_POST))
       {
+
 
         //on récupère les variables du formulaire
         $ville=$_POST['ville'];
