@@ -25,6 +25,6 @@
   $idcat=getIdCategorieLieu($idlieu);
   $nomcat=getNomCategorie($idcat);
   $categories=getAllCategorie();
-  
-include('../view/updatelieu.php');
+
+include('../view/accueil.php');
 ?>
