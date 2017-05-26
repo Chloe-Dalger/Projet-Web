@@ -3,35 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <title>Modification du lieu</title>
-  <!--  Toutes les librairies/CSS/JS nécessaire à la mise en page et aux fonctionnalités de la page-->
+<!--  Toutes les librairies/CSS/JS nécessaire à la mise en page et aux fonctionnalités de la page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/css/ajoutlieu.css" rel="stylesheet">
 
-  <?php include('navbar.php');?>
+<?php include('navbar.php');?>
 
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-6" >
-          <h1 style="margin-top:100px">Supprimer un lieu</h3>
-            <!--  Affiche le message du controleur s'il existe-->
+            <div class="col-md-6" >
+            <h1 style="margin-top:100px">Supprimer un lieu</h3>
+              <!--  Affiche le message du controleur s'il existe-->
+                <?php if($bool){ ?>
+                  <h3 style="margin-top:20px"><b><?php echo $message;?></b></h3>
 
-            <?php if($bool){?>
-              <h3 style="margin-top:20px"><b><?php echo $message1;?></b></h3>
-              <a class="text-align:center;" href="accueil">Retour</a>
-            <?php}else{?>
-                <h3 style="margin-top:20px"><b><?php echo $message2;?></b></h3>
-                <a class="text-align:center;" href="javascript:history.go(-1)">Retour</a>
-            <?php}?>
+                     <a class="text-align:center;" href="accueil">Retour</a>
+                <?php }else{ ?>
+                  <h3 style="margin-top:20px"><b><?php echo $message;?></b></h3>
+
+                     <a class="text-align:center;" href="javascript:history.go(-1)">Retour</a>
+                <?php } ?>
+
+
 
 
 
             </div>
-        </div>
       </div>
+    </div>
   </body>
 
-</html>
+  </html>
