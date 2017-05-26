@@ -7,12 +7,9 @@
   <!--  Toutes les librairies/CSS/JS dont on a besoin pour la mise en page et les fonctionalités de la page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../bootstrap.min.js"></script> <!-- Essayer de virer -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
-
-  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Essayer de virer -->
   <style>
   body{font-family: "Raleway", sans-serif;
   background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -63,12 +60,12 @@
   </ul>
 
   <!-- Formulaire d'ajout d'un lieu -->
-  <form action="../controller/ajoutlieu_controller.php" method="post">
+  <form action="ajoutlieu" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
           <h1 style="margin-top:100px">Ajouter un nouveau lieu</h3>
-            <!-- Mesasge du controlleur s'il existe -->
+            <!-- Message du controlleur s'il existe -->
           <?php if(!empty($message)) : ?>
               <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
             <?php endif; ?>
