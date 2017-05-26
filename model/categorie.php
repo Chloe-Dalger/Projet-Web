@@ -138,39 +138,25 @@ function getAllCategorie(){
         return $Listenomcat;
     }
 
-  function modifDescriptionCategorie($newdes, $id){
-  	//donnée : id de la categorie à modifier et la nouvelle description
-  	//pré : idcat : entier > 0 / newdes : String & length(des)>=0
-  	//résultat : modifie la description de la catégorie actuelle par newdes
-    global $db;
-    try{
-  		$req=$db->prepare('UPDATE categorie SET descat= ? WHERE idcat=?');
-  		$req->execute(array(
-  			'newdes' => $newdes,
-  			'idcat' => $id
-  		));
-  	} catch(PDOException $e){
-  		echo($e->getMessage());
-  		die(" Erreur lors de la modification de la description de la categorie dans la table " );
-  }
-  }
 
-  function modifNomCategorie($id,$newnom){
-	//donnée : id de la catégorie à modifier et le nouveau nom
-	//pré : idcat : entier > 0 / newnom : String & length(nom)>0
-	//résultat : modifie le nom de la catégorie actuelle avec un nouveau nom
-  global $db;
-	try{
-		$req=$db->prepare('UPDATE categorie SET nomcat= :newnom WHERE idcat=:id');
-		$req->execute(array(
-			'newnom' => $newnom,
-			'idcat' => $id
-		));
-	} catch(PDOException $e){
-		echo($e->getMessage());
-		die(" Erreur lors de la modification du nom de la categorie dans la table " );
+function modifCategorie($id,$newnom, $newdescat){
+//donnée : id de la catégorie à modifier et le nouveau nom
+//pré : idcat : entier > 0 / newnom : String & length(nom)>0
+//résultat : modifie le nom de la catégorie actuelle avec un nouveau nom
+global $db;
+try{
+  $req=$db->prepare('UPDATE categorie SET nomcat= :newnom, descat=:$newdescat WHERE idcat=:id');
+  $req->execute(array(
+    'newnom' => $newnom,
+    'newdescat' => $newdescat,
+    'id' => $id
+  ));
+} catch(PDOException $e){
+  echo($e->getMessage());
+  die(" Erreur lors de la modification du nom de la categorie dans la table " );
 }
 }
+
 
 
 function existeCategorie($nom){

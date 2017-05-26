@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Lieux</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!--  Voir ce que c'est-->
+<!-- Toutes les librairies/CSS/JS dont on a besoin pour la mise en page et pour  -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../view/css/test.css">
-<link rel="stylesheet" href="../view/css/navbar.css">
+<link rel="stylesheet" href="../view/css/navbar.css"><!--Esssayer de virer  -->
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -64,7 +65,7 @@ li a:hover:not(.active) {
 
 
 <body class="w3-light-grey w3-content" style="max-width:2000px">
-
+<!-- Navbar de la page -->
   <ul>
     <li><a href="../controller/accueil_controller.php">Accueil</a></li>
     <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
@@ -85,6 +86,7 @@ li a:hover:not(.active) {
 
     <h1><b> Résultats de votre recherche:</b></h1>
 
+    <!-- Affiche les filtres que l'on a choisi, à savoir, departement, région, ville -->
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right ">Filtres:</span>
 
@@ -104,7 +106,7 @@ li a:hover:not(.active) {
 
 
 </div>
-
+    <!-- Affiche le message du controller -->
     <?php if(!empty($message)) : ?>
         <h1><b><?php echo $message; ?></b></h1>
       <?php endif; ?>
@@ -112,6 +114,7 @@ li a:hover:not(.active) {
 
   <div class="w3-row-padding">
     <?php
+    //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
     foreach ($lieux as $lieu){ ?>
     <div class="w3-third w3-container w3-margin-bottom">
       <?php echo '<a href="../controller/affichagedulieu_controller.php?nom='.$lieu['nomlieu'].'">';?>
@@ -130,6 +133,6 @@ li a:hover:not(.active) {
 
   </div>
 
-
+<!-- Limiter le nombre à l'affichage -->
 </body>
 </html>

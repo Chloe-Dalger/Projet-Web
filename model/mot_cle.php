@@ -111,10 +111,10 @@ function getAllMotCle(){
 	//résultat : modifie le libellé actuel du mot clé par le nouveau
   global $db;
 	try{
-		$req=$db->prepare('UPDATE mot_cle SET libmotcle= ? WHERE idmotcle=?');
+		$req=$db->prepare('UPDATE mot_cle SET libmotcle=:newlib WHERE idmotcle=:id');
 		$req->execute(array(
 			'newlib' => $newlib,
-			'idmotcle' => $id
+			'id' => $id
 		));
 	} catch(PDOException $e){
 		echo($e->getMessage());

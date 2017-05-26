@@ -111,7 +111,7 @@ function getAllPseudo(){
   		$req=$db->prepare('UPDATE pseudo SET pseudo= :newpseudo WHERE idpseudo=:id');
   		$req->execute(array(
   			'newpseudo' => $newpseudo,
-  			'idpseudo' => $id
+  			'id' => $id
   		));
   	} catch(PDOException $e){
   		echo($e->getMessage());

@@ -7,8 +7,7 @@
   require_once('../model/pseudo.php');
   require_once('../model/lieu.php');
   require_once('../model/categorie.php');
-  require_once('../model/mot_cle.php');
-  require_once('../model/possede_mc.php');
+
 
 
   //recuperation du nom via l'url
@@ -69,7 +68,7 @@
 
           //La ville existe-t-elle déjà?
           if(is_null(existeVille($cpville))){
-          //La ville n existais pas
+          //La ville n existaist pas
 
           //On regarde la validité du département, donc du code postal
             if(is_null(existeDepartement($dep))){
@@ -90,21 +89,9 @@
               $idcat=getIdCategorie($ctegorie);
 
               //Mettre le lieu à jour
-
               modifLieu($nomlieu, $description, $url, $adr, $idcat, $idville, $idlieu);
 
-
-
-
-              // for($i=0; $i<count($motcle); $i++){
-              //   if(is_null($motcle[$i])){
-              //     creerMotCle($motcle[$i]);
-              //     $idmotcle=getIdMotCle($motcle[$i]);
-              //     creerMotCleLieu($idlieu, $idmotcle);
-              //   }
-              //}
-
-              // L'identification a réussi
+              //on créé le message de modification
             $message = 'Votre lieu a bien été modifié !';
         }
 

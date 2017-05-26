@@ -153,6 +153,25 @@ function getAllville(){
           return $Listelieuville;
       }
 
+      function modifVille($id, $newnom, $newcp, $newiddep){
+        //donnée : id de la ville à modifier et tous les nouveaux champs à modifier
+        //pré : idville : entier > 0 / newnum : String & length(newnum)>0
+        //résultat : modifie les champs de la ville par les nouveau
+        global $db;
+        try{
+          $req=$db->prepare('UPDATE ville SET nomville=:newnom, cpville= :newnum, $iddep=:newiddep WHERE idville=:id');
+          $req->execute(array(
+            'newnom' => $newnom,
+            'newnum' => $newcp,
+            'newiddep' => $newiddep,
+            'idville' => $id
+          ));
+        } catch(PDOException $e){
+          echo($e->getMessage());
+          die(" Erreur lors de la modification du code postal de la ville dans la table " );
+      }
+      }
+
   function modifCodePostalVille($id,$newnum){
   	//donnée : id de la ville à modifier et le nouveau code postal
   	//pré : idville : entier > 0 / newnum : String & length(newnum)>0

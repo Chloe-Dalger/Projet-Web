@@ -170,33 +170,18 @@
           return $Listenomdep;
       }
 
-    function modifNumeroDepartement($id,$newnum){
-    	//donnée : id du département à modifier et un nouveau numéro
-    	//pré : iddep : entier > 0 / newnum : String & length(newnum)>0
-    	//résultat : modifie le numéro de département par le nouveau
-      global $db;
-      try{
-    		$req=$db->prepare('UPDATE departement SET numerodep= :newnum WHERE iddep=:id');
-    		$req->execute(array(
-    			'newnum' => $newnum,
-    			'iddep' => $id
-    		));
-    	} catch(PDOException $e){
-    		echo($e->getMessage());
-    		die(" Erreur lors de la modification du numero du departement dans la table " );
-    }
-    }
 
-    function modifNomDepartement($id,$newnom){
+    function modifDepartement($id,$newnom, $newnumdep){
   	//donnée : id du département à modifier et le nouveau nom
   	//pré : iddep : entier > 0 / newnom : String & length(newnom)>0
   	//résultat : modifie le nom actuel du départment par le nouveau
     global $db;
   	try{
-  		$req=$db->prepare('UPDATE departement SET nomdep= :newnom WHERE iddep=:id');
+  		$req=$db->prepare('UPDATE departement SET nomdep= :newnom, numerodep=:newnumdep WHERE iddep=:id');
   		$req->execute(array(
   			'newnom' => $newnom,
-  			'iddep' => $id
+        'newnumdep' => $newnumdep,
+  			'id' => $id
   		));
   	} catch(PDOException $e){
   		echo($e->getMessage());

@@ -3,16 +3,16 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Bienvenu</title>
-
+  <title>Modification du lieu</title>
+<!--  Toutes les librairies/CSS/JS nécessaire à la mise en page et aux fonctionnalités de la page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../bootstrap.min.js"></script>
+  <script type="text/javascript" src="../bootstrap.min.js"></script><!-- Essayer de virer -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
 
-  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"><!--Essayer de virer  -->
   <style>
   body{font-family: "Raleway", sans-serif;
   background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -54,19 +54,20 @@
 </head>
 
 <body>
-
+<!--  Navbar de la page-->
   <ul>
     <li><a  href="../controller/accueil_controller.php">Accueil</a></li>
     <li><a  href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
 
   </ul>
 
-
+<!-- Formulaire de modification du lieu avec les informations du lieu pré remplis -->
   <form action="../controller/updatelieu_controller.php" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
           <h1 style="margin-top:100px">Modifier un lieu</h3>
+            <!--  Affiche le message du controleur s'il existe-->
           <?php if(!empty($message)) : ?>
               <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
             <?php endif; ?>
@@ -127,7 +128,9 @@
                     <?php
 
                     foreach ($categories as $categorie){
+                      //on stocke le nom de la catégorie courante dans une variable
                         $nomcat1=$categorie['nomcat'];
+                        //On fait un comparaison de chaine, si la catégorie courante est la catégorie du lieu à modifier alors on la choisi par défaut
                       if(strcmp($nomcat1, $nomcat) == 0){
                         echo '<option selected value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                       }else{

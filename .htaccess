@@ -1,0 +1,4 @@
+Options +FollowSymlinks -MultiViews
+RewriteEngine on
+
+RewriteRule ^accueil$ /controller/controller_page_ranking.php [L]

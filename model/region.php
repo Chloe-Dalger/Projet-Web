@@ -111,7 +111,7 @@ function getAllRegion(){
   		$req=$db->prepare('UPDATE region SET nomregion= :newnom WHERE idregion=:id');
   		$req->execute(array(
   			'newnom' => $newnom,
-  			'idregion' => $id
+  			'id' => $id
   		));
   	} catch(PDOException $e){
   		echo($e->getMessage());
