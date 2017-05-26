@@ -102,7 +102,7 @@
 
 
   //page voulue
-  include('../view/ajoutlieu.php');
+  require_once('../view/ajoutlieu.php');
 
 
 
