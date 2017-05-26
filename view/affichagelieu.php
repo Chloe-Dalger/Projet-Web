@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -93,6 +94,14 @@ li a:hover:not(.active) {
           <?php if(!(strcmp($region, "choisir1")==0)) : ?>
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
+            <div class="w3-dropdown-hover">
+              <button class="w3-button w3-black">Catégorie</button>
+              <div class="w3-dropdown-content w3-bar-block w3-border">
+                    <?php foreach ($categorie as $categorie){
+                      echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                    }?>
+              </div>
+            </div>
 
     </div>
 
