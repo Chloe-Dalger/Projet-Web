@@ -77,10 +77,7 @@ a:hover {
   .cover-container {
     width: 700px;
   }
-  .site-wrapper {*  height: 100%; /* For at least Firefox */
-    margin-top: 50px;
-    margin-left: 100px;
-}
+
 }
 
 
