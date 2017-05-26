@@ -8,7 +8,7 @@
   require_once('../model/lieu.php');
   require_once('../model/categorie.php');
 
-
+  $nom=$_GET['nom'];
   // Si le tableau $_POST existe alors le formulaire a été envoyé
   if(!empty($_POST))
     {
