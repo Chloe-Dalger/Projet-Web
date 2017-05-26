@@ -58,6 +58,21 @@ a:hover {
  * Header
  */
 
+ @media (max-width:480px){
+   .masthead,
+   .mastfoot,
+   .cover-container {
+     width: 300px;
+   }
+   .site-wrapper {*  height: 100%; /* For at least Firefox */
+     margin-top: 50px;
+     margin-left: 100px;
+ }
+ .body{
+   background-size: auto;
+ }
+
+ }
 
 @media (min-width: 992px) {
   .masthead,
