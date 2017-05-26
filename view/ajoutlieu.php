@@ -111,6 +111,7 @@
                     }else{
                     echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                   }
+                }
                   ?>
                 </select>
 
