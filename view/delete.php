@@ -19,7 +19,7 @@
             <h1 style="margin-top:100px">Supprimer un lieu</h3>
               <!--  Affiche le message du controleur s'il existe-->
 
-                <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
+                <h3 style="margin-top:20px"><b><?php echo $message;?></b></h3>
 
                    <a class="text-align:center;" href="javascript:history.go(-1)">Retour</a>
 

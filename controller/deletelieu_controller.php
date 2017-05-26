@@ -21,7 +21,7 @@
     //on supprime le lieu choisi
     supprimerLieu($idlieu);
       //page vue voulue
-      $message=echo $nom.'a bien été supprimé';
+      $message='Le lieu a bien été supprimé';
       include('../view/delete.php');
   }
   else{
