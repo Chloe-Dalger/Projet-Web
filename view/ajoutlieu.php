@@ -57,8 +57,8 @@
 
 <!--  Navbar de la page-->
   <ul>
-    <li><a  href="../controller/accueil_controller.php">Accueil</a></li>
-    <li><a class="active" href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
+    <li><a  href="accueil">Accueil</a></li>
+    <li><a class="active" href="ajoutlieu">Ajouter lieu</a></li>
 
   </ul>
 
