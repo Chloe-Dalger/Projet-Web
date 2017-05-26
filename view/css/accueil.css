@@ -1,11 +1,14 @@
 body{
     margin-top:20px;
 
-    background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center center fixed;
+    background: url(http://www.nue-propriete.org/wp-content/uploads/2016/06/Nue-propri%C3%A9t%C3%A9-Montpellier-34-1024x686.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin:0;
+    padding:0;
+
 
     height: 100%;
     background-color: #060;
