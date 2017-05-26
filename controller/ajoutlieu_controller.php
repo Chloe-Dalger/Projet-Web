@@ -52,6 +52,38 @@
       {
         $message = 'Veuillez indiquer la ville où se trouve le lieu';
       }
+      elseif(getimagesize($url)==false) {
+        $message='L URL saisie de l image n est pas une URL';
+
+      }
+      elseif(strlen($cpville)!=5){
+        $message='Le code postal doit être composé de 5 chiffres';
+
+      }
+      elseif(strlen($deslieu)>700){
+        $message='La description doit faire moins de 701 caractères';
+
+      }
+      elseif(strlen($url)>300){
+        $message='L url doit faire moins de 301 caractères';
+
+      }
+      elseif(strlen($pseudo)>20){
+        $message='Le pseudo doit faire moins de 21 caractères';
+
+      }
+      elseif(strlen($nomlieu)>50){
+        $message='Le nom du lieu doit faire moins de 51 caractères';
+
+      }
+      elseif(strlen($ville)>50){
+        $message='Le nom de la ville doit faire moins de 51 caractères';
+
+      }
+      elseif(strlen($adr)>100){
+        $message='L adresse du lieu doit faire moins de 101 caractères';
+
+      }
       else{
 
           if(is_null(existeVille($cpville))){

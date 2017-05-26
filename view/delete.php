@@ -10,40 +10,7 @@
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
 <style>
-  body{font-family: "Raleway", sans-serif;
-  background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
-  background-repeat: repeat;}
 
-  ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 0;
-      width: 100%;
-  }
-
-  li {
-      float: left;
-  }
-
-  li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
-
-  li a:hover:not(.active) {
-      background-color: #111;
-  }
-
-  .active {
-      background-color: #4CAF50;
-  }
   </style>
 <?php include('navbar.php');?>
 
@@ -54,7 +21,9 @@
             <h1 style="margin-top:100px">Supprimer un lieu</h3>
               <!--  Affiche le message du controleur s'il existe-->
 
-                <h3 style="margin-top:20px"><b>Le lieu <?php echo $nom ?> a bien été supprimé</b></h1>
+                <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
+
+                   <a class="text-align:center;" href="javascript:history.go(-1)">Retour</a>
 
 
 

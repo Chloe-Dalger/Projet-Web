@@ -25,9 +25,11 @@
 				 <p><?php echo $adrlieu.', '.$cpville.' '.$nomville;?></p><br/>
 		     <a><u><?php echo $pseudo; ?></u></a>
 				 <!-- Lorsque l'on appui sur le lien le javascript prend la trouver explication sur internet -->
-				 <a href="javascript:history.go(-1)">Retour</a>
+
 
 		     </div>
+
+				 				 <a class="text-align:center;" href="javascript:history.go(-1)">Retour</a>
 
 				 <br />
 				 <!-- Bouton pour aller sur la page de modification du lieu  -->

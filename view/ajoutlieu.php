@@ -10,49 +10,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
-  <style>
-  body{font-family: "Raleway", sans-serif;
-  background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
-  background-repeat: repeat;}
-
-  ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 0;
-      width: 100%;
-  }
-
-  li {
-      float: left;
-  }
-
-  li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
-
-  li a:hover:not(.active) {
-      background-color: #111;
-  }
-
-  .active {
-      background-color: #4CAF50;
-  }
-  </style>
 
 
 </head>
 
 <body>
 
-<!--  Navbar de la page-->
+  <!--  Navbar de la page-->
   <ul>
     <li><a  href="accueil">Accueil</a></li>
     <li><a class="active" href="ajoutlieu">Ajouter lieu</a></li>
@@ -61,63 +25,63 @@
 
   <!-- Formulaire d'ajout d'un lieu -->
   <form action="ajoutlieu" method="post">
-  <div class="container">
-    <div class="row">
-          <div class="col-md-6" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" >
           <h1 style="margin-top:100px">Ajouter un nouveau lieu</h3>
             <!-- Message du controlleur s'il existe -->
-          <?php if(!empty($message)) : ?>
+            <?php if(!empty($message)) : ?>
               <h3 style="margin-top:20px"><b><?php echo $message; ?></b></h1>
-            <?php endif; ?>
+              <?php endif; ?>
 
               <div class="input-group" style="margin-top: 100px; ">
                 <span class="input-group-addon custom__addon" style="background-color: DodgerBlue;">
-                  Pseudo
+                  Pseudo
                 </span>
-                <!-- Input text pour rentrer son pseudo avec un maximum de 15 caractères -->
-                <input type="text" maxlength="15" placeholder="Entrez votre nom/pseudo..." name="pseudo" id="pseudo" value="<?php if(!empty($_POST['pseudo'])) { echo htmlspecialchars($_POST['pseudo'], ENT_QUOTES); } ?>">
+                <!-- Input text pour rentrer son pseudo avec un maximum de 20 caractères -->
+                <input type="text" maxlength="20" placeholder="Entrez votre nom/pseudo..." name="pseudo" id="pseudo" value="<?php if(!empty($_POST['pseudo'])) { echo htmlspecialchars($_POST['pseudo'], ENT_QUOTES); } ?>">
               </div>
-            <br />
+              <br />
 
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
                   Nom lieu
                 </span>
-                <!-- Input text pour rentrer le nom du lieu avec un maximum de 40 caractères1 -->
-                <input type="text" maxlength="40" placeholder="Entrez le nom du lieu ici..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
+                <!-- Input text pour rentrer le nom du lieu avec un maximum de 50 caractères -->
+                <input type="text" maxlength="50" placeholder="Entrez le nom du lieu ici..." maxlength="40" name="nomlieu" id="nomlieu" value="<?php if(!empty($_POST['nomlieu'])) { echo htmlspecialchars($_POST['nomlieu'], ENT_QUOTES); } ?>">
               </div>
-            <br />
+              <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: LimeGreen;">
                   Description
                 </span>
-                  <!-- Textare pour la description du lieu, avec colonnes et 5 lignes   -->
-                  <textarea  maxlength="500" name="description" cols="40" rows="5" placeholder="Entrez la description du lieu ici..." value="<?php if(!empty($_POST['description'])) { echo htmlspecialchars($_POST['description'], ENT_QUOTES); } ?>"></textarea>
+                <!-- Textare pour la description du lieu, avec 40 colonnes et 5 lignes   -->
+                <textarea  maxlength="700" name="description" cols="40" rows="5" placeholder="Entrez la description du lieu ici..." value="<?php if(!empty($_POST['description'])) { echo htmlspecialchars($_POST['description'], ENT_QUOTES); } ?>"></textarea>
 
               </div>
-<br />
+              <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Gold;">
-                 Ville
+                  Ville
                 </span>
-                <!-- Input text pour entrer la nom de la ville avec une longueur ed 40 caractères max -->
-                <input type="text" placeholder="Entrez la ville ici..." maxlength="40" name="ville" id="ville" value="<?php if(!empty($_POST['ville'])) { echo htmlspecialchars($_POST['ville'], ENT_QUOTES); } ?>">
+                <!-- Input text pour entrer la nom de la ville avec une longueur ed 50 caractères max -->
+                <input type="text" placeholder="Entrez la ville ici..." maxlength="50" name="ville" id="ville" value="<?php if(!empty($_POST['ville'])) { echo htmlspecialchars($_POST['ville'], ENT_QUOTES); } ?>">
               </div>
-<br />
+              <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: DarkCyan;">
-                Code Postal
+                  Code Postal
                 </span>
-                <!-- Input text pour rentrer le code postal de la ville avec une longueur max de 40 caractères -->
-                <input type="text" placeholder="Entrez le code postal ici..." maxlength="40" name="cpville" id="cpville" value="<?php if(!empty($_POST['cpville'])) { echo htmlspecialchars($_POST['cpville'], ENT_QUOTES); } ?>">
+                <!-- Input text pour rentrer le code postal de la ville avec une longueur max de 5 caractères -->
+                <input type="text" placeholder="Entrez le code postal ici..." maxlength="5" name="cpville" id="cpville" value="<?php if(!empty($_POST['cpville'])) { echo htmlspecialchars($_POST['cpville'], ENT_QUOTES); } ?>">
               </div>
-<br />
+              <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Wheat;">
-                Adresse Lieu
+                  Adresse Lieu
                 </span>
-                <!--  Input text pour entrer l'adresse du lieu avec 40 caratères max-->
-                <input type="text" placeholder="Entrez l''adresse de la ville ici..." maxlength="40" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
+                <!--  Input text pour entrer l'adresse du lieu avec 100 caratères max-->
+                <input type="text" placeholder="Entrez l''adresse de la ville ici..." maxlength="100" name="adrlieu" id="adrlieu" value="<?php if(!empty($_POST['adrlieu'])) { echo htmlspecialchars($_POST['adrlieu'], ENT_QUOTES); } ?>">
               </div>
               <br />
               <div class="input-group">
@@ -126,12 +90,12 @@
                   URL Image
                 </span>
                 <!-- Input url pour entrer l'url de l'image du lieu vérifications à faire -->
-                <input type="url" placeholder="Entrez l'url de l'image ici..." name="urlim" id="urlim" value="<?php if(!empty($_POST['urlim'])) { echo htmlspecialchars($_POST['urlim'], ENT_QUOTES); } ?>">
+                <input type="url" maclength="100" placeholder="Entrez l'url de l'image ici..." name="urlim" id="urlim" value="<?php if(!empty($_POST['urlim'])) { echo htmlspecialchars($_POST['urlim'], ENT_QUOTES); } ?>">
               </div>
-<br />
+              <br />
               <div class="input-group">
                 <span class="input-group-addon custom__addon" style="background-color: Crimson;">
-                Catégorie
+                  Catégorie
                 </span>
                 <select name='ctegorie' class="form-control custom__select">
                   <!-- Menu déroulant affichant toutes les catégories de la base de données -->
@@ -141,21 +105,21 @@
                     echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                   }
                   ?>
-              </select>
+                </select>
 
               </div>
               <hr/>
 
 
               <input type="submit" value="Submit">
+            </div>
           </div>
-    </div>
-  </div>
+        </div>
 
 
-  </form>
+      </form>
 
 
-</body>
+    </body>
 
-</html>
+    </html>
