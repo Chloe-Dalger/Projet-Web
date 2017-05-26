@@ -83,6 +83,6 @@
 
 
   //page vue voulue
-  include('../view/update.php');
+  include('../view/accueil.php');
 
 ?>
