@@ -21,11 +21,11 @@
     //on supprime le lieu choisi
     supprimerLieu($idlieu);
       //page vue voulue
-      include('../view/accueil.php');
+      include('../view/delete.php');
   }
   else{
       //changer avec la page du lieu
-      include('../view/accueil.php');
+      include('../view/delete.php');
   }
 
   ?>
