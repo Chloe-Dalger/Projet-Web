@@ -2,4 +2,4 @@ Options +FollowSymlinks -MultiViews
 RewriteEngine on
 
 
-RewriteRule ^ajoutlieu$ /controller/ajoutlieu_controller.php [L]
+RewriteRule ^ajoutlieu$ controller/ajoutlieu_controller.php [L]
