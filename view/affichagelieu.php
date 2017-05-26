@@ -94,8 +94,8 @@ li a:hover:not(.active) {
           <?php if(!(strcmp($region, "choisir1")==0)) : ?>
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
-
-            <select class="selectpicker" data-style="btn-warning">
+            <form action="lieux" method="post">
+            <select name="ctg" class="selectpicker" data-style="btn-warning">
               <!-- Menu déroulant affichant toutes les catégories de la base de données -->
               <?php
               //categories tableau à double entrée qui pour chaque ligne va afficher un certain nombre d'informations
@@ -104,6 +104,8 @@ li a:hover:not(.active) {
               }
               ?>
             </select>
+            <input type="submit" value="Choisir">
+          </form>
 
     </div>
 
@@ -118,9 +120,18 @@ li a:hover:not(.active) {
 
 
   <div class="w3-row-padding">
-    <?php
+
+    <?php if(!empty($_POST))
+      {
+
+        //on récupère les variables du formulaire
+        $ctg=$_POST['ctg'];
     //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
-    foreach ($lieux as $lieu){ ?>
+      foreach ($lieux as $lieu){
+        $categ=getNomCategorie($lieu['idcat']);
+        if($ctg==$categ){
+
+      ?>
     <div class="w3-third w3-container w3-margin-bottom">
       <?php echo '<a href="lieux/'.$lieu['nomlieu'].'">';?>
       <?php
@@ -133,8 +144,27 @@ li a:hover:not(.active) {
         <p><?php echo $lieu['deslieu']; ?></p>
       </div>
     </div>
-  <?php }
-    ?>
+  <?php }}}else{
+
+      //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
+        foreach ($lieux as $lieu){
+
+        ?>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <?php echo '<a href="lieux/'.$lieu['nomlieu'].'">';?>
+        <?php
+
+          echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
+        ?>
+  </a>
+        <div class="w3-container w3-white">
+          <p><b><?php echo $lieu['nomlieu']; ?></b></p>
+          <p><?php echo $lieu['deslieu']; ?></p>
+        </div>
+      </div>
+    <?php }}
+      ?>
+
 
   </div>
 
