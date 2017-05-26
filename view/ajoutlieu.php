@@ -102,6 +102,13 @@
                   <?php
                   //categories tableau à double entrée qui pour chaque ligne va afficher un certain nombre d'informations
                   foreach ($categories as $categorie){
+
+                    $nomcat1=$categorie['nomcat'];
+                    $nomcat2='Aucune';
+
+                    if(strcmp($nomcat1, $nomcat2) == 0){
+                      echo '<option selected value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+                    }else{
                     echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
                   }
                   ?>
