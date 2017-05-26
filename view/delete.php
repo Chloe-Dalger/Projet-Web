@@ -15,12 +15,13 @@
   background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
   background-repeat: repeat;}
   </style>
+<?php include('navbar.php');?>
 
   <body>
     <div class="container">
       <div class="row">
             <div class="col-md-6" >
-            <h1 style="margin-top:100px">Modifier un lieu</h3>
+            <h1 style="margin-top:100px">Supprimer un lieu</h3>
               <!--  Affiche le message du controleur s'il existe-->
 
                 <h3 style="margin-top:20px"><b>Le lieu <?php echo $nom ?> a bien été supprimé</b></h1>
