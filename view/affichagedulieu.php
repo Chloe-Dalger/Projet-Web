@@ -33,7 +33,7 @@
 				 <!-- Bouton pour aller sur la page de modification du lieu  -->
 	 			<div style="display= block">
 	 			<div class="input-group" >
-	 				<?php echo '<a href="lieux1/modifier/'.$nom.'">';?>
+	 				<?php echo '<a href="modifier/'.$nom.'">';?>
 	 				  <button type="button" class="btn btn-info">Modifier</button></a>
 
 
@@ -42,7 +42,7 @@
 
 	 					 <br />
 						 <!-- Formulaire pour supprimer le lieu avec besoin de mot de passe -->
-						<form action="lieux1/supprimer/<?php echo $nom;?>" method="post">
+						<form action="supprimer/<?php echo $nom;?>" method="post">
 	 					 <div class="input-group">
 
 	 						 <input type="password" placeholder="Entrez le mot de passe..." name="psw" id="urlim">
