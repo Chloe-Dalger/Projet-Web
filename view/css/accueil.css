@@ -68,6 +68,9 @@ a:hover {
     margin-top: 50px;
     margin-left: 100px;
 }
+.body{
+  background-size: auto;
+}
 
 }
 
@@ -77,6 +80,7 @@ a:hover {
   .cover-container {
     width: 700px;
   }
+
 
 }
 
