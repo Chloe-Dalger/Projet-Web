@@ -8,23 +8,15 @@
   <!-- Toutes les librairies/CSS etJS dont on a besoins pour l'esthétique de la page -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../bootstrap.min.js"></script> <!--  Essayer d'enlever-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="../view/css/accueil.css" rel="stylesheet">
-  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"><!-- essayer d'enlever -->
 
 
 </head>
 
 <body>
 
-  <!-- La navbar de la page -->
-  <ul>
-    <li><a class="active" href="accueil">Accueil</a></li>
-    <li><a href="ajoutlieu">Ajouter lieu</a></li>
-
-  </ul>
-
+<?php include('navbar.php');?>
 
 
 
