@@ -93,7 +93,7 @@ function getAllCategorie(){
 
   global $db;
   try{
-  		$req=$db->prepare('SELECT nomcat FROM categorie GROUP BY nomcat');
+  		$req=$db->prepare('SELECT nomcat FROM categorie ORDER BY nomcat');
   		$req->execute(array());
   		$Listecat=$req->fetchAll();
   	} catch(PDOException $e){
