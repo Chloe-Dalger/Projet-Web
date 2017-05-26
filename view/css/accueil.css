@@ -58,7 +58,7 @@ a:hover {
  * Header
  */
 
-@media (min-width:480px){
+@media (min-width:280px){
   .masthead,
   .mastfoot,
   .cover-container {
