@@ -41,6 +41,9 @@
       $ctegorie=$_POST['ctegorie'];
       $adr=$_POST['adrlieu'];
 
+      echo $nomlieu;
+      echo $ville;
+
       //$motscles=$_POST['motscles'];
       //$motcle = explode(";", $motscles);
 
