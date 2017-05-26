@@ -21,11 +21,11 @@
     //on supprime le lieu choisi
     supprimerLieu($idlieu);
       //page vue voulue
-      $message='Le lieu a bien été supprimé';
+      $message1='Le lieu a bien été supprimé';
       include('../view/delete.php');
   }
   else{
-      $message='Mauvais mot de passe';
+      $message2='Mauvais mot de passe';
       //changer avec la page du lieu
       include('../view/delete.php');
   }
