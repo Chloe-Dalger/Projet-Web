@@ -11,20 +11,6 @@
 
 
   //recuperation du nom via l'url
-  $nom=$_GET['nom'];
-
-  //recuperation des donnees via les requêtes des models
-  $idlieu=getIdLieu($nom);
-  $idville=getIdVilleLieu($idlieu);
-  $idpseudo=getIdPseudoLieu($idlieu);
-  $adrlieu=getAdresseLieu($idlieu);
-  $deslieu=getDescriptionLieu($idlieu);
-  $urllieu=getUrlLieu($idlieu);
-  $cpville=getCodePostalVille($idville);
-  $nomville=getNomVille($idville);
-  $idcat=getIdCategorieLieu($idlieu);
-  $nomcat=getNomCategorie($idcat);
-  $categories=getAllCategorie();
 
 
   // Si le tableau $_POST existe alors le formulaire a été envoyé
