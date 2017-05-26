@@ -11,7 +11,8 @@
 
 
   //recuperation du nom via l'url
-
+  $nom=$_GET['nom'];
+  $idlieu=getIdLieu($nom);
 
   // Si le tableau $_POST existe alors le formulaire a été envoyé
   if(!empty($_POST))

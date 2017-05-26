@@ -3,7 +3,7 @@ RewriteEngine on
 
 RewriteRule ^accueil$ /controller/accueil_controller.php [L]
 RewriteRule ^ajoutlieu$ /controller/ajoutlieu_controller.php [L]
-RewriteRule ^modification$ /controller/updatelieu_controller.php [L]
+RewriteRule ^modificationOK-(.*)$ /controller/updatelieu_controller.php?nom=$1 [L]
 RewriteRule ^modifier-(.*)$ /controller/modif_controller.php?nom=$1 [L]
 RewriteRule ^supprimer-(.*)$ /controller/deletelieu_controller.php?nom=$1 [L]
 RewriteRule ^lieux$ /controller/affichagelieu_controller.php [L]

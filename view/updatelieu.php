@@ -56,7 +56,7 @@
 <?php include('navbar.php');?>
 
 <!-- Formulaire de modification du lieu avec les informations du lieu pré remplis -->
-  <form action="modification" method="post">
+  <form action="modificationOK-<?php echo $nom; ?>" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >
@@ -71,7 +71,7 @@
                 <span class="input-group-addon custom__addon" style="background-color: MediumPurple;">
                   <span class="glyphicon glyphicon-cog"></span>  Nom lieu
                 </span>
-                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nom; ?>">
+                <input type="text" maxlength="40" maxlength="40" name="nomlieu" id="nomlieu" value="<?php echo $nomlieu; ?>">
               </div>
 
 
