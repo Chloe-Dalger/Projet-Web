@@ -94,7 +94,14 @@ li a:hover:not(.active) {
           <?php if(!(strcmp($region, "choisir1")==0)) : ?>
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
-
+            <div class="w3-dropdown-hover">
+              <button class="w3-button w3-black">Hover Over Me!</button>
+              <div class="w3-dropdown-content w3-bar-block w3-border">
+                <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+              </div>
+            </div>
 
     </div>
 
