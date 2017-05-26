@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -95,7 +94,6 @@ li a:hover:not(.active) {
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
 
-
     </div>
 
   </header>
@@ -109,28 +107,23 @@ li a:hover:not(.active) {
 
 
   <div class="w3-row-padding">
-
     <?php
+    //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
+    foreach ($lieux as $lieu){ ?>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <?php echo '<a href="lieux/'.$lieu['nomlieu'].'">';?>
+      <?php
 
-      //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
-        foreach ($lieux as $lieu){
-
-        ?>
-      <div class="w3-third w3-container w3-margin-bottom">
-        <?php echo '<a href="lieux/'.$lieu['nomlieu'].'">';?>
-        <?php
-
-          echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
-        ?>
-  </a>
-        <div class="w3-container w3-white">
-          <p><b><?php echo $lieu['nomlieu']; ?></b></p>
-          <p><?php echo $lieu['deslieu']; ?></p>
-        </div>
-      </div>
-    <?php }
+        echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
       ?>
-
+</a>
+      <div class="w3-container w3-white">
+        <p><b><?php echo $lieu['nomlieu']; ?></b></p>
+        <p><?php echo $lieu['deslieu']; ?></p>
+      </div>
+    </div>
+  <?php }
+    ?>
 
   </div>
 
