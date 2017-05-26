@@ -111,7 +111,7 @@ li a:hover:not(.active) {
     //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
     foreach ($lieux as $lieu){ ?>
     <div class="w3-third w3-container w3-margin-bottom">
-      <?php echo '<a href="lieux1/'.$lieu['nomlieu'].'">';?>
+      <?php echo '<a href="lieux-'.$lieu['nomlieu'].'">';?>
       <?php
 
         echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
