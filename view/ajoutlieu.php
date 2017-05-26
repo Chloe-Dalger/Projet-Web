@@ -61,7 +61,7 @@
               </div>
               <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Gold;">
+                <span class="input-group-addon custom__addon" style="background-color: GoldenRod;">
                   Ville
                 </span>
                 <!-- Input text pour entrer la nom de la ville avec une longueur ed 50 caractères max -->
@@ -77,7 +77,7 @@
               </div>
               <br />
               <div class="input-group">
-                <span class="input-group-addon custom__addon" style="background-color: Wheat;">
+                <span class="input-group-addon custom__addon" style="background-color: SaddleBrown;">
                   Adresse Lieu
                 </span>
                 <!--  Input text pour entrer l'adresse du lieu avec 100 caratères max-->

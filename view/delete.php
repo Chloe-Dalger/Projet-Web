@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/css/ajoutlieu.css" rel="stylesheet">
-<style>
 
-  </style>
 <?php include('navbar.php');?>
 
   <body>
