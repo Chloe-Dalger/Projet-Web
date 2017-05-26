@@ -134,8 +134,7 @@
                 Catégorie
                 </span>
                 <select name='ctegorie' class="form-control custom__select">
-                  <!-- Menu déroulant affichant toutes les catégories de la base de données, aucune à rajouter dans la BD!! -->
-                  <option value="aucune">Aucune</option>
+                  <!-- Menu déroulant affichant toutes les catégories de la base de données -->
                   <?php
                   //categories tableau à double entrée qui pour chaque ligne va afficher un certain nombre d'informations
                   foreach ($categories as $categorie){

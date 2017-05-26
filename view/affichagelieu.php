@@ -94,18 +94,19 @@ li a:hover:not(.active) {
           <?php if(!(strcmp($region, "choisir1")==0)) : ?>
               <button class="w3-button w3-black"><?php echo $nomregion; ?></button>
             <?php endif; ?>
-            <form action="lieux" method="post">
+            <!-- <form action="lieux" method="post">
             <select name="ctg" class="selectpicker" data-style="btn-warning">
               <!-- Menu déroulant affichant toutes les catégories de la base de données -->
+              <!--
               <?php
               //categories tableau à double entrée qui pour chaque ligne va afficher un certain nombre d'informations
-              foreach ($categories as $categorie){
-                echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
+              //foreach ($categories as $categorie){
+              //  echo '<option value="'.$categorie['nomcat'].'">'.$categorie['nomcat'].'</option>';
               }
               ?>
             </select>
             <input type="submit" value="Choisir">
-          </form>
+          </form> -->
 
     </div>
 
@@ -121,7 +122,8 @@ li a:hover:not(.active) {
 
   <div class="w3-row-padding">
 
-<?php
+    <?php
+
       //Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
         foreach ($lieux as $lieu){
 

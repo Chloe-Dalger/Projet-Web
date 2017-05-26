@@ -1,95 +1,24 @@
-<?php if(!empty($message)) : ?>
-<p><?php echo $message; ?></p>
-<?php endif; ?>
-
-
-if(!empty($_POST))
+<?php if(!empty($_POST))
   {
 
-    $pseudo=$_POST['pseudo'];
-    $nomlieu=$_POST['nomlieu'];
-    $description=$_POST['description'];
-    $ville=$_POST['ville'];
-    $cpville=$_POST['cpville'];
-    $url=$_POST['urlim'];
-    $categorie=$_POST['categorie'];
-    $adr=$_POST['adrlieu'];
-    $motscles=$_POST['motscles'];
-    $motcle = explode(";", $motscles);
-    $bool= True;
+    //on récupère les variables du formulaire
+    $ctg=$_POST['ctg'];
+//Lieux tableau à double entrée, pour chaque ligne de lieux, on va afficher certaines informations
+  foreach ($lieux as $lieu){
+    $categ=getNomCategorie($lieu['idcat']);
+    if($ctg==$categ){
 
+  ?>
+<div class="w3-third w3-container w3-margin-bottom">
+  <?php echo '<a href="lieux/'.$lieu['nomlieu'].'">';?>
+  <?php
 
-    // Si le tableau $_POST existe alors le formulaire a été envoyé
-
-    // Le login est-il rempli ?
-    if(empty($pseudo))
-    {
-      $message = 'Veuillez indiquer votre pseudo !';
-    }
-      // Le mot de passe est-il rempli ?
-      elseif(empty($nomlieu))
-    {
-      $message = 'Veuillez indiquer le nom du lieu';
-    }
-      // Le mot de passe est-il correct ?
-      elseif(empty($ville))
-    {
-      $message = 'Veuillez indiquer la ville où se trouve le lieu';
-    }
-    else{
-
-      if(!is_null(existeLieu($nomlieu, $ville))){
-
-
-        if(is_null(existeVille($cpville))){
-          $dep=substr($cpville, 0, 1);
-          if(is_null(existeDepartement($dep))){
-            $message = 'Le code postal n est pas valide';
-            $bool = false;
-          }else {
-            $iddep=getIdNDepartement($dep);
-            creerVille($ville,$cpville,$iddep);
-          }
-        }
-      if($bool){
-            if(is_null(existePseudo($pseudo))){
-              creerPseudo($pseudo);
-            }
-            $idpseudo=getIdPseudo($pseudo);
-            $idville=getIdVille($ville);
-            $idcat=getIdCategorie($categorie);
-            creerLieu($nomlieu, $url, $description, $adr, $idpseudo, $idville, $idcat);
-            $idlieu=getIdLieu($nom);
-            for($i=0; $i<count($motcle); $i++){
-              if(is_null($motcle[$i])){
-                creerMotCle($motcle[$i]);
-                $idmotcle=getIdMotCle($motcle[$i]);
-                creerMotCleLieu($idlieu, $idmotcle);
-              }
-            }
-            // L'identification a réussi
-          $message = 'Votre lieu a bien été ajouté !';
-      }
-    }
-
-}
-}
-
-
-
-
-  function creerMotCleLieu($idlieu, $idmotcle){
-  	//donnée : libellé du mot clé
-  	//pré : lib : String & length(lib)>0
-  	//résultat : ajout du mot cle dans la base de données
-
-    global $db;
-  	try{
-  		$req=$db->prepare('INSERT INTO possede_mc(idlieu, idmotcle) VALUES (?,?)');
-  		$req->execute(array($idlieu, $idmotcle);
-  	} catch(PDOException $e){
-  		echo($e->getMessage());
-  		die(" Erreur lors l'insertion du mot cle dans la base de données " );
-  }
-
-  }
+    echo '<img src="'.$lieu['urllieu'].'" style="width:100%; height: 100%;"" class="w3-hover-opacity">';
+  ?>
+</a>
+  <div class="w3-container w3-white">
+    <p><b><?php echo $lieu['nomlieu']; ?></b></p>
+    <p><?php echo $lieu['deslieu']; ?></p>
+  </div>
+</div>
+<?php }}}else{
