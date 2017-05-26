@@ -7,7 +7,6 @@
     require_once('../model/lieu.php');
     require_once('../model/region.php');
 
-    $categories=getAllCategorie();
 
 
     //si post n'est pas vide alors le formulaire a été envoyé
