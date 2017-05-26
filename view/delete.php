@@ -19,8 +19,8 @@
           <h1 style="margin-top:100px">Supprimer un lieu</h3>
             <!--  Affiche le message du controleur s'il existe-->
 
-            <?php if(!is_null($message1)){
-              ?><h3 style="margin-top:20px"><b><?php echo $message1;?></b></h3>
+            <?php if($bool){?>
+              <h3 style="margin-top:20px"><b><?php echo $message1;?></b></h3>
               <a class="text-align:center;" href="accueil">Retour</a>
             <?php}else{?>
                 <h3 style="margin-top:20px"><b><?php echo $message2;?></b></h3>

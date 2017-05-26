@@ -11,6 +11,7 @@
 
   //récupération du password via le formulaire
   $psw=$_POST['psw'];
+  $bool=false;
 
 
   //recuperation du nom via l'url
@@ -19,6 +20,7 @@
 
   if (strcmp($psw, $password) == 0) {
     //on supprime le lieu choisi
+    $bool=true;
     supprimerLieu($idlieu);
       //page vue voulue
       $message1='Le lieu a bien été supprimé';
