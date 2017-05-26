@@ -62,7 +62,7 @@
   </ul>
 
 <!-- Formulaire de modification du lieu avec les informations du lieu pré remplis -->
-  <form action="../controller/updatelieu_controller.php" method="post">
+  <form action="modifier" method="post">
   <div class="container">
     <div class="row">
           <div class="col-md-6" >

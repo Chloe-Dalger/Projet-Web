@@ -40,7 +40,7 @@
 				 <!-- Bouton pour aller sur la page de modification du lieu  -->
 	 			<div style="display= block">
 	 			<div class="input-group" >
-	 				<?php echo '<a href="lieux/modifier/'.$nom.'">';?>
+	 				<?php echo '<a href="modifier/'.$nom.'">';?>
 	 				  <button type="button" class="btn btn-info">Modifier</button></a>
 
 
