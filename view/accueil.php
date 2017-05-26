@@ -35,7 +35,7 @@
 
 
           <!--  Formulaire de recher de lieux pour déterminer la zone géographique recherchée-->
-          <form method="post" action="lieux1">
+          <form method="post" action="lieux">
             <!--  Un menu déroulant affichant toutes les regions de la base de données-->
             <select name="region" id="region">
               <option value="choisir1" selected="selected">Choisissez la Région</option>
