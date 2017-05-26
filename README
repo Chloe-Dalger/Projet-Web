@@ -3,3 +3,5 @@ Chloe Dalger
 Version 1
 
 Projet Web IG3
+
+Le site va permettre d’effectuer des recherches de lieux, des ajouts, des modifications et des suppressions. Lorsque vous arrivez sur la page d’accueil, c’est là que vous pourrez faire une recherche de lieux selon différents critères (qui sera donc l’activité principale de ce site). Si vous êtes venus pour pouvoir ajouter un lieu qui vous semble digne d’intérêt, alors vous pouvez cliquer sur l’onglet « ajouter un lieu » et y remplir les différentes informations sur ce lieu. Si toutefois vous voulez modifier ou supprimer un lieu, il vous faudra aller sur ce lieu via la recherche et vous pourrez effectuer vos modifications en cliquant sur le bouton « modifier ». Si vous voulez supprimer le lieu, il vous faudra le mot de passe de suppression, l’insérer dans l’input en bas de la page et cliquer sur le bouton supprimer, vous serez alors redirigé vers la page d’accueil.
