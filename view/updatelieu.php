@@ -7,12 +7,10 @@
 <!--  Toutes les librairies/CSS/JS nécessaire à la mise en page et aux fonctionnalités de la page-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../bootstrap.min.js"></script><!-- Essayer de virer -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <link href="../view/ajoutlieu.css" rel="stylesheet">
 
-  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"><!--Essayer de virer  -->
   <style>
   body{font-family: "Raleway", sans-serif;
   background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -55,11 +53,7 @@
 
 <body>
 <!--  Navbar de la page-->
-  <ul>
-    <li><a  href="../controller/accueil_controller.php">Accueil</a></li>
-    <li><a  href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
-
-  </ul>
+<?php include('navbar.php');?>
 
 <!-- Formulaire de modification du lieu avec les informations du lieu pré remplis -->
   <form action="modifier" method="post">

@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../view/css/test.css">
-<link rel="stylesheet" href="../view/css/navbar.css"><!--Esssayer de virer  -->
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif;
 background-image: url("http://subtlepatterns.com/patterns/wood_pattern.png");
@@ -66,11 +65,7 @@ li a:hover:not(.active) {
 
 <body class="w3-light-grey w3-content" style="max-width:2000px">
 <!-- Navbar de la page -->
-  <ul>
-    <li><a href="../controller/accueil_controller.php">Accueil</a></li>
-    <li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
-
-  </ul>
+<?php include('navbar.php');?>
 
 
   <!-- Overlay effect when opening sidebar on small screens -->

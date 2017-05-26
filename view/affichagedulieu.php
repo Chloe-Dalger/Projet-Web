@@ -7,20 +7,13 @@
 		<link rel="stylesheet" href="../view/css/affichagedulieu.css" />
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="../bootstrap.min.js"></script><!--  Essayer de virer-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Essayer de virer -->
 
 	</head>
 	<body>
 		<!-- Navbar de la page -->
-
-		<ul>
-			<li><a href="../controller/accueil_controller.php">Accueil</a></li>
-			<li><a href="../controller/ajoutlieu_controller.php">Ajouter lieu</a></li>
-
-		</ul>
+<?php include('navbar.php');?>
 
 		<!--  -->
 		​<div class='wrapper_body'>
