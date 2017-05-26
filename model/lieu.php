@@ -178,7 +178,7 @@
 
     global $db;
     try{
-    		$req=$db->prepare('SELECT * FROM lieu LIMIT 50');
+    		$req=$db->prepare('SELECT * FROM lieu');
     		$req->execute(array());
     		$Listelieu=$req->fetchAll();
     	} catch(PDOException $e){
